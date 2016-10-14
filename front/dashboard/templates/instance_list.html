@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    {% load staticfiles %} 
+    <link rel="stylesheet" href="{% static "js/bootstrap-3.3.4-dist/css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "wanggang.css" %}">
+    <link rel="stylesheet" href="{% static "jstree/dist/themes/default/style.min.css" %}">
+    <link href="{% static "dashboard.css" %}" rel="stylesheet">
+    <link href="{% static "datetimepicker/css/bootstrap-datetimepicker.min.css" %}" rel="stylesheet" media="screen">
+    <title>Dashboard for Beehive</title>
+    <script src="{% static "js/jquery-1.11.2.min.js" %}"></script>
+    <script src="{% static "js/bootstrap-3.3.4-dist/js/bootstrap.min.js" %}"></script>
+    <script src="{% static "jstree/dist/jstree.min.js" %}"></script>
+    <script src="{% static "datetimepicker/js/bootstrap-datetimepicker.js" %}" charset="UTF-8" ></script>
+    <script src="{% static "datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js" %}" charset="UTF-8"></script>
+    <script src="{% static "highcharts/js/highcharts.js" %}"></script>
+    <script src="{% static "highcharts/js/modules/exporting.js" %}"></script> 
+</head>
+
+<body style="padding-top:3px">
+<div class="container-fluid" >
+
+<div class="row">
+    <div class="col-md-12">
+        <img src="{% static "tuli.png" %}"></img>
+    </div>
+</div>
+
+<div class="row" >
+    <div class="col-md-12">
+        <table class="table table-striped table-condensed" style="font-size:11px">
+            <tr><th>instance_id</th><th>module</th><th>app</th><th>hostname</th><th>state</th><th>work_path</th><th>freeze</th><th>begin_port</th><th>chart</th></tr>
+            {% for x in result %}
+            <tr><td>{{x.8 | safe }}</td><td>{{x.1}}</td><td>{{x.2}}</td><td>{{x.9 | safe}}</td><td>{{x.4}}</td><td>{{x.5}}</td><td>{{x.6}}</td><td>{{x.7}}</td><td style="width:450px;"><div id="{{x.0}}" style="width:450px;height:65px;margin:0 auto;"></div></td></tr>
+            {% endfor %} 
+        </table>
+    </div>
+</div>
+
+</div>
+</body>
+<script>
+function highcharts(ret,time){
+    return {                                                             
+        chart: {                                                                             
+            type: 'scatter',                                                                 
+            zoomType: 'xy',
+            spacing:[10,1,10,1]                                                                   
+        },                                                                                   
+        title: {                                                                             
+            text: ''                        
+        },                                                                                   
+        exporting:{enabled:false},
+        credits:{enabled:false},                                                                                   
+        xAxis: { 
+            type: 'datetime',
+            minRange: 24 * 3600000,
+            startOnTick: false,                                                               
+            endOnTick: false,                                                                 
+            showLastLabel: true,
+        },                                                                                   
+        yAxis: {  
+            
+            title: {                                                                         
+                text: ''                                                          
+            },
+            labels: {
+                     formatter:function(){
+                       if(this.value == 1) {
+                         return"";
+                       }
+                     }
+            },                                                                                
+        },                                                                                   
+        legend: {                                                                            
+            enabled:false
+        },                                                                                   
+        plotOptions: {                                                                       
+            scatter: {                                                                       
+                marker: {                                                                    
+                    radius: 3,                                                               
+                    states: {                                                                
+                        hover: {                                                             
+                            enabled: true,                                                   
+                            lineColor: 'rgb(100,100,100)'                                    
+                        }                                                                    
+                    }                                                                        
+                },                                                                           
+                states: {                                                                    
+                    hover: {                                                                 
+                        marker: {                                                            
+                            enabled: false                                                   
+                        }                                                                    
+                    }                                                                        
+                },                                                                           
+                                                                                            
+            }                                                                                
+        },      
+
+        tooltip: {                                                                   
+            formatter:function(){
+            return'<strong><b>'+this.series.name+'</b></strong><br/>'+
+            Highcharts.dateFormat('%Y-%m-%d %H:%M:%S',this.x);
+            }                                
+        },
+                                                                             
+        series: [{  
+            name:'running',                                                                    
+            pointInterval: 3600 * 1000,
+            pointStart: Date.UTC(time[0],time[1],time[2],time[3]),
+            color:'green',
+            data: ret['running_list']
+            },
+                {     
+            name:'stop',                                                                 
+            pointInterval: 3600 * 1000,
+            pointStart: Date.UTC(time[0],time[1],time[2],time[3]),
+            color:'red',
+            data: ret['stop_list']
+            },
+                {
+            name:'repair',                                                                     
+            pointInterval: 3600 * 1000,
+            color:'yellow',
+            pointStart: Date.UTC(time[0],time[1],time[2],time[3]),
+            data: ret['repair_list']
+            },
+                {
+            name:'deployfail',                                                                     
+            pointInterval: 3600 * 1000,
+            color:'blue',
+            pointStart: Date.UTC(time[0],time[1],time[2],time[3]),
+            data: ret['dfail_list']
+            },
+                {
+            name:'new',                                                                     
+            pointInterval: 3600 * 1000,
+            pointStart: Date.UTC(time[0],time[1],time[2],time[3]),
+            data: ret['new_list']
+            },
+                {
+            name:'null',                                                                     
+            pointInterval: 3600 * 1000,
+            pointStart: Date.UTC(time[0],time[1],time[2],time[3]),
+            data: ret['null_list']
+            },
+                {
+            name:'unknown',                                                                     
+            pointInterval: 3600 * 1000,
+            pointStart: Date.UTC(time[0],time[1],time[2],time[3]),
+            data: ret['unknown_list'],
+            color:'purple'
+            },
+                {
+            name:'unavail',                                                                     
+            pointInterval: 3600 * 1000,
+            pointStart: Date.UTC(time[0],time[1],time[2],time[3]),
+            data: ret['unavail_list'],
+            color:'orange'
+            }
+                ]                                                                                   
+    } 
+
+}
+
+{% for x in result %}
+$.getJSON("/ajax_show_instance/",{'start':'{{start}}','end':'{{end}}','search':'{{x.0}}','cluster':'{{cluster}}'},function(ret){
+    time = ret['time'];
+    $(function(){$('#{{x.0}}').highcharts(highcharts(ret,time));});
+}); 
+{% endfor %}
+</script>
+</html>

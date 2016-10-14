@@ -1,0 +1,52 @@
+wget -q --limit-rate=20M nj02-www-maclife.nj02.baidu.com:/home/work/tools/auto_repair/data//allretbeehive_beijing -O /home/work/opbin/machine_analysis/input_data/20150805_030101/allretbeehive_beijing
+wget -q --limit-rate=20M tc-ps-beehive-con0.tc:/home/work/opbin/zk_dump/data/dump/lastest.naming -O /home/work/opbin/machine_analysis/input_data/20150805_030101/beijing_lastest.naming
+wget -q --limit-rate=20M tc-ps-beehive-con0.tc:/home/work/opbin/zk_dump/data/dump/lastest.shell -O /home/work/opbin/machine_analysis/input_data/20150805_030101/beijing_lastest.shell
+wget -q --limit-rate=20M tc-ps-beehive-con0.tc:/home/work/opbin/zk_dump/data/dump/lastest.slavenode -O /home/work/opbin/machine_analysis/input_data/20150805_030101/beijing_lastest.slavenode
+wget -q --limit-rate=20M tc-ps-beehive-con0.tc:/home/work/opbin/zk_dump/data/dump/lastest.service-instance -O /home/work/opbin/machine_analysis/input_data/20150805_030101/beijing_lastest.service-instance
+wget -q --limit-rate=20M nj02-www-maclife.nj02.baidu.com:/home/work/tools/auto_repair/data//allretbeehive_hangzhou -O /home/work/opbin/machine_analysis/input_data/20150805_030101/allretbeehive_hangzhou
+wget -q --limit-rate=20M hz01-ps-beehive-con1.hz01:/home/work/opbin/zk_dump/data/dump/lastest.naming -O /home/work/opbin/machine_analysis/input_data/20150805_030101/hangzhou_lastest.naming
+wget -q --limit-rate=20M hz01-ps-beehive-con1.hz01:/home/work/opbin/zk_dump/data/dump/lastest.shell -O /home/work/opbin/machine_analysis/input_data/20150805_030101/hangzhou_lastest.shell
+wget -q --limit-rate=20M hz01-ps-beehive-con1.hz01:/home/work/opbin/zk_dump/data/dump/lastest.slavenode -O /home/work/opbin/machine_analysis/input_data/20150805_030101/hangzhou_lastest.slavenode
+wget -q --limit-rate=20M hz01-ps-beehive-con1.hz01:/home/work/opbin/zk_dump/data/dump/lastest.service-instance -O /home/work/opbin/machine_analysis/input_data/20150805_030101/hangzhou_lastest.service-instance
+wget -q --limit-rate=20M nj02-www-maclife.nj02.baidu.com:/home/work/tools/auto_repair/data//allretbeehive_shanghai -O /home/work/opbin/machine_analysis/input_data/20150805_030101/allretbeehive_shanghai
+wget -q --limit-rate=20M sh01-ps-beehive-con1.sh01:/home/work/opbin/zk_dump/data/dump/lastest.naming -O /home/work/opbin/machine_analysis/input_data/20150805_030101/shanghai_lastest.naming
+wget -q --limit-rate=20M sh01-ps-beehive-con1.sh01:/home/work/opbin/zk_dump/data/dump/lastest.shell -O /home/work/opbin/machine_analysis/input_data/20150805_030101/shanghai_lastest.shell
+wget -q --limit-rate=20M sh01-ps-beehive-con1.sh01:/home/work/opbin/zk_dump/data/dump/lastest.slavenode -O /home/work/opbin/machine_analysis/input_data/20150805_030101/shanghai_lastest.slavenode
+wget -q --limit-rate=20M sh01-ps-beehive-con1.sh01:/home/work/opbin/zk_dump/data/dump/lastest.service-instance -O /home/work/opbin/machine_analysis/input_data/20150805_030101/shanghai_lastest.service-instance
+wget -q --limit-rate=20M nj02-www-maclife.nj02.baidu.com:/home/work/tools/auto_repair/data//allretbeehive_tucheng -O /home/work/opbin/machine_analysis/input_data/20150805_030101/allretbeehive_tucheng
+wget -q --limit-rate=20M m1-ps-beehive-con0.m1:/home/work/opbin/zk_dump/data/dump/lastest.naming -O /home/work/opbin/machine_analysis/input_data/20150805_030101/tucheng_lastest.naming
+wget -q --limit-rate=20M m1-ps-beehive-con0.m1:/home/work/opbin/zk_dump/data/dump/lastest.shell -O /home/work/opbin/machine_analysis/input_data/20150805_030101/tucheng_lastest.shell
+wget -q --limit-rate=20M m1-ps-beehive-con0.m1:/home/work/opbin/zk_dump/data/dump/lastest.slavenode -O /home/work/opbin/machine_analysis/input_data/20150805_030101/tucheng_lastest.slavenode
+wget -q --limit-rate=20M m1-ps-beehive-con0.m1:/home/work/opbin/zk_dump/data/dump/lastest.service-instance -O /home/work/opbin/machine_analysis/input_data/20150805_030101/tucheng_lastest.service-instance
+wget -q --limit-rate=20M nj02-www-maclife.nj02.baidu.com:/home/work/tools/auto_repair/data//allretbeehive_nanjing -O /home/work/opbin/machine_analysis/input_data/20150805_030101/allretbeehive_nanjing
+wget -q --limit-rate=20M nj02-ps-beehive-con1.nj02:/home/work/opbin/zk_dump/data/dump/lastest.naming -O /home/work/opbin/machine_analysis/input_data/20150805_030101/nanjing_lastest.naming
+wget -q --limit-rate=20M nj02-ps-beehive-con1.nj02:/home/work/opbin/zk_dump/data/dump/lastest.shell -O /home/work/opbin/machine_analysis/input_data/20150805_030101/nanjing_lastest.shell
+wget -q --limit-rate=20M nj02-ps-beehive-con1.nj02:/home/work/opbin/zk_dump/data/dump/lastest.slavenode -O /home/work/opbin/machine_analysis/input_data/20150805_030101/nanjing_lastest.slavenode
+wget -q --limit-rate=20M nj02-ps-beehive-con1.nj02:/home/work/opbin/zk_dump/data/dump/lastest.service-instance -O /home/work/opbin/machine_analysis/input_data/20150805_030101/nanjing_lastest.service-instance
+Clean ret 0
+Clean ouput ÒÑÉ¾³ý¡®./20150804_030102/allretbeehive_beijing¡¯
+ÒÑÉ¾³ý¡®./20150804_030102/beijing_lastest.naming¡¯
+ÒÑÉ¾³ý¡®./20150804_030102/beijing_lastest.shell¡¯
+ÒÑÉ¾³ý¡®./20150804_030102/beijing_lastest.slavenode¡¯
+ÒÑÉ¾³ý¡®./20150804_030102/beijing_lastest.service-instance¡¯
+ÒÑÉ¾³ý¡®./20150804_030102/allretbeehive_hangzhou¡¯
+ÒÑÉ¾³ý¡®./20150804_030102/hangzhou_lastest.naming¡¯
+ÒÑÉ¾³ý¡®./20150804_030102/hangzhou_lastest.shell¡¯
+ÒÑÉ¾³ý¡®./20150804_030102/hangzhou_lastest.slavenode¡¯
+ÒÑÉ¾³ý¡®./20150804_030102/hangzhou_lastest.service-instance¡¯
+ÒÑÉ¾³ý¡®./20150804_030102/allretbeehive_shanghai¡¯
+ÒÑÉ¾³ý¡®./20150804_030102/shanghai_lastest.naming¡¯
+ÒÑÉ¾³ý¡®./20150804_030102/shanghai_lastest.shell¡¯
+ÒÑÉ¾³ý¡®./20150804_030102/shanghai_lastest.slavenode¡¯
+ÒÑÉ¾³ý¡®./20150804_030102/shanghai_lastest.service-instance¡¯
+ÒÑÉ¾³ý¡®./20150804_030102/allretbeehive_tucheng¡¯
+ÒÑÉ¾³ý¡®./20150804_030102/tucheng_lastest.naming¡¯
+ÒÑÉ¾³ý¡®./20150804_030102/tucheng_lastest.shell¡¯
+ÒÑÉ¾³ý¡®./20150804_030102/tucheng_lastest.slavenode¡¯
+ÒÑÉ¾³ý¡®./20150804_030102/tucheng_lastest.service-instance¡¯
+ÒÑÉ¾³ý¡®./20150804_030102/allretbeehive_nanjing¡¯
+ÒÑÉ¾³ý¡®./20150804_030102/nanjing_lastest.naming¡¯
+ÒÑÉ¾³ý¡®./20150804_030102/nanjing_lastest.shell¡¯
+ÒÑÉ¾³ý¡®./20150804_030102/nanjing_lastest.slavenode¡¯
+ÒÑÉ¾³ý¡®./20150804_030102/nanjing_lastest.service-instance¡¯
+ÒÑÉ¾³ýÄ¿Â¼£º¡®./20150804_030102¡¯

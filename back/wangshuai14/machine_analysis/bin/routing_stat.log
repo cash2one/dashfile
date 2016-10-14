@@ -1,0 +1,43 @@
++ stat_dir=/home/work/opbin/machine_analysis/data
++ '[' '!' -d /home/work/opbin/machine_analysis/data ']'
++ stat_list=("analyse_machine_userate")
++ stat_script_dir=/home/work/opbin/machine_analysis/bin
++ export PATH=/home/work/opbin/it/bin/:/home/work/usr/bin:/home/work/usr/bin_se/:/home/work/usr/src/bin/:/home/work/psop-share/:/home/work/.jumbo/bin/core_perl:/home/work/.jumbo/bin:/usr/kerberos/bin:/usr/local/bin:/bin:/usr/bin:/usr/X11R6/bin:/usr/share/baidu/bin:/opt/bin:/home/opt/bin:/DoorGod/bin:/opt/bin:/home/opt/bin:/sbin:/usr/sbin/:/home/work/opbin/it/bin/:/home/work/lamp/php5/bin/:/home/work/psop-share:/home/work/opbin/machine_analysis/bin
++ PATH=/home/work/opbin/it/bin/:/home/work/usr/bin:/home/work/usr/bin_se/:/home/work/usr/src/bin/:/home/work/psop-share/:/home/work/.jumbo/bin/core_perl:/home/work/.jumbo/bin:/usr/kerberos/bin:/usr/local/bin:/bin:/usr/bin:/usr/X11R6/bin:/usr/share/baidu/bin:/opt/bin:/home/opt/bin:/DoorGod/bin:/opt/bin:/home/opt/bin:/sbin:/usr/sbin/:/home/work/opbin/it/bin/:/home/work/lamp/php5/bin/:/home/work/psop-share:/home/work/opbin/machine_analysis/bin
++ zkdump_source_dir=/home/work/opbin/machine_analysis/input_data
++ rm_dump_name_suffix=slavenode.zkdump.latest
++ pd_dump_name_suffix=service-instance.zkdump.latest
++ ns_dump_name_suffix=naming.zkdump.latest
++ allretbeehive_dir=/home/work/opbin/machine_analysis/input_data
++ allretbeehive_name_prefix=allretbeehive
++ service_units_num=1
++ service_units=("sh" "tc" "nj" "hz" "bj")
++ service_units_fullspel=("shanghai" "tucheng" "nanjing" "hangzhou" "beijing")
+++ date +%F
++ today=2015-08-05
+++ date +%H-%M
++ cur_time=07-51
++ for one_stat in '${stat_list[@]}'
++ dest_dir=/home/work/opbin/machine_analysis/data/analyse_machine_userate/2015-08-05/07-51
++ '[' '!' -d /home/work/opbin/machine_analysis/data/analyse_machine_userate/2015-08-05/07-51 ']'
++ mkdir -p /home/work/opbin/machine_analysis/data/analyse_machine_userate/2015-08-05/07-51
++ log_file=/home/work/opbin/machine_analysis/data/../log/analyse_machine_userate.log.2015-08-05-07-51
++ cd /home/work/opbin/machine_analysis/data/analyse_machine_userate/2015-08-05/07-51
+++ readlink -f /home/work/opbin/machine_analysis/bin/analyse_machine_userate.sh
++ stat_script_dir=/home/work/opbin/machine_analysis/bin/analyse_machine_userate.sh
+++ dirname /home/work/opbin/machine_analysis/bin/analyse_machine_userate.sh
++ stat_script_dir=/home/work/opbin/machine_analysis/bin
++ (( i = 0 ))
++ (( i < 1 ))
+++ readlink -f /home/work/opbin/machine_analysis/input_data/sh.slavenode.zkdump.latest
++ rm_dump_file=/home/work/opbin/machine_analysis/input_data/20150805_030101/shanghai_lastest.slavenode
+++ readlink -f /home/work/opbin/machine_analysis/input_data/sh.service-instance.zkdump.latest
++ pd_dump_file=/home/work/opbin/machine_analysis/input_data/20150805_030101/shanghai_lastest.service-instance
+++ readlink -f /home/work/opbin/machine_analysis/input_data/sh.naming.zkdump.latest
++ ns_dump_file=/home/work/opbin/machine_analysis/input_data/20150805_030101/shanghai_lastest.naming
+++ readlink -f /home/work/opbin/machine_analysis/input_data/allretbeehive_shanghai.latest
++ allretbeehive_file=/home/work/opbin/machine_analysis/input_data/20150805_030101/allretbeehive_shanghai
++ sh -x /home/work/opbin/machine_analysis/bin/analyse_machine_userate.sh -r /home/work/opbin/machine_analysis/input_data/20150805_030101/shanghai_lastest.slavenode -p /home/work/opbin/machine_analysis/input_data/20150805_030101/shanghai_lastest.service-instance -n /home/work/opbin/machine_analysis/input_data/20150805_030101/shanghai_lastest.naming -e /home/work/opbin/machine_analysis/input_data/20150805_030101/allretbeehive_shanghai -c sh -f /home/work/opbin/machine_analysis/bin/../conf/analyse_machine_userate.conf
+[generate fix machine list failed]
++ (( i++ ))
++ (( i < 1 ))

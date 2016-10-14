@@ -1,0 +1,130 @@
+<html><title>Book</title>
+<head>
+{% load staticfiles %}
+<script src="{% static "js/jquery-1.11.2.min.js" %}"></script>
+<script src="{% static "js/bootstrap-3.3.4-dist/js/bootstrap.min.js" %}"></script>
+<script src="{% static "jstree/dist/jstree.min.js" %}"></script>
+<link rel="stylesheet" href="{% static "js/bootstrap-3.3.4-dist/css/bootstrap.min.css" %}">
+<link rel="stylesheet" href="{% static "wanggang.css" %}">
+<link rel="stylesheet" href="{% static "jstree/dist/themes/default/style.min.css" %}">
+<link href="{% static "dashboard.css"%} " rel="stylesheet">
+
+</head>
+<body>
+
+<button value="v1" onclick="heihei(this)">aa</button>
+<button value="v2" onclick="haha(this)">bb</button>
+<button value="v3" onclick="openxx()">open</button>
+<button value="v4" onclick="closexx()">close</button>
+<button value="v5" onclick="haha(this)" style="background:green">ee</button>
+
+
+<a href="{% static "lv2_soft/test.txt"%}" target="_blank">soft_link</a>
+
+<h1>ajax demo</h1>
+<div id="test"></div>
+
+<div id="myDiv"><h2>通过ajax改变文本</h2></div>
+<button id="b01" type="button">改变内容</button>
+
+
+<div>
+<button id="button1">输出每个列表的值</button>
+<ul>
+<li>Coffee</li>
+<li>Mike</li>
+<li>Soda</li>
+</ul>
+</div>
+
+
+<div>
+<p>请输入两个数字</p>
+<form action="/add/" method="get">
+    a: <input type="text" id="a" name="a"> <br>
+    b: <input type="text" id="b" name="b"> <br>
+    <p>result: <span id='result'></span></p>
+    <button type="button" id='sum'>提交</button>
+</form>
+</div>
+
+
+<p>{% with age=100 %}
+   {{ age | add:2 }}
+   {% endwith %} 
+</p>
+
+<img src="{% static "loading.gif"%}" />
+
+</body>
+<script>
+
+function heihei(t) {
+    $('#ajax').data('jstree',false).empty().jstree({
+        'core' : {
+            'data' : {
+                "url" : "{% static "basic/root.json" %}",
+                "dataType" : "json" // needed only if you do not supply JSON headers
+            }
+        }
+    });
+}
+
+
+function haha(t){
+    $('#ajax').data('jstree',false).empty().jstree({
+        'core' : {
+            'data' : {
+                "url" : "{% static "basic/result_step2.json" %}",
+                "dataType" : "json" // needed only if you do not supply JSON headers
+            }
+        }
+    })
+}
+
+
+function openxx(){
+    $('#ajax').jstree(true).open_all()
+}
+
+
+function closexx(){
+    $('#ajax').jstree(true).close_all()
+}
+
+$(document).ready(function(){
+  $("#b01").click(function(){
+  htmlobj=$.ajax({url:"{% static "test_ajax.txt" %}",async:false});
+  $("#myDiv").html(htmlobj.responseText);
+  });
+
+  $("#button1").click( function(){
+  $("li").each(function(){
+            });
+      });
+});
+
+
+
+$(document).ready(function(){
+      $("#sum").click(function(){
+        var a = $("#a").val();
+        var b = $("#b").val();
+ 
+        $.get("/add/",{'a':a,'b':b}, function(ret){
+            $('#result').html(ret)
+        })
+      });
+    });
+
+$('#test').data('jstree',false).empty().jstree({
+    'core' : {
+        'data' : {
+            "url" : "{% static "basic/root.json" %}",
+            "dataType" : "json" // needed only if you do not supply JSON headers
+        }
+    }
+});
+
+</script>
+</html>

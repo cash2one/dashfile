@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static "js/bootstrap-3.3.4-dist/css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "wanggang.css" %}">
+    <link rel="stylesheet" href="{% static "jstree/dist/themes/default/style.min.css" %}">
+    <link href="{% static "dashboard.css"%} " rel="stylesheet">
+    <link href="{% static "datetimepicker/css/bootstrap-datetimepicker.min.css"%}" rel="stylesheet" media="screen">
+    <title>Dashboard for Beehive</title>
+    <script src="{% static "js/jquery-1.11.2.min.js" %}"></script>
+    <script src="{% static "js/bootstrap-3.3.4-dist/js/bootstrap.min.js" %}"></script>
+    <script src="{% static "jstree/dist/jstree.min.js" %}"></script>
+    <script src="{% static "datetimepicker/js/bootstrap-datetimepicker.js" %}" charset="UTF-8" ></script>
+    <script src="{% static "datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js" %}" charset="UTF-8"></script>
+    <script src="{% static "highcharts/js/highcharts.js" %}"></script>
+    <script src="{% static "highcharts/js/modules/exporting.js" %}"></script> 
+</head>
+
+<body style="padding-top:3px">
+<div class="container-fluid" >
+
+<div class="row">
+    <div class="col-md-4 col-md-offset-2">
+        <span><strong>{{search_name}} 中 instance 的 状 态</strong></span>
+    </div>    
+    <div class="col-md-6">
+        <img src="{% static "tuli.png" %}"></img>
+    </div>
+</div>
+
+<div class="row" >
+    <div class="col-md-12">
+        <table class="table table-striped table-condensed" style="font-size:11px">
+            <tr><th>instance_id</th><th>module</th><th>app</th><th>hostname</th><th>state</th><th>work_path</th><th>freeze</th><th>beg
+in_port</th><th>chart</th></tr>
+            {% for x in final_ins %}
+                <tr><td>{{x.8 | safe}}</td><td>{{x.1}}</td><td>{{x.2}}</td><td>{{x.3}}</td><td>{{x.4}}</td><td>{{x.5}}</td><td>
+{{x.6}}</td><td>{{x.7}}</td><td style="width:580px;"><div id="{{x.0}}" style="width:580px;height:65px;margin:0 auto;"></div></td></tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+<div class="row" >
+    <div class="col-md-6">
+        <table class="table table-striped table-condensed">
+        <tr><th>key</th><th>value</th></tr>
+        <tr><td>{{mac_info.cpu_model.0}}</td><td>{{mac_info.cpu_model.1}}</td></tr>
+        <tr><td>{{mac_info.disk_size.0}}</td><td>{{mac_info.disk_size.1}}</td></tr>
+        <tr><td>{{mac_info.ip.0}}</td><td>{{mac_info.ip.1}}</td></tr>
+        <tr><td>label</td><td>{{mac_info.label}}</td></tr>
+        <tr><td>cluster</td><td>{{cluster}}</td></tr>
+        </table>
+    </div>
+    <div class="col-md-6">
+        <div id="container" style="height: 250px; margin: 0 auto"></div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-1">
+    <div class="btn-group" role="group" aria-label="...">
+        <button type="button" class="btn btn-default btn-sm" value="" onclick="open_tree('ajax_machine')">全部展开</button>
+        <button type="button" class="btn btn-default btn-sm" value="" onclick="close_tree('ajax_machine')">全部收起</button>
+    </div>
+    </div>
+
+    <div class="col-md-5">
+    <div class="btn-group" role="group" aria-label="...">
+        <button type="button" class="btn btn-default btn-sm" value="" onclick="open_tree('ajax_machine_child')">全部展开</button>
+        <button type="button" class="btn btn-default btn-sm" value="" onclick="close_tree('ajax_machine_child')">全部收起</button>
+    </div>
+    </div>
+</div> 
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-1">
+        <span class="label label-info">rm/machine/{{search_name}}</span>
+        <div id="ajax_machine" class="demo" style="margin-top:10px"></div>
+    </div>
+
+    <div class="col-md-5">
+        <span class="label label-info">rm/machine/{{search_name}}</span>
+        <div id="ajax_machine_child" class="demo" style="margin-top:10px"></div>
+    </div>
+</div>
+
+</div>
+
+</body>
+<script>
+$('#ajax_machine').jstree({
+    'core' : {
+        'data' : {
+            "url" : "{% static "machine"%}",
+            "dataType" : "json" // needed only if you do not supply JSON headers
+        }
+    }
+});
+
+$('#ajax_machine_child').jstree({
+    'core' : {
+        'data' : {
+            "url" : "{% static "machine_child"%}",
+            "dataType" : "json" // needed only if you do not supply JSON headers
+        }
+    }
+});
+
+function open_tree(t){
+$('#'+t).jstree(true).open_all();
+    }
+
+function close_tree(t){
+$('#'+t).jstree(true).close_all();
+    }
+
+
+$(function () {
+    $('#container').highcharts({
+        chart: {
+            type: 'scatter',
+            zoomType: 'xy'
+        },
+        title: {
+            text: 'Machine State'
+        },
+        exporting:{enabled:false},
+        credits:{enabled:false},
+        xAxis: {
+            type: 'datetime',
+            minRange: 24 * 3600000,
+            startOnTick: false,
+            endOnTick: false,
+            showLastLabel: true,
+        },
+        yAxis: {
+
+            title: {
+                text: ''
+            },
+            
+            labels: {
+                     formatter:function(){
+                      if(this.value == 1) {
+                         return"5级分类";
+                       }
+                       else if(this.value == 2) {
+                         return"4级分类"; 
+                       }                       
+                       else if(this.value == 3) {
+                         return"3级分类"; 
+                       }                       
+                       else if(this.value == 4) {
+                         return"2级分类"; 
+                       }                       
+                       else if(this.value == 5) {
+                         return"1级分类"; 
+                       }                
+                           
+                     }
+            },
+            tickPositions:[0,1,2,3,4,5]
+        },
+        legend: {
+            layout: 'horizontal',
+        },
+        plotOptions: {
+            scatter: {
+                marker: {
+                    radius: 3,
+                    states: {
+                        hover: {
+                            enabled: true,
+                            lineColor: 'rgb(100,100,100)'
+                        }
+                    }
+                },
+                states: {
+                    hover: {
+                        marker: {
+                            enabled: false
+                        }
+                    }
+                },
+
+            }
+        },
+
+        tooltip: {
+            formatter:function(){
+            return'<strong><b>'+this.series.name+'</b></strong><br/>'+
+            Highcharts.dateFormat('%Y-%m-%d %H:%M:%S',this.x);
+            }
+        },
+
+        series: [
+            {% for k,v in type_map.iteritems %}
+                {
+                name:'{{k}}',
+                pointInterval: 3600 * 1000,
+                pointStart: Date.UTC{{start_tuple | safe}},
+                data: {{v | safe}}
+                },
+            {% endfor %}
+                   ]
+    });
+});
+
+
+function highcharts(ret,time){
+    return {                                                             
+        chart: {                                                                             
+            type: 'scatter',                                                                 
+            zoomType: 'xy',
+            spacing:[10,1,10,1]                                                                   
+        },                                                                                   
+        title: {                                                                             
+            text: ''                        
+        },                                                                                   
+        exporting:{enabled:false},
+        credits:{enabled:false},                                                                                   
+        xAxis: { 
+            type: 'datetime',
+            minRange: 24 * 3600000,
+            startOnTick: false,                                                               
+            endOnTick: false,                                                                 
+            showLastLabel: true,
+        },                                                                                   
+        yAxis: {  
+            
+            title: {                                                                         
+                text: ''                                                          
+            },
+            labels: {
+                     formatter:function(){
+                       if(this.value == 1) {
+                         return"";
+                       }
+                     }
+            },                
+        },                                                                                   
+        legend: {                                                                            
+            enabled:false
+        },                                                                                   
+        plotOptions: {                                                                       
+            scatter: {                                                                       
+                marker: {                                                                    
+                    radius: 3,                                                               
+                    states: {                                                                
+                        hover: {                                                             
+                            enabled: true,                                                   
+                            lineColor: 'rgb(100,100,100)'                                    
+                        }                                                                    
+                    }                                                                        
+                },                                                                           
+                states: {                                                                    
+                    hover: {                                                                 
+                        marker: {                                                            
+                            enabled: false                                                   
+                        }                                                                    
+                    }                                                                        
+                },                                                                           
+                                                                                            
+            }                                                                                
+        },      
+
+        tooltip: {                                                                   
+            formatter:function(){
+            return'<strong><b>'+this.series.name+'</b></strong><br/>'+
+            Highcharts.dateFormat('%Y-%m-%d %H:%M:%S',this.x);
+            }                
+        },
+                                                                             
+        series: [{  
+            name:'running',                                                                    
+            pointInterval: 3600 * 1000,
+            pointStart: Date.UTC(time[0],time[1],time[2],time[3]),
+            color:'green',
+            data: ret['running_list']
+            },
+                {     
+            name:'stop',                                                                 
+            pointInterval: 3600 * 1000,
+            pointStart: Date.UTC(time[0],time[1],time[2],time[3]),
+            color:'red',
+            data: ret['stop_list']
+            },
+                {
+            name:'repair',                                                                     
+            pointInterval: 3600 * 1000,
+            color:'yellow',
+            pointStart: Date.UTC(time[0],time[1],time[2],time[3]),
+            data: ret['repair_list']
+            },
+                {
+            name:'deployfail',                                                                     
+            pointInterval: 3600 * 1000,
+            color:'blue',
+            pointStart: Date.UTC(time[0],time[1],time[2],time[3]),
+            data: ret['dfail_list']
+            },
+                {
+            name:'new',                                                                     
+            pointInterval: 3600 * 1000,
+            pointStart: Date.UTC(time[0],time[1],time[2],time[3]),
+            data: ret['new_list']
+            },
+                {
+            name:'null',                                                                     
+            pointInterval: 3600 * 1000,
+            pointStart: Date.UTC(time[0],time[1],time[2],time[3]),
+            data: ret['null_list']
+            },
+                {
+            name:'unknown',                                                                     
+            pointInterval: 3600 * 1000,
+            pointStart: Date.UTC(time[0],time[1],time[2],time[3]),
+            data: ret['unknown_list'],
+            color:'purple'
+            },
+                {
+            name:'unavail',                                                                     
+            pointInterval: 3600 * 1000,
+            pointStart: Date.UTC(time[0],time[1],time[2],time[3]),
+            data: ret['unavail_list'],
+            color:'orange'
+            }
+                ]                                                                                   
+    } 
+
+}
+
+
+{% for x in final_ins %}
+    $.getJSON("/ajax_show_instance/",{'start':'{{start}}','end':'{{end}}','search':'{{x.0}}','cluster':'{{cluster}}'},function(ret){
+                time = ret['time'];
+                $(function(){$('#{{x.0}}').highcharts(highcharts(ret,time));});
+    }); 
+{% endfor %}
+
+
+</script>
+</html>

@@ -1,0 +1,1235 @@
+python: can't open file 'insertdb.py': [Errno 2] No such file or directory
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=4, tm_hour=13, tm_min=17, tm_sec=20, tm_wday=1, tm_yday=216, tm_isdst=0)
+2015-08-04_13_hangzhou count:30391
+2015-08-04_13_nanjing count:37034
+2015-08-04_13_shanghai count:21046
+2015-08-04_13_tucheng count:28904
+2015-08-04_13_beijing count:46501
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=4, tm_hour=13, tm_min=21, tm_sec=3, tm_wday=1, tm_yday=216, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=4, tm_hour=14, tm_min=33, tm_sec=13, tm_wday=1, tm_yday=216, tm_isdst=0)
+2015-08-04_14_hangzhou count:30391
+2015-08-04_14_nanjing count:37034
+2015-08-04_14_shanghai count:21046
+2015-08-04_14_tucheng count:28904
+2015-08-04_14_beijing count:46617
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=4, tm_hour=14, tm_min=36, tm_sec=17, tm_wday=1, tm_yday=216, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=4, tm_hour=15, tm_min=18, tm_sec=9, tm_wday=1, tm_yday=216, tm_isdst=0)
+2015-08-04_15_hangzhou count:30391
+2015-08-04_15_nanjing count:37034
+2015-08-04_15_shanghai count:21046
+2015-08-04_15_tucheng count:28904
+2015-08-04_15_beijing count:47476
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=4, tm_hour=15, tm_min=21, tm_sec=13, tm_wday=1, tm_yday=216, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=4, tm_hour=16, tm_min=17, tm_sec=25, tm_wday=1, tm_yday=216, tm_isdst=0)
+2015-08-04_16_hangzhou count:31005
+2015-08-04_16_nanjing count:37034
+2015-08-04_16_shanghai count:21046
+2015-08-04_16_tucheng count:28904
+2015-08-04_16_beijing count:48049
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=4, tm_hour=16, tm_min=19, tm_sec=53, tm_wday=1, tm_yday=216, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=4, tm_hour=17, tm_min=18, tm_sec=10, tm_wday=1, tm_yday=216, tm_isdst=0)
+2015-08-04_17_hangzhou count:31340
+2015-08-04_17_nanjing count:37034
+2015-08-04_17_shanghai count:21046
+2015-08-04_17_tucheng count:28904
+2015-08-04_17_beijing count:48708
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=4, tm_hour=17, tm_min=21, tm_sec=29, tm_wday=1, tm_yday=216, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=4, tm_hour=18, tm_min=17, tm_sec=7, tm_wday=1, tm_yday=216, tm_isdst=0)
+2015-08-04_18_hangzhou count:31340
+2015-08-04_18_nanjing count:37034
+2015-08-04_18_shanghai count:21046
+2015-08-04_18_tucheng count:28904
+2015-08-04_18_beijing count:48972
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=4, tm_hour=18, tm_min=18, tm_sec=55, tm_wday=1, tm_yday=216, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=4, tm_hour=19, tm_min=17, tm_sec=1, tm_wday=1, tm_yday=216, tm_isdst=0)
+2015-08-04_19_hangzhou count:31340
+2015-08-04_19_nanjing count:37034
+2015-08-04_19_shanghai count:21046
+2015-08-04_19_tucheng count:28904
+2015-08-04_19_beijing count:48972
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=4, tm_hour=19, tm_min=19, tm_sec=5, tm_wday=1, tm_yday=216, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=4, tm_hour=20, tm_min=25, tm_sec=10, tm_wday=1, tm_yday=216, tm_isdst=0)
+2015-08-04_20_hangzhou count:31340
+2015-08-04_20_nanjing count:37034
+2015-08-04_20_shanghai count:21096
+2015-08-04_20_tucheng count:28904
+2015-08-04_20_beijing count:48972
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=4, tm_hour=20, tm_min=28, tm_sec=46, tm_wday=1, tm_yday=216, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=4, tm_hour=21, tm_min=18, tm_sec=34, tm_wday=1, tm_yday=216, tm_isdst=0)
+2015-08-04_21_hangzhou count:31340
+2015-08-04_21_nanjing count:37034
+2015-08-04_21_shanghai count:21137
+2015-08-04_21_tucheng count:28904
+2015-08-04_21_beijing count:48972
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=4, tm_hour=21, tm_min=22, tm_sec=0, tm_wday=1, tm_yday=216, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=4, tm_hour=22, tm_min=17, tm_sec=49, tm_wday=1, tm_yday=216, tm_isdst=0)
+2015-08-04_22_hangzhou count:31340
+2015-08-04_22_nanjing count:37034
+2015-08-04_22_shanghai count:21137
+2015-08-04_22_tucheng count:28904
+2015-08-04_22_beijing count:48972
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=4, tm_hour=22, tm_min=20, tm_sec=25, tm_wday=1, tm_yday=216, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=4, tm_hour=23, tm_min=17, tm_sec=49, tm_wday=1, tm_yday=216, tm_isdst=0)
+2015-08-04_23_hangzhou count:31340
+2015-08-04_23_nanjing count:37034
+2015-08-04_23_shanghai count:21137
+2015-08-04_23_tucheng count:28904
+2015-08-04_23_beijing count:48972
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=4, tm_hour=23, tm_min=20, tm_sec=54, tm_wday=1, tm_yday=216, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=5, tm_hour=0, tm_min=17, tm_sec=15, tm_wday=2, tm_yday=217, tm_isdst=0)
+2015-08-05_00_hangzhou count:31340
+2015-08-05_00_nanjing count:37034
+2015-08-05_00_shanghai count:21137
+2015-08-05_00_tucheng count:28904
+2015-08-05_00_beijing count:48972
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=5, tm_hour=0, tm_min=19, tm_sec=41, tm_wday=2, tm_yday=217, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=5, tm_hour=1, tm_min=17, tm_sec=32, tm_wday=2, tm_yday=217, tm_isdst=0)
+2015-08-05_01_hangzhou count:31340
+2015-08-05_01_nanjing count:37034
+2015-08-05_01_shanghai count:21137
+2015-08-05_01_tucheng count:28904
+2015-08-05_01_beijing count:48972
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=5, tm_hour=1, tm_min=20, tm_sec=1, tm_wday=2, tm_yday=217, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=5, tm_hour=2, tm_min=35, tm_sec=55, tm_wday=2, tm_yday=217, tm_isdst=0)
+2015-08-05_02_hangzhou count:31340
+2015-08-05_02_nanjing count:37034
+2015-08-05_02_shanghai count:21137
+2015-08-05_02_tucheng count:28904
+2015-08-05_02_beijing count:48972
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=5, tm_hour=2, tm_min=38, tm_sec=19, tm_wday=2, tm_yday=217, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=5, tm_hour=4, tm_min=5, tm_sec=20, tm_wday=2, tm_yday=217, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=5, tm_hour=4, tm_min=5, tm_sec=20, tm_wday=2, tm_yday=217, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=5, tm_hour=5, tm_min=17, tm_sec=19, tm_wday=2, tm_yday=217, tm_isdst=0)
+2015-08-05_05_hangzhou count:31340
+2015-08-05_05_nanjing count:37034
+2015-08-05_05_shanghai count:21137
+2015-08-05_05_tucheng count:28904
+2015-08-05_05_beijing count:48972
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=5, tm_hour=5, tm_min=19, tm_sec=42, tm_wday=2, tm_yday=217, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=5, tm_hour=6, tm_min=22, tm_sec=33, tm_wday=2, tm_yday=217, tm_isdst=0)
+2015-08-05_06_hangzhou count:31340
+2015-08-05_06_nanjing count:37034
+2015-08-05_06_shanghai count:21137
+2015-08-05_06_tucheng count:28904
+2015-08-05_06_beijing count:48972
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=5, tm_hour=6, tm_min=26, tm_sec=20, tm_wday=2, tm_yday=217, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=5, tm_hour=7, tm_min=17, tm_sec=7, tm_wday=2, tm_yday=217, tm_isdst=0)
+2015-08-05_07_hangzhou count:31340
+2015-08-05_07_nanjing count:37034
+2015-08-05_07_shanghai count:21137
+2015-08-05_07_tucheng count:28904
+2015-08-05_07_beijing count:48972
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=5, tm_hour=7, tm_min=19, tm_sec=36, tm_wday=2, tm_yday=217, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=5, tm_hour=8, tm_min=16, tm_sec=53, tm_wday=2, tm_yday=217, tm_isdst=0)
+2015-08-05_08_hangzhou count:31340
+2015-08-05_08_nanjing count:37034
+2015-08-05_08_shanghai count:21137
+2015-08-05_08_tucheng count:28904
+2015-08-05_08_beijing count:48972
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=5, tm_hour=8, tm_min=19, tm_sec=22, tm_wday=2, tm_yday=217, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=5, tm_hour=9, tm_min=17, tm_sec=26, tm_wday=2, tm_yday=217, tm_isdst=0)
+2015-08-05_09_hangzhou count:31340
+2015-08-05_09_nanjing count:37034
+2015-08-05_09_shanghai count:21137
+2015-08-05_09_tucheng count:28904
+2015-08-05_09_beijing count:48972
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=5, tm_hour=9, tm_min=20, tm_sec=12, tm_wday=2, tm_yday=217, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=5, tm_hour=10, tm_min=17, tm_sec=32, tm_wday=2, tm_yday=217, tm_isdst=0)
+2015-08-05_10_hangzhou count:31340
+2015-08-05_10_nanjing count:37034
+2015-08-05_10_shanghai count:21137
+2015-08-05_10_tucheng count:28904
+2015-08-05_10_beijing count:48972
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=5, tm_hour=10, tm_min=20, tm_sec=17, tm_wday=2, tm_yday=217, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=5, tm_hour=11, tm_min=34, tm_sec=57, tm_wday=2, tm_yday=217, tm_isdst=0)
+2015-08-05_11_hangzhou count:31340
+2015-08-05_11_nanjing count:37034
+2015-08-05_11_shanghai count:21137
+2015-08-05_11_tucheng count:28904
+2015-08-05_11_beijing count:48972
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=5, tm_hour=11, tm_min=37, tm_sec=41, tm_wday=2, tm_yday=217, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=5, tm_hour=12, tm_min=17, tm_sec=23, tm_wday=2, tm_yday=217, tm_isdst=0)
+2015-08-05_12_hangzhou count:31340
+2015-08-05_12_nanjing count:37034
+2015-08-05_12_shanghai count:21137
+2015-08-05_12_tucheng count:28904
+2015-08-05_12_beijing count:48972
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=5, tm_hour=12, tm_min=20, tm_sec=5, tm_wday=2, tm_yday=217, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=5, tm_hour=13, tm_min=17, tm_sec=42, tm_wday=2, tm_yday=217, tm_isdst=0)
+2015-08-05_13_hangzhou count:31343
+2015-08-05_13_nanjing count:37034
+2015-08-05_13_shanghai count:21137
+2015-08-05_13_tucheng count:28904
+2015-08-05_13_beijing count:48972
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=5, tm_hour=13, tm_min=20, tm_sec=24, tm_wday=2, tm_yday=217, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=5, tm_hour=14, tm_min=39, tm_sec=2, tm_wday=2, tm_yday=217, tm_isdst=0)
+2015-08-05_14_hangzhou count:31705
+2015-08-05_14_nanjing count:37034
+2015-08-05_14_shanghai count:21137
+2015-08-05_14_tucheng count:28904
+2015-08-05_14_beijing count:48972
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=5, tm_hour=14, tm_min=41, tm_sec=56, tm_wday=2, tm_yday=217, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=5, tm_hour=16, tm_min=34, tm_sec=12, tm_wday=2, tm_yday=217, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=5, tm_hour=16, tm_min=34, tm_sec=12, tm_wday=2, tm_yday=217, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=5, tm_hour=18, tm_min=48, tm_sec=24, tm_wday=2, tm_yday=217, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=5, tm_hour=18, tm_min=48, tm_sec=24, tm_wday=2, tm_yday=217, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=5, tm_hour=19, tm_min=40, tm_sec=59, tm_wday=2, tm_yday=217, tm_isdst=0)
+2015-08-05_19_hangzhou count:31725
+2015-08-05_19_nanjing count:37034
+2015-08-05_19_shanghai count:21137
+2015-08-05_19_tucheng count:28904
+2015-08-05_19_beijing count:48982
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=5, tm_hour=19, tm_min=42, tm_sec=36, tm_wday=2, tm_yday=217, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=5, tm_hour=20, tm_min=17, tm_sec=37, tm_wday=2, tm_yday=217, tm_isdst=0)
+2015-08-05_20_hangzhou count:31725
+2015-08-05_20_nanjing count:37034
+2015-08-05_20_shanghai count:21137
+2015-08-05_20_tucheng count:28904
+2015-08-05_20_beijing count:48982
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=5, tm_hour=20, tm_min=19, tm_sec=23, tm_wday=2, tm_yday=217, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=5, tm_hour=21, tm_min=20, tm_sec=44, tm_wday=2, tm_yday=217, tm_isdst=0)
+2015-08-05_21_hangzhou count:31725
+2015-08-05_21_nanjing count:37034
+2015-08-05_21_shanghai count:21137
+2015-08-05_21_tucheng count:28904
+2015-08-05_21_beijing count:48982
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=5, tm_hour=21, tm_min=24, tm_sec=36, tm_wday=2, tm_yday=217, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=5, tm_hour=22, tm_min=17, tm_sec=47, tm_wday=2, tm_yday=217, tm_isdst=0)
+2015-08-05_22_hangzhou count:31725
+2015-08-05_22_nanjing count:37034
+2015-08-05_22_shanghai count:21137
+2015-08-05_22_tucheng count:28904
+2015-08-05_22_beijing count:48982
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=5, tm_hour=22, tm_min=20, tm_sec=32, tm_wday=2, tm_yday=217, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=5, tm_hour=23, tm_min=18, tm_sec=15, tm_wday=2, tm_yday=217, tm_isdst=0)
+2015-08-05_23_hangzhou count:31725
+2015-08-05_23_nanjing count:37034
+2015-08-05_23_shanghai count:21137
+2015-08-05_23_tucheng count:28904
+2015-08-05_23_beijing count:48982
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=5, tm_hour=23, tm_min=21, tm_sec=20, tm_wday=2, tm_yday=217, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=6, tm_hour=0, tm_min=25, tm_sec=43, tm_wday=3, tm_yday=218, tm_isdst=0)
+2015-08-06_00_hangzhou count:31725
+2015-08-06_00_nanjing count:37034
+2015-08-06_00_shanghai count:21137
+2015-08-06_00_tucheng count:28904
+2015-08-06_00_beijing count:48982
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=6, tm_hour=0, tm_min=29, tm_sec=32, tm_wday=3, tm_yday=218, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=6, tm_hour=1, tm_min=20, tm_sec=39, tm_wday=3, tm_yday=218, tm_isdst=0)
+2015-08-06_01_hangzhou count:31725
+2015-08-06_01_nanjing count:37034
+2015-08-06_01_shanghai count:21137
+2015-08-06_01_tucheng count:28904
+2015-08-06_01_beijing count:48982
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=6, tm_hour=1, tm_min=24, tm_sec=0, tm_wday=3, tm_yday=218, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=6, tm_hour=2, tm_min=17, tm_sec=28, tm_wday=3, tm_yday=218, tm_isdst=0)
+2015-08-06_02_hangzhou count:31725
+2015-08-06_02_nanjing count:37034
+2015-08-06_02_shanghai count:21137
+2015-08-06_02_tucheng count:28904
+2015-08-06_02_beijing count:48982
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=6, tm_hour=2, tm_min=20, tm_sec=29, tm_wday=3, tm_yday=218, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=6, tm_hour=4, tm_min=5, tm_sec=52, tm_wday=3, tm_yday=218, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=6, tm_hour=4, tm_min=5, tm_sec=53, tm_wday=3, tm_yday=218, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=6, tm_hour=5, tm_min=17, tm_sec=0, tm_wday=3, tm_yday=218, tm_isdst=0)
+2015-08-06_05_hangzhou count:31725
+2015-08-06_05_nanjing count:37034
+2015-08-06_05_shanghai count:21137
+2015-08-06_05_tucheng count:28904
+2015-08-06_05_beijing count:48982
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=6, tm_hour=5, tm_min=18, tm_sec=54, tm_wday=3, tm_yday=218, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=6, tm_hour=6, tm_min=20, tm_sec=23, tm_wday=3, tm_yday=218, tm_isdst=0)
+2015-08-06_06_hangzhou count:31725
+2015-08-06_06_nanjing count:37034
+2015-08-06_06_shanghai count:21137
+2015-08-06_06_tucheng count:28904
+2015-08-06_06_beijing count:48982
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=6, tm_hour=6, tm_min=24, tm_sec=8, tm_wday=3, tm_yday=218, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=6, tm_hour=7, tm_min=17, tm_sec=27, tm_wday=3, tm_yday=218, tm_isdst=0)
+2015-08-06_07_hangzhou count:31725
+2015-08-06_07_nanjing count:37034
+2015-08-06_07_shanghai count:21137
+2015-08-06_07_tucheng count:28904
+2015-08-06_07_beijing count:48982
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=6, tm_hour=7, tm_min=20, tm_sec=8, tm_wday=3, tm_yday=218, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=6, tm_hour=8, tm_min=17, tm_sec=11, tm_wday=3, tm_yday=218, tm_isdst=0)
+2015-08-06_08_hangzhou count:31725
+2015-08-06_08_nanjing count:37034
+2015-08-06_08_shanghai count:21137
+2015-08-06_08_tucheng count:28904
+2015-08-06_08_beijing count:48982
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=6, tm_hour=8, tm_min=19, tm_sec=47, tm_wday=3, tm_yday=218, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=6, tm_hour=9, tm_min=16, tm_sec=53, tm_wday=3, tm_yday=218, tm_isdst=0)
+2015-08-06_09_hangzhou count:31725
+2015-08-06_09_nanjing count:37034
+2015-08-06_09_shanghai count:21137
+2015-08-06_09_tucheng count:28904
+2015-08-06_09_beijing count:48982
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=6, tm_hour=9, tm_min=19, tm_sec=27, tm_wday=3, tm_yday=218, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=6, tm_hour=10, tm_min=17, tm_sec=13, tm_wday=3, tm_yday=218, tm_isdst=0)
+2015-08-06_10_hangzhou count:31721
+2015-08-06_10_nanjing count:37034
+2015-08-06_10_shanghai count:21137
+2015-08-06_10_tucheng count:28904
+2015-08-06_10_beijing count:48982
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=6, tm_hour=10, tm_min=19, tm_sec=3, tm_wday=3, tm_yday=218, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=6, tm_hour=11, tm_min=17, tm_sec=51, tm_wday=3, tm_yday=218, tm_isdst=0)
+2015-08-06_11_hangzhou count:31543
+2015-08-06_11_nanjing count:37034
+2015-08-06_11_shanghai count:21137
+2015-08-06_11_tucheng count:28904
+2015-08-06_11_beijing count:48982
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=6, tm_hour=11, tm_min=21, tm_sec=23, tm_wday=3, tm_yday=218, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=6, tm_hour=12, tm_min=19, tm_sec=36, tm_wday=3, tm_yday=218, tm_isdst=0)
+2015-08-06_12_hangzhou count:31543
+2015-08-06_12_nanjing count:37034
+2015-08-06_12_shanghai count:21137
+2015-08-06_12_tucheng count:28904
+2015-08-06_12_beijing count:48982
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=6, tm_hour=12, tm_min=21, tm_sec=7, tm_wday=3, tm_yday=218, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=6, tm_hour=13, tm_min=23, tm_sec=37, tm_wday=3, tm_yday=218, tm_isdst=0)
+2015-08-06_13_hangzhou count:31543
+2015-08-06_13_nanjing count:37034
+2015-08-06_13_shanghai count:21137
+2015-08-06_13_tucheng count:28904
+2015-08-06_13_beijing count:48982
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=6, tm_hour=13, tm_min=25, tm_sec=9, tm_wday=3, tm_yday=218, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=6, tm_hour=14, tm_min=17, tm_sec=10, tm_wday=3, tm_yday=218, tm_isdst=0)
+2015-08-06_14_hangzhou count:31543
+2015-08-06_14_nanjing count:37034
+2015-08-06_14_shanghai count:21137
+2015-08-06_14_tucheng count:28904
+2015-08-06_14_beijing count:48982
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=6, tm_hour=14, tm_min=19, tm_sec=24, tm_wday=3, tm_yday=218, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=6, tm_hour=15, tm_min=17, tm_sec=59, tm_wday=3, tm_yday=218, tm_isdst=0)
+2015-08-06_15_hangzhou count:31543
+2015-08-06_15_nanjing count:37034
+2015-08-06_15_shanghai count:21137
+2015-08-06_15_tucheng count:28904
+2015-08-06_15_beijing count:48982
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=6, tm_hour=15, tm_min=19, tm_sec=39, tm_wday=3, tm_yday=218, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=6, tm_hour=16, tm_min=19, tm_sec=17, tm_wday=3, tm_yday=218, tm_isdst=0)
+2015-08-06_16_hangzhou count:31543
+2015-08-06_16_nanjing count:37034
+2015-08-06_16_shanghai count:21137
+2015-08-06_16_tucheng count:28904
+2015-08-06_16_beijing count:48982
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=6, tm_hour=16, tm_min=20, tm_sec=50, tm_wday=3, tm_yday=218, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=6, tm_hour=17, tm_min=26, tm_sec=10, tm_wday=3, tm_yday=218, tm_isdst=0)
+2015-08-06_17_hangzhou count:31543
+2015-08-06_17_nanjing count:37034
+2015-08-06_17_shanghai count:21113
+2015-08-06_17_tucheng count:28904
+2015-08-06_17_beijing count:48982
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=6, tm_hour=17, tm_min=30, tm_sec=7, tm_wday=3, tm_yday=218, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=6, tm_hour=18, tm_min=20, tm_sec=13, tm_wday=3, tm_yday=218, tm_isdst=0)
+2015-08-06_18_hangzhou count:31543
+2015-08-06_18_nanjing count:37034
+2015-08-06_18_shanghai count:21072
+2015-08-06_18_tucheng count:28904
+2015-08-06_18_beijing count:48982
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=6, tm_hour=18, tm_min=24, tm_sec=0, tm_wday=3, tm_yday=218, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=6, tm_hour=19, tm_min=17, tm_sec=53, tm_wday=3, tm_yday=218, tm_isdst=0)
+2015-08-06_19_hangzhou count:31543
+2015-08-06_19_nanjing count:37034
+2015-08-06_19_shanghai count:21072
+2015-08-06_19_tucheng count:28904
+2015-08-06_19_beijing count:48982
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=6, tm_hour=19, tm_min=20, tm_sec=55, tm_wday=3, tm_yday=218, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=6, tm_hour=20, tm_min=19, tm_sec=17, tm_wday=3, tm_yday=218, tm_isdst=0)
+2015-08-06_20_hangzhou count:31543
+2015-08-06_20_nanjing count:37034
+2015-08-06_20_shanghai count:21072
+2015-08-06_20_tucheng count:28904
+2015-08-06_20_beijing count:48982
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=6, tm_hour=20, tm_min=23, tm_sec=1, tm_wday=3, tm_yday=218, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=6, tm_hour=21, tm_min=20, tm_sec=48, tm_wday=3, tm_yday=218, tm_isdst=0)
+2015-08-06_21_hangzhou count:31543
+2015-08-06_21_nanjing count:37034
+2015-08-06_21_shanghai count:21072
+2015-08-06_21_tucheng count:28904
+2015-08-06_21_beijing count:48982
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=6, tm_hour=21, tm_min=22, tm_sec=13, tm_wday=3, tm_yday=218, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=6, tm_hour=22, tm_min=27, tm_sec=46, tm_wday=3, tm_yday=218, tm_isdst=0)
+2015-08-06_22_hangzhou count:31543
+2015-08-06_22_nanjing count:37034
+2015-08-06_22_shanghai count:21322
+2015-08-06_22_tucheng count:28904
+2015-08-06_22_beijing count:48982
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=6, tm_hour=22, tm_min=29, tm_sec=21, tm_wday=3, tm_yday=218, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=6, tm_hour=23, tm_min=17, tm_sec=24, tm_wday=3, tm_yday=218, tm_isdst=0)
+2015-08-06_23_hangzhou count:31543
+2015-08-06_23_nanjing count:37034
+2015-08-06_23_shanghai count:21322
+2015-08-06_23_tucheng count:28904
+2015-08-06_23_beijing count:48982
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=6, tm_hour=23, tm_min=20, tm_sec=10, tm_wday=3, tm_yday=218, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=7, tm_hour=0, tm_min=16, tm_sec=41, tm_wday=4, tm_yday=219, tm_isdst=0)
+2015-08-07_00_hangzhou count:31543
+2015-08-07_00_nanjing count:37034
+2015-08-07_00_shanghai count:21322
+2015-08-07_00_tucheng count:28904
+2015-08-07_00_beijing count:48982
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=7, tm_hour=0, tm_min=18, tm_sec=51, tm_wday=4, tm_yday=219, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=7, tm_hour=1, tm_min=20, tm_sec=13, tm_wday=4, tm_yday=219, tm_isdst=0)
+2015-08-07_01_hangzhou count:31543
+2015-08-07_01_nanjing count:37034
+2015-08-07_01_shanghai count:21322
+2015-08-07_01_tucheng count:28904
+2015-08-07_01_beijing count:48982
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=7, tm_hour=1, tm_min=22, tm_sec=8, tm_wday=4, tm_yday=219, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=7, tm_hour=2, tm_min=20, tm_sec=48, tm_wday=4, tm_yday=219, tm_isdst=0)
+2015-08-07_02_hangzhou count:31543
+2015-08-07_02_nanjing count:37034
+2015-08-07_02_shanghai count:21322
+2015-08-07_02_tucheng count:28904
+2015-08-07_02_beijing count:48982
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=7, tm_hour=2, tm_min=24, tm_sec=18, tm_wday=4, tm_yday=219, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=7, tm_hour=4, tm_min=10, tm_sec=15, tm_wday=4, tm_yday=219, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=7, tm_hour=4, tm_min=10, tm_sec=15, tm_wday=4, tm_yday=219, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=7, tm_hour=5, tm_min=17, tm_sec=39, tm_wday=4, tm_yday=219, tm_isdst=0)
+2015-08-07_05_hangzhou count:31543
+2015-08-07_05_nanjing count:37034
+2015-08-07_05_shanghai count:21322
+2015-08-07_05_tucheng count:28904
+2015-08-07_05_beijing count:48982
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=7, tm_hour=5, tm_min=21, tm_sec=25, tm_wday=4, tm_yday=219, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=7, tm_hour=6, tm_min=17, tm_sec=31, tm_wday=4, tm_yday=219, tm_isdst=0)
+2015-08-07_06_hangzhou count:31543
+2015-08-07_06_nanjing count:37034
+2015-08-07_06_shanghai count:21322
+2015-08-07_06_tucheng count:28904
+2015-08-07_06_beijing count:48982
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=7, tm_hour=6, tm_min=20, tm_sec=57, tm_wday=4, tm_yday=219, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=7, tm_hour=7, tm_min=17, tm_sec=5, tm_wday=4, tm_yday=219, tm_isdst=0)
+2015-08-07_07_hangzhou count:31543
+2015-08-07_07_nanjing count:37034
+2015-08-07_07_shanghai count:21322
+2015-08-07_07_tucheng count:28904
+2015-08-07_07_beijing count:48982
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=7, tm_hour=7, tm_min=20, tm_sec=22, tm_wday=4, tm_yday=219, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=7, tm_hour=8, tm_min=17, tm_sec=29, tm_wday=4, tm_yday=219, tm_isdst=0)
+2015-08-07_08_hangzhou count:31543
+2015-08-07_08_nanjing count:37034
+2015-08-07_08_shanghai count:21322
+2015-08-07_08_tucheng count:28904
+2015-08-07_08_beijing count:48982
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=7, tm_hour=8, tm_min=21, tm_sec=5, tm_wday=4, tm_yday=219, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=7, tm_hour=9, tm_min=17, tm_sec=13, tm_wday=4, tm_yday=219, tm_isdst=0)
+2015-08-07_09_hangzhou count:31543
+2015-08-07_09_nanjing count:37034
+2015-08-07_09_shanghai count:21322
+2015-08-07_09_tucheng count:28904
+2015-08-07_09_beijing count:48982
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=7, tm_hour=9, tm_min=20, tm_sec=26, tm_wday=4, tm_yday=219, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=7, tm_hour=10, tm_min=18, tm_sec=7, tm_wday=4, tm_yday=219, tm_isdst=0)
+2015-08-07_10_hangzhou count:31543
+2015-08-07_10_nanjing count:37034
+2015-08-07_10_shanghai count:21322
+2015-08-07_10_tucheng count:28904
+2015-08-07_10_beijing count:48982
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=7, tm_hour=10, tm_min=22, tm_sec=2, tm_wday=4, tm_yday=219, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=7, tm_hour=11, tm_min=20, tm_sec=49, tm_wday=4, tm_yday=219, tm_isdst=0)
+2015-08-07_11_hangzhou count:31543
+2015-08-07_11_nanjing count:37034
+2015-08-07_11_shanghai count:21322
+2015-08-07_11_tucheng count:28904
+2015-08-07_11_beijing count:48982
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=7, tm_hour=11, tm_min=24, tm_sec=28, tm_wday=4, tm_yday=219, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=7, tm_hour=12, tm_min=17, tm_sec=53, tm_wday=4, tm_yday=219, tm_isdst=0)
+2015-08-07_12_hangzhou count:31543
+2015-08-07_12_nanjing count:37034
+2015-08-07_12_shanghai count:21322
+2015-08-07_12_tucheng count:28904
+2015-08-07_12_beijing count:49017
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=7, tm_hour=12, tm_min=21, tm_sec=54, tm_wday=4, tm_yday=219, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=7, tm_hour=13, tm_min=19, tm_sec=5, tm_wday=4, tm_yday=219, tm_isdst=0)
+2015-08-07_13_hangzhou count:31543
+2015-08-07_13_nanjing count:37034
+2015-08-07_13_shanghai count:21322
+2015-08-07_13_tucheng count:28904
+2015-08-07_13_beijing count:49017
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=7, tm_hour=13, tm_min=21, tm_sec=42, tm_wday=4, tm_yday=219, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=7, tm_hour=14, tm_min=21, tm_sec=44, tm_wday=4, tm_yday=219, tm_isdst=0)
+2015-08-07_14_hangzhou count:31543
+2015-08-07_14_nanjing count:37034
+2015-08-07_14_shanghai count:21322
+2015-08-07_14_tucheng count:28904
+2015-08-07_14_beijing count:49017
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=7, tm_hour=14, tm_min=23, tm_sec=12, tm_wday=4, tm_yday=219, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=7, tm_hour=16, tm_min=30, tm_sec=49, tm_wday=4, tm_yday=219, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=7, tm_hour=16, tm_min=30, tm_sec=49, tm_wday=4, tm_yday=219, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=7, tm_hour=17, tm_min=18, tm_sec=7, tm_wday=4, tm_yday=219, tm_isdst=0)
+2015-08-07_17_hangzhou count:31544
+2015-08-07_17_nanjing count:37034
+2015-08-07_17_shanghai count:21296
+2015-08-07_17_tucheng count:28904
+2015-08-07_17_beijing count:49161
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=7, tm_hour=17, tm_min=19, tm_sec=34, tm_wday=4, tm_yday=219, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=7, tm_hour=18, tm_min=17, tm_sec=10, tm_wday=4, tm_yday=219, tm_isdst=0)
+2015-08-07_18_hangzhou count:31688
+2015-08-07_18_nanjing count:37034
+2015-08-07_18_shanghai count:21296
+2015-08-07_18_tucheng count:28904
+2015-08-07_18_beijing count:49316
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=7, tm_hour=18, tm_min=18, tm_sec=35, tm_wday=4, tm_yday=219, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=7, tm_hour=19, tm_min=17, tm_sec=48, tm_wday=4, tm_yday=219, tm_isdst=0)
+2015-08-07_19_hangzhou count:31688
+2015-08-07_19_nanjing count:37034
+2015-08-07_19_shanghai count:21296
+2015-08-07_19_tucheng count:28904
+2015-08-07_19_beijing count:49563
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=7, tm_hour=19, tm_min=19, tm_sec=14, tm_wday=4, tm_yday=219, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=7, tm_hour=20, tm_min=17, tm_sec=57, tm_wday=4, tm_yday=219, tm_isdst=0)
+2015-08-07_20_hangzhou count:31726
+2015-08-07_20_nanjing count:37034
+2015-08-07_20_shanghai count:21296
+2015-08-07_20_tucheng count:28904
+2015-08-07_20_beijing count:49590
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=7, tm_hour=20, tm_min=19, tm_sec=21, tm_wday=4, tm_yday=219, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=7, tm_hour=21, tm_min=18, tm_sec=37, tm_wday=4, tm_yday=219, tm_isdst=0)
+2015-08-07_21_hangzhou count:31726
+2015-08-07_21_nanjing count:37034
+2015-08-07_21_shanghai count:21296
+2015-08-07_21_tucheng count:28904
+2015-08-07_21_beijing count:49590
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=7, tm_hour=21, tm_min=20, tm_sec=1, tm_wday=4, tm_yday=219, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=7, tm_hour=22, tm_min=17, tm_sec=20, tm_wday=4, tm_yday=219, tm_isdst=0)
+2015-08-07_22_hangzhou count:31726
+2015-08-07_22_nanjing count:37034
+2015-08-07_22_shanghai count:21296
+2015-08-07_22_tucheng count:28904
+2015-08-07_22_beijing count:49590
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=7, tm_hour=22, tm_min=18, tm_sec=45, tm_wday=4, tm_yday=219, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=7, tm_hour=23, tm_min=17, tm_sec=46, tm_wday=4, tm_yday=219, tm_isdst=0)
+2015-08-07_23_hangzhou count:31726
+2015-08-07_23_nanjing count:37034
+2015-08-07_23_shanghai count:21296
+2015-08-07_23_tucheng count:28904
+2015-08-07_23_beijing count:49590
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=7, tm_hour=23, tm_min=19, tm_sec=13, tm_wday=4, tm_yday=219, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=8, tm_hour=0, tm_min=17, tm_sec=5, tm_wday=5, tm_yday=220, tm_isdst=0)
+2015-08-08_00_hangzhou count:31726
+2015-08-08_00_nanjing count:37034
+2015-08-08_00_shanghai count:21296
+2015-08-08_00_tucheng count:28904
+2015-08-08_00_beijing count:49590
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=8, tm_hour=0, tm_min=18, tm_sec=30, tm_wday=5, tm_yday=220, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=8, tm_hour=1, tm_min=17, tm_sec=22, tm_wday=5, tm_yday=220, tm_isdst=0)
+2015-08-08_01_hangzhou count:31726
+2015-08-08_01_nanjing count:37034
+2015-08-08_01_shanghai count:21296
+2015-08-08_01_tucheng count:28904
+2015-08-08_01_beijing count:49590
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=8, tm_hour=1, tm_min=18, tm_sec=46, tm_wday=5, tm_yday=220, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=8, tm_hour=2, tm_min=18, tm_sec=29, tm_wday=5, tm_yday=220, tm_isdst=0)
+2015-08-08_02_hangzhou count:31726
+2015-08-08_02_nanjing count:37034
+2015-08-08_02_shanghai count:21296
+2015-08-08_02_tucheng count:28904
+2015-08-08_02_beijing count:49590
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=8, tm_hour=2, tm_min=19, tm_sec=54, tm_wday=5, tm_yday=220, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=8, tm_hour=3, tm_min=29, tm_sec=31, tm_wday=5, tm_yday=220, tm_isdst=0)
+2015-08-08_03_hangzhou count:31726
+2015-08-08_03_nanjing count:37034
+2015-08-08_03_shanghai count:21296
+2015-08-08_03_tucheng count:28904
+2015-08-08_03_beijing count:49590
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=8, tm_hour=3, tm_min=30, tm_sec=57, tm_wday=5, tm_yday=220, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=8, tm_hour=4, tm_min=17, tm_sec=9, tm_wday=5, tm_yday=220, tm_isdst=0)
+2015-08-08_04_hangzhou count:31726
+2015-08-08_04_nanjing count:37034
+2015-08-08_04_shanghai count:21296
+2015-08-08_04_tucheng count:28904
+2015-08-08_04_beijing count:49590
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=8, tm_hour=4, tm_min=18, tm_sec=37, tm_wday=5, tm_yday=220, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=8, tm_hour=5, tm_min=17, tm_sec=19, tm_wday=5, tm_yday=220, tm_isdst=0)
+2015-08-08_05_hangzhou count:31726
+2015-08-08_05_nanjing count:37034
+2015-08-08_05_shanghai count:21296
+2015-08-08_05_tucheng count:28904
+2015-08-08_05_beijing count:49590
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=8, tm_hour=5, tm_min=18, tm_sec=46, tm_wday=5, tm_yday=220, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=8, tm_hour=6, tm_min=18, tm_sec=4, tm_wday=5, tm_yday=220, tm_isdst=0)
+2015-08-08_06_hangzhou count:31726
+2015-08-08_06_nanjing count:37034
+2015-08-08_06_shanghai count:21296
+2015-08-08_06_tucheng count:28904
+2015-08-08_06_beijing count:49590
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=8, tm_hour=6, tm_min=19, tm_sec=31, tm_wday=5, tm_yday=220, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=8, tm_hour=7, tm_min=17, tm_sec=37, tm_wday=5, tm_yday=220, tm_isdst=0)
+2015-08-08_07_hangzhou count:31726
+2015-08-08_07_nanjing count:37034
+2015-08-08_07_shanghai count:21296
+2015-08-08_07_tucheng count:28904
+2015-08-08_07_beijing count:49590
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=8, tm_hour=7, tm_min=19, tm_sec=3, tm_wday=5, tm_yday=220, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=8, tm_hour=8, tm_min=17, tm_sec=2, tm_wday=5, tm_yday=220, tm_isdst=0)
+2015-08-08_08_hangzhou count:31726
+2015-08-08_08_nanjing count:37034
+2015-08-08_08_shanghai count:21296
+2015-08-08_08_tucheng count:28904
+2015-08-08_08_beijing count:49590
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=8, tm_hour=8, tm_min=18, tm_sec=28, tm_wday=5, tm_yday=220, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=8, tm_hour=9, tm_min=17, tm_sec=28, tm_wday=5, tm_yday=220, tm_isdst=0)
+2015-08-08_09_hangzhou count:31726
+2015-08-08_09_nanjing count:37034
+2015-08-08_09_shanghai count:21296
+2015-08-08_09_tucheng count:28904
+2015-08-08_09_beijing count:49590
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=8, tm_hour=9, tm_min=18, tm_sec=53, tm_wday=5, tm_yday=220, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=8, tm_hour=11, tm_min=7, tm_sec=54, tm_wday=5, tm_yday=220, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=8, tm_hour=11, tm_min=7, tm_sec=54, tm_wday=5, tm_yday=220, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=8, tm_hour=12, tm_min=18, tm_sec=23, tm_wday=5, tm_yday=220, tm_isdst=0)
+2015-08-08_12_hangzhou count:31726
+2015-08-08_12_nanjing count:37034
+2015-08-08_12_shanghai count:21296
+2015-08-08_12_tucheng count:28904
+2015-08-08_12_beijing count:49590
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=8, tm_hour=12, tm_min=19, tm_sec=50, tm_wday=5, tm_yday=220, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=8, tm_hour=13, tm_min=20, tm_sec=30, tm_wday=5, tm_yday=220, tm_isdst=0)
+2015-08-08_13_hangzhou count:31726
+2015-08-08_13_nanjing count:37034
+2015-08-08_13_shanghai count:21296
+2015-08-08_13_tucheng count:28904
+2015-08-08_13_beijing count:49590
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=8, tm_hour=13, tm_min=21, tm_sec=55, tm_wday=5, tm_yday=220, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=8, tm_hour=14, tm_min=20, tm_sec=41, tm_wday=5, tm_yday=220, tm_isdst=0)
+2015-08-08_14_hangzhou count:31726
+2015-08-08_14_nanjing count:37034
+2015-08-08_14_shanghai count:21296
+2015-08-08_14_tucheng count:28728
+2015-08-08_14_beijing count:48623
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=8, tm_hour=14, tm_min=22, tm_sec=7, tm_wday=5, tm_yday=220, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=8, tm_hour=15, tm_min=17, tm_sec=33, tm_wday=5, tm_yday=220, tm_isdst=0)
+2015-08-08_15_hangzhou count:31726
+2015-08-08_15_nanjing count:37034
+2015-08-08_15_shanghai count:21296
+2015-08-08_15_tucheng count:28728
+2015-08-08_15_beijing count:47731
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=8, tm_hour=15, tm_min=18, tm_sec=57, tm_wday=5, tm_yday=220, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=8, tm_hour=16, tm_min=37, tm_sec=41, tm_wday=5, tm_yday=220, tm_isdst=0)
+2015-08-08_16_hangzhou count:31726
+2015-08-08_16_nanjing count:37034
+2015-08-08_16_shanghai count:21296
+2015-08-08_16_tucheng count:28728
+2015-08-08_16_beijing count:47096
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=8, tm_hour=16, tm_min=39, tm_sec=5, tm_wday=5, tm_yday=220, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=8, tm_hour=17, tm_min=21, tm_sec=30, tm_wday=5, tm_yday=220, tm_isdst=0)
+2015-08-08_17_hangzhou count:31726
+2015-08-08_17_nanjing count:37034
+2015-08-08_17_shanghai count:21296
+2015-08-08_17_tucheng count:28728
+2015-08-08_17_beijing count:47092
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=8, tm_hour=17, tm_min=22, tm_sec=54, tm_wday=5, tm_yday=220, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=8, tm_hour=18, tm_min=16, tm_sec=17, tm_wday=5, tm_yday=220, tm_isdst=0)
+2015-08-08_18_hangzhou count:31726
+2015-08-08_18_nanjing count:37034
+2015-08-08_18_shanghai count:21296
+2015-08-08_18_tucheng count:28728
+2015-08-08_18_beijing count:47092
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=8, tm_hour=18, tm_min=17, tm_sec=42, tm_wday=5, tm_yday=220, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=8, tm_hour=19, tm_min=16, tm_sec=35, tm_wday=5, tm_yday=220, tm_isdst=0)
+2015-08-08_19_hangzhou count:31726
+2015-08-08_19_nanjing count:37034
+2015-08-08_19_shanghai count:21296
+2015-08-08_19_tucheng count:28728
+2015-08-08_19_beijing count:47092
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=8, tm_hour=19, tm_min=18, tm_sec=0, tm_wday=5, tm_yday=220, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=8, tm_hour=20, tm_min=17, tm_sec=58, tm_wday=5, tm_yday=220, tm_isdst=0)
+2015-08-08_20_hangzhou count:31726
+2015-08-08_20_nanjing count:37034
+2015-08-08_20_shanghai count:21296
+2015-08-08_20_tucheng count:28728
+2015-08-08_20_beijing count:47092
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=8, tm_hour=20, tm_min=19, tm_sec=24, tm_wday=5, tm_yday=220, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=8, tm_hour=21, tm_min=17, tm_sec=7, tm_wday=5, tm_yday=220, tm_isdst=0)
+2015-08-08_21_hangzhou count:31726
+2015-08-08_21_nanjing count:37034
+2015-08-08_21_shanghai count:21296
+2015-08-08_21_tucheng count:28728
+2015-08-08_21_beijing count:47092
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=8, tm_hour=21, tm_min=18, tm_sec=32, tm_wday=5, tm_yday=220, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=8, tm_hour=22, tm_min=16, tm_sec=56, tm_wday=5, tm_yday=220, tm_isdst=0)
+2015-08-08_22_hangzhou count:31726
+2015-08-08_22_nanjing count:37034
+2015-08-08_22_shanghai count:21296
+2015-08-08_22_tucheng count:28728
+2015-08-08_22_beijing count:47092
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=8, tm_hour=22, tm_min=18, tm_sec=20, tm_wday=5, tm_yday=220, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=8, tm_hour=23, tm_min=33, tm_sec=4, tm_wday=5, tm_yday=220, tm_isdst=0)
+2015-08-08_23_hangzhou count:31726
+2015-08-08_23_nanjing count:37034
+2015-08-08_23_shanghai count:21296
+2015-08-08_23_tucheng count:28728
+2015-08-08_23_beijing count:47092
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=8, tm_hour=23, tm_min=34, tm_sec=29, tm_wday=5, tm_yday=220, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=9, tm_hour=0, tm_min=19, tm_sec=24, tm_wday=6, tm_yday=221, tm_isdst=0)
+2015-08-09_00_hangzhou count:31726
+2015-08-09_00_nanjing count:37034
+2015-08-09_00_shanghai count:21296
+2015-08-09_00_tucheng count:28728
+2015-08-09_00_beijing count:47092
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=9, tm_hour=0, tm_min=20, tm_sec=47, tm_wday=6, tm_yday=221, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=9, tm_hour=1, tm_min=17, tm_sec=35, tm_wday=6, tm_yday=221, tm_isdst=0)
+2015-08-09_01_hangzhou count:31726
+2015-08-09_01_nanjing count:37034
+2015-08-09_01_shanghai count:21296
+2015-08-09_01_tucheng count:28728
+2015-08-09_01_beijing count:47092
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=9, tm_hour=1, tm_min=19, tm_sec=0, tm_wday=6, tm_yday=221, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=9, tm_hour=2, tm_min=17, tm_sec=36, tm_wday=6, tm_yday=221, tm_isdst=0)
+2015-08-09_02_hangzhou count:31726
+2015-08-09_02_nanjing count:37034
+2015-08-09_02_shanghai count:21296
+2015-08-09_02_tucheng count:28728
+2015-08-09_02_beijing count:47092
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=9, tm_hour=2, tm_min=19, tm_sec=0, tm_wday=6, tm_yday=221, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=9, tm_hour=3, tm_min=29, tm_sec=10, tm_wday=6, tm_yday=221, tm_isdst=0)
+2015-08-09_03_hangzhou count:31726
+2015-08-09_03_nanjing count:37034
+2015-08-09_03_shanghai count:21296
+2015-08-09_03_tucheng count:28728
+2015-08-09_03_beijing count:47092
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=9, tm_hour=3, tm_min=30, tm_sec=34, tm_wday=6, tm_yday=221, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=9, tm_hour=4, tm_min=16, tm_sec=56, tm_wday=6, tm_yday=221, tm_isdst=0)
+2015-08-09_04_hangzhou count:31726
+2015-08-09_04_nanjing count:37034
+2015-08-09_04_shanghai count:21296
+2015-08-09_04_tucheng count:28728
+2015-08-09_04_beijing count:47092
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=9, tm_hour=4, tm_min=18, tm_sec=21, tm_wday=6, tm_yday=221, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=9, tm_hour=5, tm_min=16, tm_sec=28, tm_wday=6, tm_yday=221, tm_isdst=0)
+2015-08-09_05_hangzhou count:31726
+2015-08-09_05_nanjing count:37034
+2015-08-09_05_shanghai count:21296
+2015-08-09_05_tucheng count:28728
+2015-08-09_05_beijing count:47092
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=9, tm_hour=5, tm_min=17, tm_sec=54, tm_wday=6, tm_yday=221, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=9, tm_hour=6, tm_min=24, tm_sec=36, tm_wday=6, tm_yday=221, tm_isdst=0)
+2015-08-09_06_hangzhou count:31726
+2015-08-09_06_nanjing count:37034
+2015-08-09_06_shanghai count:21296
+2015-08-09_06_tucheng count:28728
+2015-08-09_06_beijing count:47092
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=9, tm_hour=6, tm_min=26, tm_sec=0, tm_wday=6, tm_yday=221, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=9, tm_hour=7, tm_min=16, tm_sec=43, tm_wday=6, tm_yday=221, tm_isdst=0)
+2015-08-09_07_hangzhou count:31726
+2015-08-09_07_nanjing count:37034
+2015-08-09_07_shanghai count:21296
+2015-08-09_07_tucheng count:28728
+2015-08-09_07_beijing count:47092
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=9, tm_hour=7, tm_min=18, tm_sec=6, tm_wday=6, tm_yday=221, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=9, tm_hour=8, tm_min=18, tm_sec=58, tm_wday=6, tm_yday=221, tm_isdst=0)
+2015-08-09_08_hangzhou count:31726
+2015-08-09_08_nanjing count:37034
+2015-08-09_08_shanghai count:21296
+2015-08-09_08_tucheng count:28728
+2015-08-09_08_beijing count:47092
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=9, tm_hour=8, tm_min=20, tm_sec=23, tm_wday=6, tm_yday=221, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=9, tm_hour=9, tm_min=16, tm_sec=36, tm_wday=6, tm_yday=221, tm_isdst=0)
+2015-08-09_09_hangzhou count:31726
+2015-08-09_09_nanjing count:37034
+2015-08-09_09_shanghai count:21296
+2015-08-09_09_tucheng count:28728
+2015-08-09_09_beijing count:47092
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=9, tm_hour=9, tm_min=18, tm_sec=1, tm_wday=6, tm_yday=221, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=9, tm_hour=10, tm_min=19, tm_sec=7, tm_wday=6, tm_yday=221, tm_isdst=0)
+2015-08-09_10_hangzhou count:31726
+2015-08-09_10_nanjing count:37034
+2015-08-09_10_shanghai count:21296
+2015-08-09_10_tucheng count:28728
+2015-08-09_10_beijing count:47092
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=9, tm_hour=10, tm_min=20, tm_sec=30, tm_wday=6, tm_yday=221, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=9, tm_hour=11, tm_min=16, tm_sec=50, tm_wday=6, tm_yday=221, tm_isdst=0)
+2015-08-09_11_hangzhou count:31726
+2015-08-09_11_nanjing count:37034
+2015-08-09_11_shanghai count:21296
+2015-08-09_11_tucheng count:28728
+2015-08-09_11_beijing count:47092
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=9, tm_hour=11, tm_min=18, tm_sec=14, tm_wday=6, tm_yday=221, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=9, tm_hour=12, tm_min=19, tm_sec=22, tm_wday=6, tm_yday=221, tm_isdst=0)
+2015-08-09_12_hangzhou count:31726
+2015-08-09_12_nanjing count:37034
+2015-08-09_12_shanghai count:21296
+2015-08-09_12_tucheng count:28728
+2015-08-09_12_beijing count:47092
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=9, tm_hour=12, tm_min=20, tm_sec=47, tm_wday=6, tm_yday=221, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=9, tm_hour=13, tm_min=17, tm_sec=25, tm_wday=6, tm_yday=221, tm_isdst=0)
+2015-08-09_13_hangzhou count:31726
+2015-08-09_13_nanjing count:37034
+2015-08-09_13_shanghai count:21296
+2015-08-09_13_tucheng count:28728
+2015-08-09_13_beijing count:47092
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=9, tm_hour=13, tm_min=18, tm_sec=47, tm_wday=6, tm_yday=221, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=9, tm_hour=14, tm_min=17, tm_sec=23, tm_wday=6, tm_yday=221, tm_isdst=0)
+2015-08-09_14_hangzhou count:31726
+2015-08-09_14_nanjing count:37034
+2015-08-09_14_shanghai count:21296
+2015-08-09_14_tucheng count:28728
+2015-08-09_14_beijing count:47092
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=9, tm_hour=14, tm_min=18, tm_sec=49, tm_wday=6, tm_yday=221, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=9, tm_hour=15, tm_min=17, tm_sec=0, tm_wday=6, tm_yday=221, tm_isdst=0)
+2015-08-09_15_hangzhou count:31726
+2015-08-09_15_nanjing count:37034
+2015-08-09_15_shanghai count:21296
+2015-08-09_15_tucheng count:28728
+2015-08-09_15_beijing count:47092
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=9, tm_hour=15, tm_min=18, tm_sec=24, tm_wday=6, tm_yday=221, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=9, tm_hour=16, tm_min=28, tm_sec=44, tm_wday=6, tm_yday=221, tm_isdst=0)
+2015-08-09_16_hangzhou count:31726
+2015-08-09_16_nanjing count:37034
+2015-08-09_16_shanghai count:21296
+2015-08-09_16_tucheng count:28728
+2015-08-09_16_beijing count:47092
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=9, tm_hour=16, tm_min=30, tm_sec=11, tm_wday=6, tm_yday=221, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=9, tm_hour=17, tm_min=28, tm_sec=36, tm_wday=6, tm_yday=221, tm_isdst=0)
+2015-08-09_17_hangzhou count:31726
+2015-08-09_17_nanjing count:37034
+2015-08-09_17_shanghai count:21296
+2015-08-09_17_tucheng count:28728
+2015-08-09_17_beijing count:47092
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=9, tm_hour=17, tm_min=30, tm_sec=1, tm_wday=6, tm_yday=221, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=9, tm_hour=18, tm_min=16, tm_sec=48, tm_wday=6, tm_yday=221, tm_isdst=0)
+2015-08-09_18_hangzhou count:31726
+2015-08-09_18_nanjing count:37034
+2015-08-09_18_shanghai count:21296
+2015-08-09_18_tucheng count:28728
+2015-08-09_18_beijing count:47092
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=9, tm_hour=18, tm_min=18, tm_sec=13, tm_wday=6, tm_yday=221, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=9, tm_hour=19, tm_min=19, tm_sec=42, tm_wday=6, tm_yday=221, tm_isdst=0)
+2015-08-09_19_hangzhou count:31726
+2015-08-09_19_nanjing count:37034
+2015-08-09_19_shanghai count:21296
+2015-08-09_19_tucheng count:28728
+2015-08-09_19_beijing count:47092
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=9, tm_hour=19, tm_min=21, tm_sec=7, tm_wday=6, tm_yday=221, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=9, tm_hour=20, tm_min=17, tm_sec=41, tm_wday=6, tm_yday=221, tm_isdst=0)
+2015-08-09_20_hangzhou count:31726
+2015-08-09_20_nanjing count:37034
+2015-08-09_20_shanghai count:21296
+2015-08-09_20_tucheng count:28728
+2015-08-09_20_beijing count:47092
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=9, tm_hour=20, tm_min=19, tm_sec=7, tm_wday=6, tm_yday=221, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=9, tm_hour=21, tm_min=17, tm_sec=17, tm_wday=6, tm_yday=221, tm_isdst=0)
+2015-08-09_21_hangzhou count:31726
+2015-08-09_21_nanjing count:37034
+2015-08-09_21_shanghai count:21296
+2015-08-09_21_tucheng count:28728
+2015-08-09_21_beijing count:47092
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=9, tm_hour=21, tm_min=18, tm_sec=42, tm_wday=6, tm_yday=221, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=9, tm_hour=22, tm_min=18, tm_sec=43, tm_wday=6, tm_yday=221, tm_isdst=0)
+2015-08-09_22_hangzhou count:31726
+2015-08-09_22_nanjing count:37034
+2015-08-09_22_shanghai count:21296
+2015-08-09_22_tucheng count:28728
+2015-08-09_22_beijing count:47092
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=9, tm_hour=22, tm_min=20, tm_sec=10, tm_wday=6, tm_yday=221, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=9, tm_hour=23, tm_min=16, tm_sec=27, tm_wday=6, tm_yday=221, tm_isdst=0)
+2015-08-09_23_hangzhou count:31726
+2015-08-09_23_nanjing count:37034
+2015-08-09_23_shanghai count:21296
+2015-08-09_23_tucheng count:28728
+2015-08-09_23_beijing count:47092
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=9, tm_hour=23, tm_min=17, tm_sec=52, tm_wday=6, tm_yday=221, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=10, tm_hour=0, tm_min=16, tm_sec=41, tm_wday=0, tm_yday=222, tm_isdst=0)
+2015-08-10_00_hangzhou count:31726
+2015-08-10_00_nanjing count:37034
+2015-08-10_00_shanghai count:21296
+2015-08-10_00_tucheng count:28728
+2015-08-10_00_beijing count:47092
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=10, tm_hour=0, tm_min=18, tm_sec=9, tm_wday=0, tm_yday=222, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=10, tm_hour=1, tm_min=18, tm_sec=10, tm_wday=0, tm_yday=222, tm_isdst=0)
+2015-08-10_01_hangzhou count:31726
+2015-08-10_01_nanjing count:37034
+2015-08-10_01_shanghai count:21296
+2015-08-10_01_tucheng count:28728
+2015-08-10_01_beijing count:47092
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=10, tm_hour=1, tm_min=19, tm_sec=36, tm_wday=0, tm_yday=222, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=10, tm_hour=2, tm_min=18, tm_sec=49, tm_wday=0, tm_yday=222, tm_isdst=0)
+2015-08-10_02_hangzhou count:31726
+2015-08-10_02_nanjing count:37034
+2015-08-10_02_shanghai count:21296
+2015-08-10_02_tucheng count:28728
+2015-08-10_02_beijing count:47092
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=10, tm_hour=2, tm_min=20, tm_sec=15, tm_wday=0, tm_yday=222, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=10, tm_hour=3, tm_min=29, tm_sec=11, tm_wday=0, tm_yday=222, tm_isdst=0)
+2015-08-10_03_hangzhou count:31726
+2015-08-10_03_nanjing count:37034
+2015-08-10_03_shanghai count:21296
+2015-08-10_03_tucheng count:28728
+2015-08-10_03_beijing count:47092
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=10, tm_hour=3, tm_min=30, tm_sec=38, tm_wday=0, tm_yday=222, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=10, tm_hour=4, tm_min=17, tm_sec=14, tm_wday=0, tm_yday=222, tm_isdst=0)
+2015-08-10_04_hangzhou count:31726
+2015-08-10_04_nanjing count:37034
+2015-08-10_04_shanghai count:21296
+2015-08-10_04_tucheng count:28728
+2015-08-10_04_beijing count:47092
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=10, tm_hour=4, tm_min=18, tm_sec=46, tm_wday=0, tm_yday=222, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=10, tm_hour=5, tm_min=17, tm_sec=1, tm_wday=0, tm_yday=222, tm_isdst=0)
+2015-08-10_05_hangzhou count:31726
+2015-08-10_05_nanjing count:37034
+2015-08-10_05_shanghai count:21296
+2015-08-10_05_tucheng count:28728
+2015-08-10_05_beijing count:47092
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=10, tm_hour=5, tm_min=18, tm_sec=28, tm_wday=0, tm_yday=222, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=10, tm_hour=6, tm_min=18, tm_sec=7, tm_wday=0, tm_yday=222, tm_isdst=0)
+2015-08-10_06_hangzhou count:31726
+2015-08-10_06_nanjing count:37034
+2015-08-10_06_shanghai count:21296
+2015-08-10_06_tucheng count:28728
+2015-08-10_06_beijing count:47092
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=10, tm_hour=6, tm_min=19, tm_sec=35, tm_wday=0, tm_yday=222, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=10, tm_hour=7, tm_min=16, tm_sec=41, tm_wday=0, tm_yday=222, tm_isdst=0)
+2015-08-10_07_hangzhou count:31726
+2015-08-10_07_nanjing count:37034
+2015-08-10_07_shanghai count:21296
+2015-08-10_07_tucheng count:28728
+2015-08-10_07_beijing count:47092
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=10, tm_hour=7, tm_min=18, tm_sec=10, tm_wday=0, tm_yday=222, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=10, tm_hour=8, tm_min=16, tm_sec=27, tm_wday=0, tm_yday=222, tm_isdst=0)
+2015-08-10_08_hangzhou count:31726
+2015-08-10_08_nanjing count:37034
+2015-08-10_08_shanghai count:21296
+2015-08-10_08_tucheng count:28728
+2015-08-10_08_beijing count:47092
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=10, tm_hour=8, tm_min=17, tm_sec=54, tm_wday=0, tm_yday=222, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=10, tm_hour=9, tm_min=17, tm_sec=4, tm_wday=0, tm_yday=222, tm_isdst=0)
+2015-08-10_09_hangzhou count:31726
+2015-08-10_09_nanjing count:37034
+2015-08-10_09_shanghai count:21296
+2015-08-10_09_tucheng count:28728
+2015-08-10_09_beijing count:47092
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=10, tm_hour=9, tm_min=18, tm_sec=30, tm_wday=0, tm_yday=222, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=10, tm_hour=10, tm_min=19, tm_sec=2, tm_wday=0, tm_yday=222, tm_isdst=0)
+2015-08-10_10_hangzhou count:31726
+2015-08-10_10_nanjing count:37034
+2015-08-10_10_shanghai count:21296
+2015-08-10_10_tucheng count:28728
+2015-08-10_10_beijing count:47092
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=10, tm_hour=10, tm_min=20, tm_sec=50, tm_wday=0, tm_yday=222, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=10, tm_hour=11, tm_min=17, tm_sec=8, tm_wday=0, tm_yday=222, tm_isdst=0)
+2015-08-10_11_hangzhou count:31726
+2015-08-10_11_nanjing count:37034
+2015-08-10_11_shanghai count:21296
+2015-08-10_11_tucheng count:28728
+2015-08-10_11_beijing count:47092
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=10, tm_hour=11, tm_min=18, tm_sec=50, tm_wday=0, tm_yday=222, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=10, tm_hour=12, tm_min=16, tm_sec=41, tm_wday=0, tm_yday=222, tm_isdst=0)
+2015-08-10_12_hangzhou count:31726
+2015-08-10_12_nanjing count:37034
+2015-08-10_12_shanghai count:21296
+2015-08-10_12_tucheng count:28728
+2015-08-10_12_beijing count:47092
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=10, tm_hour=12, tm_min=18, tm_sec=26, tm_wday=0, tm_yday=222, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=10, tm_hour=13, tm_min=18, tm_sec=54, tm_wday=0, tm_yday=222, tm_isdst=0)
+2015-08-10_13_hangzhou count:31726
+2015-08-10_13_nanjing count:37034
+2015-08-10_13_shanghai count:21296
+2015-08-10_13_tucheng count:28728
+2015-08-10_13_beijing count:47229
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=10, tm_hour=13, tm_min=20, tm_sec=38, tm_wday=0, tm_yday=222, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=10, tm_hour=14, tm_min=43, tm_sec=44, tm_wday=0, tm_yday=222, tm_isdst=0)
+2015-08-10_14_hangzhou count:31726
+2015-08-10_14_nanjing count:37034
+2015-08-10_14_shanghai count:21296
+2015-08-10_14_tucheng count:28728
+2015-08-10_14_beijing count:47389
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=10, tm_hour=14, tm_min=45, tm_sec=30, tm_wday=0, tm_yday=222, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=10, tm_hour=15, tm_min=16, tm_sec=49, tm_wday=0, tm_yday=222, tm_isdst=0)
+2015-08-10_15_hangzhou count:31726
+2015-08-10_15_nanjing count:37034
+2015-08-10_15_shanghai count:21296
+2015-08-10_15_tucheng count:28728
+2015-08-10_15_beijing count:47556
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=10, tm_hour=15, tm_min=18, tm_sec=33, tm_wday=0, tm_yday=222, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=10, tm_hour=16, tm_min=17, tm_sec=40, tm_wday=0, tm_yday=222, tm_isdst=0)
+2015-08-10_16_hangzhou count:31726
+2015-08-10_16_nanjing count:37034
+2015-08-10_16_shanghai count:21297
+2015-08-10_16_tucheng count:28728
+2015-08-10_16_beijing count:47556
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=10, tm_hour=16, tm_min=19, tm_sec=30, tm_wday=0, tm_yday=222, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=10, tm_hour=17, tm_min=17, tm_sec=23, tm_wday=0, tm_yday=222, tm_isdst=0)
+2015-08-10_17_hangzhou count:31726
+2015-08-10_17_nanjing count:37034
+2015-08-10_17_shanghai count:21297
+2015-08-10_17_tucheng count:28728
+2015-08-10_17_beijing count:47556
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=10, tm_hour=17, tm_min=19, tm_sec=10, tm_wday=0, tm_yday=222, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=10, tm_hour=18, tm_min=17, tm_sec=51, tm_wday=0, tm_yday=222, tm_isdst=0)
+2015-08-10_18_hangzhou count:31726
+2015-08-10_18_nanjing count:37034
+2015-08-10_18_shanghai count:21297
+2015-08-10_18_tucheng count:28728
+2015-08-10_18_beijing count:47556
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=10, tm_hour=18, tm_min=19, tm_sec=37, tm_wday=0, tm_yday=222, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=10, tm_hour=19, tm_min=21, tm_sec=16, tm_wday=0, tm_yday=222, tm_isdst=0)
+2015-08-10_19_hangzhou count:31726
+2015-08-10_19_nanjing count:37034
+2015-08-10_19_shanghai count:21297
+2015-08-10_19_tucheng count:28728
+2015-08-10_19_beijing count:47556
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=10, tm_hour=19, tm_min=23, tm_sec=1, tm_wday=0, tm_yday=222, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=10, tm_hour=20, tm_min=18, tm_sec=29, tm_wday=0, tm_yday=222, tm_isdst=0)
+2015-08-10_20_hangzhou count:31726
+2015-08-10_20_nanjing count:37034
+2015-08-10_20_shanghai count:21297
+2015-08-10_20_tucheng count:28728
+2015-08-10_20_beijing count:47556
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=10, tm_hour=20, tm_min=20, tm_sec=12, tm_wday=0, tm_yday=222, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=10, tm_hour=21, tm_min=45, tm_sec=18, tm_wday=0, tm_yday=222, tm_isdst=0)
+2015-08-10_21_hangzhou count:31726
+2015-08-10_21_nanjing count:37034
+2015-08-10_21_shanghai count:21297
+2015-08-10_21_tucheng count:28728
+2015-08-10_21_beijing count:47556
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=10, tm_hour=21, tm_min=47, tm_sec=5, tm_wday=0, tm_yday=222, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=10, tm_hour=22, tm_min=24, tm_sec=18, tm_wday=0, tm_yday=222, tm_isdst=0)
+2015-08-10_22_hangzhou count:31726
+2015-08-10_22_nanjing count:37034
+2015-08-10_22_shanghai count:21297
+2015-08-10_22_tucheng count:28728
+2015-08-10_22_beijing count:47556
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=10, tm_hour=22, tm_min=26, tm_sec=5, tm_wday=0, tm_yday=222, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=10, tm_hour=23, tm_min=21, tm_sec=43, tm_wday=0, tm_yday=222, tm_isdst=0)
+2015-08-10_23_hangzhou count:31726
+2015-08-10_23_nanjing count:37034
+2015-08-10_23_shanghai count:21297
+2015-08-10_23_tucheng count:28728
+2015-08-10_23_beijing count:47556
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=10, tm_hour=23, tm_min=23, tm_sec=30, tm_wday=0, tm_yday=222, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=11, tm_hour=3, tm_min=30, tm_sec=5, tm_wday=1, tm_yday=223, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=11, tm_hour=3, tm_min=30, tm_sec=5, tm_wday=1, tm_yday=223, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=11, tm_hour=4, tm_min=16, tm_sec=51, tm_wday=1, tm_yday=223, tm_isdst=0)
+2015-08-11_04_hangzhou count:30401
+2015-08-11_04_nanjing count:37034
+2015-08-11_04_shanghai count:21297
+2015-08-11_04_tucheng count:28746
+2015-08-11_04_beijing count:47567
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=11, tm_hour=4, tm_min=18, tm_sec=26, tm_wday=1, tm_yday=223, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=11, tm_hour=5, tm_min=16, tm_sec=42, tm_wday=1, tm_yday=223, tm_isdst=0)
+2015-08-11_05_hangzhou count:30401
+2015-08-11_05_nanjing count:37034
+2015-08-11_05_shanghai count:21297
+2015-08-11_05_tucheng count:28746
+2015-08-11_05_beijing count:47567
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=11, tm_hour=5, tm_min=18, tm_sec=13, tm_wday=1, tm_yday=223, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=11, tm_hour=6, tm_min=16, tm_sec=33, tm_wday=1, tm_yday=223, tm_isdst=0)
+2015-08-11_06_hangzhou count:30401
+2015-08-11_06_nanjing count:37034
+2015-08-11_06_shanghai count:21297
+2015-08-11_06_tucheng count:28746
+2015-08-11_06_beijing count:47567
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=11, tm_hour=6, tm_min=18, tm_sec=2, tm_wday=1, tm_yday=223, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=11, tm_hour=7, tm_min=16, tm_sec=28, tm_wday=1, tm_yday=223, tm_isdst=0)
+2015-08-11_07_hangzhou count:30401
+2015-08-11_07_nanjing count:37034
+2015-08-11_07_shanghai count:21297
+2015-08-11_07_tucheng count:28746
+2015-08-11_07_beijing count:47567
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=11, tm_hour=7, tm_min=17, tm_sec=58, tm_wday=1, tm_yday=223, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=11, tm_hour=8, tm_min=16, tm_sec=26, tm_wday=1, tm_yday=223, tm_isdst=0)
+2015-08-11_08_hangzhou count:30401
+2015-08-11_08_nanjing count:37034
+2015-08-11_08_shanghai count:21297
+2015-08-11_08_tucheng count:28746
+2015-08-11_08_beijing count:47567
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=11, tm_hour=8, tm_min=17, tm_sec=56, tm_wday=1, tm_yday=223, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=11, tm_hour=9, tm_min=16, tm_sec=37, tm_wday=1, tm_yday=223, tm_isdst=0)
+2015-08-11_09_hangzhou count:30401
+2015-08-11_09_nanjing count:37034
+2015-08-11_09_shanghai count:21297
+2015-08-11_09_tucheng count:28746
+2015-08-11_09_beijing count:47567
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=11, tm_hour=9, tm_min=18, tm_sec=8, tm_wday=1, tm_yday=223, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=11, tm_hour=10, tm_min=17, tm_sec=18, tm_wday=1, tm_yday=223, tm_isdst=0)
+2015-08-11_10_hangzhou count:30401
+2015-08-11_10_nanjing count:37034
+2015-08-11_10_shanghai count:21297
+2015-08-11_10_tucheng count:28746
+2015-08-11_10_beijing count:47567
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=11, tm_hour=10, tm_min=18, tm_sec=48, tm_wday=1, tm_yday=223, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=11, tm_hour=11, tm_min=31, tm_sec=45, tm_wday=1, tm_yday=223, tm_isdst=0)
+2015-08-11_11_hangzhou count:30401
+2015-08-11_11_nanjing count:37034
+2015-08-11_11_shanghai count:21297
+2015-08-11_11_tucheng count:28746
+2015-08-11_11_beijing count:47567
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=11, tm_hour=11, tm_min=33, tm_sec=14, tm_wday=1, tm_yday=223, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=11, tm_hour=12, tm_min=17, tm_sec=34, tm_wday=1, tm_yday=223, tm_isdst=0)
+2015-08-11_12_hangzhou count:30401
+2015-08-11_12_nanjing count:37034
+2015-08-11_12_shanghai count:21297
+2015-08-11_12_tucheng count:28746
+2015-08-11_12_beijing count:47567
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=11, tm_hour=12, tm_min=19, tm_sec=4, tm_wday=1, tm_yday=223, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=11, tm_hour=13, tm_min=17, tm_sec=11, tm_wday=1, tm_yday=223, tm_isdst=0)
+2015-08-11_13_hangzhou count:30401
+2015-08-11_13_nanjing count:37034
+2015-08-11_13_shanghai count:21297
+2015-08-11_13_tucheng count:28746
+2015-08-11_13_beijing count:47567
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=11, tm_hour=13, tm_min=18, tm_sec=40, tm_wday=1, tm_yday=223, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=11, tm_hour=14, tm_min=29, tm_sec=41, tm_wday=1, tm_yday=223, tm_isdst=0)
+2015-08-11_14_hangzhou count:30400
+2015-08-11_14_nanjing count:37034
+2015-08-11_14_shanghai count:21297
+2015-08-11_14_tucheng count:28746
+2015-08-11_14_beijing count:47567
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=11, tm_hour=14, tm_min=31, tm_sec=10, tm_wday=1, tm_yday=223, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=11, tm_hour=15, tm_min=17, tm_sec=25, tm_wday=1, tm_yday=223, tm_isdst=0)
+2015-08-11_15_hangzhou count:30400
+2015-08-11_15_nanjing count:37034
+2015-08-11_15_shanghai count:21297
+2015-08-11_15_tucheng count:28746
+2015-08-11_15_beijing count:47567
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=11, tm_hour=15, tm_min=18, tm_sec=55, tm_wday=1, tm_yday=223, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=11, tm_hour=16, tm_min=17, tm_sec=37, tm_wday=1, tm_yday=223, tm_isdst=0)
+2015-08-11_16_hangzhou count:30400
+2015-08-11_16_nanjing count:37034
+2015-08-11_16_shanghai count:21297
+2015-08-11_16_tucheng count:28746
+2015-08-11_16_beijing count:47567
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=11, tm_hour=16, tm_min=19, tm_sec=7, tm_wday=1, tm_yday=223, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=11, tm_hour=17, tm_min=18, tm_sec=50, tm_wday=1, tm_yday=223, tm_isdst=0)
+2015-08-11_17_hangzhou count:30400
+2015-08-11_17_nanjing count:37034
+2015-08-11_17_shanghai count:21297
+2015-08-11_17_tucheng count:28746
+2015-08-11_17_beijing count:47567
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=11, tm_hour=17, tm_min=20, tm_sec=21, tm_wday=1, tm_yday=223, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=11, tm_hour=18, tm_min=17, tm_sec=53, tm_wday=1, tm_yday=223, tm_isdst=0)
+2015-08-11_18_hangzhou count:30400
+2015-08-11_18_nanjing count:37034
+2015-08-11_18_shanghai count:21297
+2015-08-11_18_tucheng count:28746
+2015-08-11_18_beijing count:47567
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=11, tm_hour=18, tm_min=19, tm_sec=24, tm_wday=1, tm_yday=223, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=11, tm_hour=19, tm_min=18, tm_sec=9, tm_wday=1, tm_yday=223, tm_isdst=0)
+2015-08-11_19_hangzhou count:30400
+2015-08-11_19_nanjing count:37034
+2015-08-11_19_shanghai count:21297
+2015-08-11_19_tucheng count:28746
+2015-08-11_19_beijing count:47567
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=11, tm_hour=19, tm_min=19, tm_sec=41, tm_wday=1, tm_yday=223, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=11, tm_hour=20, tm_min=17, tm_sec=29, tm_wday=1, tm_yday=223, tm_isdst=0)
+2015-08-11_20_hangzhou count:30400
+2015-08-11_20_nanjing count:37034
+2015-08-11_20_shanghai count:21297
+2015-08-11_20_tucheng count:28746
+2015-08-11_20_beijing count:47567
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=11, tm_hour=20, tm_min=19, tm_sec=2, tm_wday=1, tm_yday=223, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=11, tm_hour=21, tm_min=17, tm_sec=10, tm_wday=1, tm_yday=223, tm_isdst=0)
+2015-08-11_21_hangzhou count:30400
+2015-08-11_21_nanjing count:37034
+2015-08-11_21_shanghai count:21297
+2015-08-11_21_tucheng count:28746
+2015-08-11_21_beijing count:47567
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=11, tm_hour=21, tm_min=18, tm_sec=43, tm_wday=1, tm_yday=223, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=11, tm_hour=22, tm_min=18, tm_sec=39, tm_wday=1, tm_yday=223, tm_isdst=0)
+2015-08-11_22_hangzhou count:30400
+2015-08-11_22_nanjing count:37034
+2015-08-11_22_shanghai count:21297
+2015-08-11_22_tucheng count:28746
+2015-08-11_22_beijing count:47567
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=11, tm_hour=22, tm_min=20, tm_sec=13, tm_wday=1, tm_yday=223, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=11, tm_hour=23, tm_min=16, tm_sec=58, tm_wday=1, tm_yday=223, tm_isdst=0)
+2015-08-11_23_hangzhou count:30400
+2015-08-11_23_nanjing count:37034
+2015-08-11_23_shanghai count:21297
+2015-08-11_23_tucheng count:28746
+2015-08-11_23_beijing count:47567
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=11, tm_hour=23, tm_min=18, tm_sec=31, tm_wday=1, tm_yday=223, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=12, tm_hour=0, tm_min=18, tm_sec=14, tm_wday=2, tm_yday=224, tm_isdst=0)
+2015-08-12_00_hangzhou count:30640
+2015-08-12_00_nanjing count:37034
+2015-08-12_00_shanghai count:21297
+2015-08-12_00_tucheng count:28746
+2015-08-12_00_beijing count:47567
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=12, tm_hour=0, tm_min=19, tm_sec=50, tm_wday=2, tm_yday=224, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=12, tm_hour=1, tm_min=17, tm_sec=1, tm_wday=2, tm_yday=224, tm_isdst=0)
+2015-08-12_01_hangzhou count:30640
+2015-08-12_01_nanjing count:37034
+2015-08-12_01_shanghai count:21297
+2015-08-12_01_tucheng count:28746
+2015-08-12_01_beijing count:47567
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=12, tm_hour=1, tm_min=18, tm_sec=36, tm_wday=2, tm_yday=224, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=12, tm_hour=10, tm_min=23, tm_sec=37, tm_wday=2, tm_yday=224, tm_isdst=0)
+2015-08-12_10_hangzhou count:30640
+2015-08-12_10_nanjing count:37034
+2015-08-12_10_shanghai count:21297
+2015-08-12_10_tucheng count:28728
+2015-08-12_10_beijing count:47559
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=12, tm_hour=10, tm_min=26, tm_sec=55, tm_wday=2, tm_yday=224, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=12, tm_hour=11, tm_min=17, tm_sec=45, tm_wday=2, tm_yday=224, tm_isdst=0)
+2015-08-12_11_hangzhou count:30640
+2015-08-12_11_nanjing count:37034
+2015-08-12_11_shanghai count:21297
+2015-08-12_11_tucheng count:28728
+2015-08-12_11_beijing count:47556
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=12, tm_hour=11, tm_min=19, tm_sec=24, tm_wday=2, tm_yday=224, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=12, tm_hour=12, tm_min=17, tm_sec=37, tm_wday=2, tm_yday=224, tm_isdst=0)
+2015-08-12_12_hangzhou count:30640
+2015-08-12_12_nanjing count:37034
+2015-08-12_12_shanghai count:21297
+2015-08-12_12_tucheng count:28728
+2015-08-12_12_beijing count:47556
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=12, tm_hour=12, tm_min=19, tm_sec=13, tm_wday=2, tm_yday=224, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=12, tm_hour=13, tm_min=17, tm_sec=8, tm_wday=2, tm_yday=224, tm_isdst=0)
+2015-08-12_13_hangzhou count:30995
+2015-08-12_13_nanjing count:37034
+2015-08-12_13_shanghai count:21297
+2015-08-12_13_tucheng count:28728
+2015-08-12_13_beijing count:47556
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=12, tm_hour=13, tm_min=18, tm_sec=45, tm_wday=2, tm_yday=224, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=12, tm_hour=14, tm_min=20, tm_sec=39, tm_wday=2, tm_yday=224, tm_isdst=0)
+2015-08-12_14_hangzhou count:30995
+2015-08-12_14_nanjing count:37034
+2015-08-12_14_shanghai count:21297
+2015-08-12_14_tucheng count:28728
+2015-08-12_14_beijing count:47556
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=12, tm_hour=14, tm_min=22, tm_sec=16, tm_wday=2, tm_yday=224, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=12, tm_hour=15, tm_min=21, tm_sec=20, tm_wday=2, tm_yday=224, tm_isdst=0)
+2015-08-12_15_hangzhou count:30995
+2015-08-12_15_nanjing count:37034
+2015-08-12_15_shanghai count:21297
+2015-08-12_15_tucheng count:28728
+2015-08-12_15_beijing count:47556
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=12, tm_hour=15, tm_min=23, tm_sec=2, tm_wday=2, tm_yday=224, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=12, tm_hour=16, tm_min=17, tm_sec=20, tm_wday=2, tm_yday=224, tm_isdst=0)
+2015-08-12_16_hangzhou count:30995
+2015-08-12_16_nanjing count:37034
+2015-08-12_16_shanghai count:21297
+2015-08-12_16_tucheng count:28728
+2015-08-12_16_beijing count:47571
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=12, tm_hour=16, tm_min=18, tm_sec=58, tm_wday=2, tm_yday=224, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=12, tm_hour=17, tm_min=49, tm_sec=31, tm_wday=2, tm_yday=224, tm_isdst=0)
+2015-08-12_17_hangzhou count:30995
+2015-08-12_17_nanjing count:37034
+2015-08-12_17_shanghai count:21297
+2015-08-12_17_tucheng count:28728
+2015-08-12_17_beijing count:47572
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=12, tm_hour=17, tm_min=51, tm_sec=8, tm_wday=2, tm_yday=224, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=12, tm_hour=19, tm_min=18, tm_sec=25, tm_wday=2, tm_yday=224, tm_isdst=0)
+2015-08-12_19_hangzhou count:30995
+2015-08-12_19_nanjing count:37034
+2015-08-12_19_shanghai count:21297
+2015-08-12_19_tucheng count:28728
+2015-08-12_19_beijing count:47572
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=12, tm_hour=19, tm_min=20, tm_sec=3, tm_wday=2, tm_yday=224, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=12, tm_hour=20, tm_min=16, tm_sec=51, tm_wday=2, tm_yday=224, tm_isdst=0)
+2015-08-12_20_hangzhou count:30995
+2015-08-12_20_nanjing count:37034
+2015-08-12_20_shanghai count:21297
+2015-08-12_20_tucheng count:28728
+2015-08-12_20_beijing count:47572
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=12, tm_hour=20, tm_min=18, tm_sec=30, tm_wday=2, tm_yday=224, tm_isdst=0)
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=12, tm_hour=21, tm_min=17, tm_sec=0, tm_wday=2, tm_yday=224, tm_isdst=0)
+2015-08-12_21_hangzhou count:30995
+2015-08-12_21_nanjing count:37034
+2015-08-12_21_shanghai count:21297
+2015-08-12_21_tucheng count:28728
+2015-08-12_21_beijing count:47572
+time.struct_time(tm_year=2015, tm_mon=8, tm_mday=12, tm_hour=21, tm_min=18, tm_sec=38, tm_wday=2, tm_yday=224, tm_isdst=0)

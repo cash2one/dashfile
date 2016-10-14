@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static "js/bootstrap-3.3.4-dist/css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "wanggang.css" %}">
+    <link rel="stylesheet" href="{% static "jstree/dist/themes/default/style.min.css" %}">
+    <link href="{% static "dashboard.css"%} " rel="stylesheet">   
+    <title>Dashboard for Beehive</title>
+    <script src="{% static "js/jquery-1.11.2.min.js" %}"></script>
+    <script src="{% static "js/bootstrap-3.3.4-dist/js/bootstrap.min.js" %}"></script>
+    <script src="{% static "jstree/dist/jstree.min.js" %}"></script>
+    <script src="{% static "highcharts/js/highcharts.js" %}"></script>
+    <script src="{% static "highcharts/js/modules/exporting.js" %}"></script>  
+    <style type="text/css">
+        body{
+            margin:0px;
+            padding:0px,30px;
+            text-align:center;
+        }
+       #mycontainer{
+            position:relative;
+            margin:0 auto;
+            padding:0px; 
+         /* width:1265px; */
+            overflow:hidden; 
+            text-align:left; 
+        }   
+        .container {
+            width:1265px;
+        }
+    </style> 
+</head>
+ <body style="overflow:scroll;"> 
+  <div id="mycontainer" >
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">    
+          <div class="row" style="padding-top:10px">
+            <ul class="nav nav-tabs nav-justified">
+                  <li role="presentation" class="active"><a href="/">首页</a></li>
+                  <li role="presentation"><a href="/detail/hangzhou">杭州机房</a></li>
+                  <li role="presentation"><a href="/detail/nanjing">南京机房</a></li>
+                  <li role="presentation"><a href="/detail/shanghai">上海机房</a></li>
+                  <li role="presentation"><a href="/detail/tucheng">土城机房</a></li>
+                  <li role="presentation"><a href="/detail/beijing">北京机房</a></li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+    <div class="container">  
+     <div class="row"> 
+        <div class="col-xs-2 ">
+            <div class="sidebar" style="margin-left:-25px" >
+                <button class="btn btn-success btn-sm" style="width:100%" disabled>检索</button>
+                <input type="text" class="form-control" id="search_txt" placeholder="实例ID/IP/机器名" style="height:28px;margin-top:5px"> 
+                <div class="btn-group" role="group" aria-label="..." style="width:100%;margin-top:5px">
+                    <button class="btn btn-default btn-xs" id="search_hangzhou" type="button" style="width:20%" disabled>杭州</button>
+                    <button class="btn btn-default btn-xs" id="search_nanjing" type="button" style="width:20%" disabled>南京</button>
+                    <button class="btn btn-default btn-xs" id="search_shanghai" type="button" style="width:20%" disabled>上海</button>
+                    <button class="btn btn-default btn-xs" id="search_tucheng" type="button" style="width:20%" disabled>土城</button>
+                    <button class="btn btn-default btn-xs" id="search_beijing" type="button" style="width:20%" disabled>北京</button>
+                </div>
+                
+                <div style="margin-top:20px;">
+                <button class="btn btn-success btn-sm" style="width:100%" disabled>提示</button>
+                <textarea class="form-control" rows="5" id="show_all" style="resize:none;font-size:12px;margin-top:5px;" readonly></textarea>
+                </div>
+               <textarea class="form-control" rows="1" placeholder="" id="show_width_high" style="resize:none;margin-top:20px;font-size:12px" readonly></textarea>  
+
+              <ul class="nav nav-sidebar" style="margin-top:15px">
+                <li><a href="http://wiki.baidu.com/pages/viewpage.action?pageId=80550829" target="_blank">数据说明</a></li>
+                <li><a href="http://wiki.baidu.com/pages/viewpage.action?pageId=80550848" target="_blank">Todo List</a></li>
+                <li><a href="http://tc-ps-beehive-test1.tc.baidu.com:8088/phpMyAdmin" target="_blank">PHPMyAdmin</a></li>
+              </ul>
+          </div>
+        </div>
+      </div>
+    <div class="row" style="padding-top:17px;font-size:12px"> <!-- core table -->
+    {% for k in core_info %} 
+        {%if k.0 == "hangzhou"%}
+        <div class="col-xs-2 col-xs-offset-2">
+        {%else%}
+        <div class="col-xs-2">
+        {%endif%}
+            <table class="table table-condensed table-bordered" id="core_{{k.0}}">
+                <tr>
+                    <td>
+                        机器
+                    </td>
+                    <td colspan="3">
+                        <div class="btn-group" role="group" aria-label="...">
+                        <button type="button" class="btn btn-default btn-xs" id="main_{{k.0}}">主</button>
+                        <button type="button" class="btn btn-default btn-xs" id="backup_{{k.0}}">备</button>
+                        <button type="button" class="btn btn-default btn-xs" id="zk_{{k.0}}" >zookeeper</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr><td>版本</td><td>shell {{k.1.shell}}</td><td>pd {{k.1.pd}}</td><td>rm {{k.1.rm}}</td></tr>
+            <!--    <tr><td>agent</td><td colspan="3">xxx</td></tr>   -->
+            </table>
+        </div>
+    {%endfor%}
+    </div>
+    <div class="row" style="padding-top:0px"> <!-- kpi button -->
+        <div class="col-xs-10 col-xs-offset-2">
+            <button type="button" class="btn btn-success btn-sm" disabled>KPI</button>
+            <div class="btn-group" role="group" aria-label="...">
+            {% for k in kpi_list %}
+            <button type="button" class="btn btn-primary btn-sm" id="kpi_{{k.0}}">{{k.1}}</button>
+            {% endfor %} 
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="padding-top:10px;font-size:12px">  
+        {%for x in kpi%}
+        {%if x.0 == "hangzhou"%}
+        <div class="col-xs-2 col-xs-offset-2">
+        {%else%}
+        <div class="col-xs-2">
+        {%endif%}
+        <table class="table table-condensed table-bordered" id="kpi_{{x.0}}">
+        <tr> 
+            <th>24 hours</th>
+            <th>30 days</th>
+            <th>本月</th>
+        </tr>
+        <tr> 
+            <td>{{x.2}}%</td>
+            <td>{{x.4}}%</td>
+            <td>{{x.3}}%</td>
+        </tr>
+        </table>
+        </div>
+        {%endfor%}
+    </div> 
+
+    <div class="row" style="padding-top:0px"> <!-- chart button machine-->
+        <div class="col-xs-10 col-xs-offset-2">
+        {%if history%}
+        <div class="alert alert-danger alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <strong>以下数据源获取失败，</strong>
+          {%for x in history%}
+          {{x.0}}(最后更新{{x.2}})
+          {%endfor%}
+        </div>
+        {%endif%}
+
+            <button type="button" class="btn btn-success btn-sm" disabled>机器状态</button>
+            <div class="btn-group" role="group" aria-label="...">
+                {%for k in chart_machine_list%}
+                        <button type="button" class="btn btn-primary btn-sm" id="index_machine_{{k.0}}" value="{{k.0}}">{{k.1}}</button>
+                {%endfor%}
+            </div>
+            <div class="btn-group" role="group" aria-label="...">
+                <button type="button" class="btn btn-warning btn-sm" value="rate" id="machine_rate" >比率</button>
+                <button type="button" class="btn btn-warning btn-sm" value="num" id="machine_num" >数量</button>
+            </div>
+            <div class="btn-group" role="group" aria-label="...">
+                <button type="button" class="btn btn-warning btn-sm" id = "machine_on" value="on">统一刻度</button>
+                <button type="button" class="btn btn-warning btn-sm" id = "machine_off" value="off">浮动刻度</button>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="row" style="padding-top:10px"> <!-- chart machine -->
+        <div class="col-xs-2 col-xs-offset-2" id="mchange1">
+           <div id="machine1" style="height: 200px; margin: 0 auto"></div>
+        </div>
+        <div class="col-xs-2" id="mchange2">
+           <div id="machine2" style="height: 200px; margin: 0 auto"></div>
+        </div>
+        <div class="col-xs-2" id="mchange3">
+           <div id="machine3" style="height: 200px; margin: 0 auto"></div>
+        </div>
+        <div class="col-xs-2" id="mchange4">
+           <div id="machine4" style="height: 200px; margin: 0 auto"></div>
+        </div>
+        <div class="col-xs-2" id="mchange5">
+           <div id="machine5" style="height: 200px; margin: 0 auto"></div>
+        </div>
+    </div>
+
+    <div class="row" style="padding-top:10px"> <!-- chart button instance -->
+        <div class="col-xs-10 col-xs-offset-2">
+            <button type="button" class="btn btn-success btn-sm" disabled>故障实例</button>
+            <div class="btn-group" role="group" aria-label="...">
+              {%for k in chart_items_list%}
+              <button type="button" class="btn btn-primary btn-sm" id="index_instance_{{k}}" value="{{k}}">{{k}}</button>
+              {%endfor%}
+            </div>
+             <div class="btn-group" role="group" aria-label="...">
+                <button type="button" class="btn btn-warning btn-sm" value="rate" id="instance_rate" >比率</button>
+                <button type="button" class="btn btn-warning btn-sm" value="num" id="instance_num" >数量</button>
+            </div>
+            <div class="btn-group" role="group" aria-label="...">
+                <button type="button" class="btn btn-warning btn-sm" id = "instance_on" value="on">统一刻度</button>
+                <button type="button" class="btn btn-warning btn-sm" id = "instance_off" value="off">浮动刻度</button>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row" style="padding-top:10px"> <!-- chart instance -->
+        <div class="col-xs-2 col-xs-offset-2" id="ichange1">
+           <div id="instance1" style="height: 200px; margin: 0 auto"></div>
+        </div>
+        <div class="col-xs-2" id="ichange2">
+           <div id="instance2" style="height: 200px; margin: 0 auto"></div>
+        </div>
+        <div class="col-xs-2" id="ichange3">
+           <div id="instance3" style="height: 200px; margin: 0 auto"></div>
+        </div>
+        <div class="col-xs-2" id="ichange4">
+           <div id="instance4" style="height: 200px; margin: 0 auto"></div>
+        </div>
+        <div class="col-xs-2" id="ichange5">
+           <div id="instance5" style="height: 200px; margin: 0 auto"></div>
+        </div>
+    </div>
+
+    <div class="row" style="padding-top:20px"> <!-- new fault button -->
+        <div class="col-xs-10 col-xs-offset-2">
+            <button type="button" class="btn btn-success btn-sm" disabled>故障实例状态</button>
+            <div class="btn-group" role="group" aria-label="...">
+              {%for k in new_fault_items_list%}
+               <button type="button" class="btn btn-primary btn-sm" id="new_fault_{{k}}" value="{{k}}">{{k}}</button>
+              {%endfor%}
+            </div>
+            <div class="btn-group" role="group" aria-label="...">
+               <button type="button" class="btn btn-warning btn-sm" id="new_fault_1"  value="1">1小时</button>
+               <button type="button" class="btn btn-warning btn-sm" id="new_fault_24"  value="24">1 天</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row" style="padding-top:15px;font-size:11px"> 
+    {% for k in new_fault_list %}
+        {%if k.0.room == "hangzhou"%}
+        <div class="col-xs-2 col-xs-offset-2">
+        {%else%}
+        <div class="col-xs-2">
+        {%endif%}
+            <table class="table table-condensed " id="new_fault_table_{{k.0.room}}">
+                <tr class="active"><th>状态</th>
+                    <th>all</th>
+                        <th>1d</th>
+                        <th>列表</th>
+                </tr>
+                {% for j in k %}
+                    <tr>
+                        {% if j.type == 'dfail' %}
+                            <td>deployfail</td>
+                        {% elif j.type == 'repa' %}
+                            <td>repair</td>
+                        {% elif j.type == 'unav' %}
+                            <td>unavail</td>
+                        {% else %}
+                            <td>{{ j.type }}</td>
+                        {% endif %} 
+                        <td>{{j.num}}</td>
+
+                        {% if j.num_delta > 0 %}
+                            <td><font color="red"><b>+{{j.num_delta}}</b></font></td>
+                        {% elif j.num_delta < 0 %}
+                            <td><font color="green"><b>{{j.num_delta}}</b></font></td>
+                        {% else %}
+                            <td>{{j.num_delta}}</td>
+                        {% endif %}
+
+                        <td style="padding-top:3px;padding-bottom:2px">
+                          <div class="btn-group" role="group" aria-label="..." style="align:center">
+                            <button type="button" class="btn btn-default btn-xs" aria-label="Left Align" id="{{j.room}}-{{j.type}}-bs" value="{{j.room}}-{{j.type}}-bs"  onmouseover="kk(this)">
+                              <a href="/index_open?type={{j.type}}&room={{j.room}}&modeln=bs_on_ns" target="_blank"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                            </button>
+                          </div>
+                       </td>                     
+                    </tr>
+                {%endfor%}
+
+                {%if k.0.room == "hangzhou"%}
+                <tr><td>总数</td>
+                    <td>{{new_fault_total.hangzhou.total}}</td>
+                    {% if new_fault_total.hangzhou.total_delta > 0 %}
+                        <td><font color="red"><b>+{{new_fault_total.hangzhou.total_delta}}</b></font></td>
+                    {% elif new_fault_total.hangzhou.total_delta < 0 %}
+                        <td><font color="green"><b>{{new_fault_total.hangzhou.total_delta}}</b></font></td>
+                    {% else %}
+                        <td>{{new_fault_total.hangzhou.total_delta}}</td>
+                    {% endif %}
+                            <td style="padding-top:3px;padding-bottom:2px">
+                              <div class="btn-group" role="group" aria-label="..." style="align:center">
+                                <button type="button" class="btn btn-default btn-xs" aria-label="Left Align" id="wget_hangzhou" value="bs">
+                                  <a href="/index_open?cluster=hangzhou&model=bs_on_ns" target="_blank"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                                </button>
+                              </div>
+                            </td>                   
+                 </tr>
+                {%elif k.0.room == "nanjing"%}
+                <tr><td>总数</td>
+                    <td>{{new_fault_total.nanjing.total}}</td>
+                    {% if new_fault_total.nanjing.total_delta > 0 %}
+                        <td><font color="red"><b>+{{new_fault_total.nanjing.total_delta}}</b></font></td>
+                    {% elif new_fault_total.nanjing.total_delta < 0 %}
+                        <td><font color="green"><b>{{new_fault_total.nanjing.total_delta}}</b></font></td>
+                    {% else %}
+                        <td>{{new_fault_total.nanjing.total_delta}}</td>
+                    {% endif %}
+                            <td style="padding-top:3px;padding-bottom:2px">
+                              <div class="btn-group" role="group" aria-label="..." style="align:center">
+                                <button type="button" class="btn btn-default btn-xs" aria-label="Left Align" id="wget_nanjing" value="bs">
+                                  <a href="/index_open?cluster=nanjing&model=bs_on_ns" target="_blank"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                                </button>
+                              </div>
+                            </td>                   
+                </tr>
+                {%elif k.0.room == "shanghai"%}
+                <tr><td>总数</td>
+                    <td>{{new_fault_total.shanghai.total}}</td>
+                    {% if new_fault_total.shanghai.total_delta > 0 %}
+                        <td><font color="red"><b>+{{new_fault_total.shanghai.total_delta}}</b></font></td>
+                    {% elif new_fault_total.shanghai.total_delta < 0 %}
+                        <td><font color="green"><b>{{new_fault_total.shanghai.total_delta}}</b></font></td>
+                    {% else %}
+                        <td>{{new_fault_total.shanghai.total_delta}}</td>
+                    {% endif %}
+                            <td style="padding-top:3px;padding-bottom:2px">
+                              <div class="btn-group" role="group" aria-label="..." style="align:center">
+                                <button type="button" class="btn btn-default btn-xs" aria-label="Left Align" id="wget_shanghai" value="bs">
+                                  <a href="/index_open?cluster=shanghai&model=bs_on_ns" target="_blank"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                                </button>
+                              </div>
+                            </td>                   
+                 </tr>
+                {%elif k.0.room == "tucheng"%}
+                <tr><td>总数</td>
+                    <td>{{new_fault_total.tucheng.total}}</td>
+                    {% if new_fault_total.tucheng.total_delta > 0 %}
+                        <td><font color="red"><b>+{{new_fault_total.tucheng.total_delta}}</b></font></td>
+                    {% elif new_fault_total.tucheng.total_delta < 0 %}
+                        <td><font color="green"><b>{{new_fault_total.tucheng.total_delta}}</b></font></td>
+                    {% else %}
+                        <td>{{new_fault_total.tucheng.total_delta}}</td>
+                    {% endif %}
+                            <td style="padding-top:3px;padding-bottom:2px">
+                              <div class="btn-group" role="group" aria-label="..." style="align:center">
+                                <button type="button" class="btn btn-default btn-xs" aria-label="Left Align" id="wget_tucheng" value="bs">
+                                  <a href="/index_open?cluster=tucheng&model=bs_on_ns" target="_blank"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                                </button>
+                              </div>
+                            </td>                   
+                 </tr>
+                {%elif k.0.room == "beijing"%}
+                <tr><td>总数</td>
+                    <td>{{new_fault_total.beijing.total}}</td>
+                    {% if new_fault_total.beijing.total_delta > 0 %}
+                        <td><font color="red"><b>+{{new_fault_total.beijing.total_delta}}</b></font></td>
+                    {% elif new_fault_total.beijing.total_delta < 0 %}
+                        <td><font color="green"><b>{{new_fault_total.beijing.total_delta}}</b></font></td>
+                    {% else %}
+                        <td>{{new_fault_total.beijing.total_delta}}</td>
+                    {% endif %}
+                            <td style="padding-top:3px;padding-bottom:2px">
+                              <div class="btn-group" role="group" aria-label="..." style="align:center">
+                                <button type="button" class="btn btn-default btn-xs" aria-label="Left Align" id="wget_beijing" value="bs">
+                                  <a href="/index_open?cluster=beijing&model=bs_on_ns" target="_blank"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                                </button>
+                              </div>
+                            </td>                   
+                 </tr>
+                {%endif%}
+           </table>
+        </div>
+    {%endfor%}
+    </div>
+
+    <div id="index_jstree">
+    <div class="row" style="padding-top:10px"> <!-- jstree button -->
+        <div class="col-xs-10 col-xs-offset-2">
+            <button type="button" class="btn btn-success btn-sm" disabled>故障实例分类</button>
+            <div class="btn-group" role="group" aria-label="...">
+                <button type="button" class="btn btn-primary btn-sm"  value="dfail" id="dfail">DEPLOYFAIL</button>
+                <button type="button" class="btn btn-primary btn-sm"  value="repa"id="repa">REPAIR</button>
+            </div>
+        </div>
+
+    </div>
+    <div class="row" style="padding-top:10px" id="jstree_title"> <!-- jstree title -->
+        <div class="col-xs-2 col-xs-offset-2">
+            <pre><b> 实例数 {{mi_count.hangzhou}}</b></pre>
+        </div>
+        <div class="col-xs-2">
+            <pre><b> 实例数 {{mi_count.nanjing}}</b></pre>
+        </div>
+        <div class="col-xs-2">
+            <pre><b> 实例数 {{mi_count.shanghai}}</b></pre>
+        </div>
+        <div class="col-xs-2">
+            <pre><b> 实例数 {{mi_count.tucheng}}</b></pre>
+        </div>
+        <div class="col-xs-2">
+            <pre><b> 实例数 {{mi_count.beijing}}</b></pre>
+        </div>
+    </div>
+
+    <div class="row" style="padding-bottom:10px"> <!-- jstree -->
+        <div class="col-xs-2 col-xs-offset-2"><div id="hangzhou" style="font-size:12px"></div></div>
+        <div class="col-xs-2"><div id="nanjing" style="font-size:12px"></div></div>
+        <div class="col-xs-2"><div id="shanghai" style="font-size:12px"></div></div>
+        <div class="col-xs-2"><div id="tucheng" style="font-size:12px"></div></div>
+        <div class="col-xs-2"><div id="beijing" style="font-size:12px"></div></div>
+    </div>
+    </div>
+
+    </div>
+  </div>
+<script>
+    function tree_lv1(x){
+        t = {};        
+        t[0] = '未知问题:当前还无法确定实例故障的真正原因';
+        t[2] = 'ssd数小于spec:spec里的';
+        t[3] = 'ssd磁盘/文件故障';
+        t[4] = 'ssh超时';
+        t[7] = '缺work目录:没有/home/work目录';
+        t[8] = '缺agent目录:没有/home/work/agent目录，一般是agent未部署';
+        t[20] = 'work pach缺失';
+        t[21] = 'urm软链缺失';
+        t[22] = '服务start失败';
+        if ( t[x] ) {
+            return t[x];
+        }
+        else {
+            return 0;
+        }
+    } 
+
+    {% for k in city%}    
+    $('#{{k}}').jstree({ //jstree scripts
+        'core' : {
+            'data' : {
+                "url" : "{% static ''%}/{{k}}_DEPLOYFAIL.json",
+                "dataType" : "json" // needed only if you do not supply JSON headers
+            }
+        }
+    });
+    
+    $('#{{k}}').on("select_node.jstree", function (e, data) { 
+        //x = data.node.id;
+        x = data.selected + "";
+        t = tree_lv1(x.substr(2));
+        if (t) {
+            $('#show_all').html(t);
+        }
+        else {
+            $('#show_all').html(x.substr(2));
+        }
+    });
+    {% endfor %}    
+    
+    {% for k in city %} 
+    $('#wget_{{k}}').mouseover( function(){
+        var val=$(this).val();
+        address=''
+        if(val=='bs_on_ns')
+            address= "wget tc-ps-beehive-test1.tc.baidu.com:/home/work/data_if/{{k}}/ns/total.list";  
+        else
+            address= "wget tc-ps-beehive-test1.tc.baidu.com:/home/work/data_if/{{k}}/total_"+val+".list";  
+        $('#show_all').html(address); 
+    } );
+    {% endfor %}
+
+    {% for k in city %}
+    $('#search_{{k}}').click(function(){
+        var search_txt=$.trim($('#search_txt').val());
+        window.open("/show_instance?search="+search_txt+"&cluster={{k}}");
+    });
+    {% endfor %}
+
+    function get_cluster(){
+        return ['hangzhou','nanjing','shanghai','tucheng','beijing']; 
+    }
+
+    function search_in(ret){
+        var cc = get_cluster();  
+        for (var x in cc){
+            $("#search_"+cc[x]).removeClass().addClass("btn btn-default btn-xs"); 
+            $("#search_"+cc[x]).attr('disabled',true); 
+        }
+        if (ret == "none") {
+            $('#show_all').html("查询不到结果");
+        }
+        else {
+            if ( typeof(ret) == "string" ){
+                $("#search_"+ret).attr("disabled",false);
+                $("#search_"+ret).removeClass().addClass("btn btn-danger btn-xs");
+            }   
+            else{
+                for (var i in ret){
+                    $("#search_"+ret[i]).attr("disabled",false);
+                    $("#search_"+ret[i]).removeClass().addClass("btn btn-danger btn-xs");
+                }
+            }
+            $('#show_all').html('');
+        }
+    }
+
+    function search_fun()
+    {
+        var search_txt=$.trim($('#search_txt').val());
+        if(search_txt != "" || search_txt != " "){
+            var flag = search_txt.indexOf('_');
+            if (flag != -1){
+                $.getJSON("/ajax_instance/",{'search_txt':search_txt}, search_in);
+            }
+            else {
+                $.get("/ajax_machine/",{'search_txt':search_txt},search_in);
+            }
+        }
+        else{
+            var cc = get_cluster();   
+            for (var x in cc){
+                $("#search_"+cc[x]).removeClass().addClass("btn btn-default btn-xs"); 
+            }
+        }
+    }
+
+    $('#search_txt').bind({
+        input: search_fun,
+        keyup: search_fun
+    });
+    
+    $('#kpi_machine').addClass('active');
+    {% for k in kpi_list %}
+    $('#kpi_{{k.0}}').click(function(){
+        $(this).addClass('active');
+        var xx = ['machine','instance']
+        key = xx.indexOf('{{k.0}}');
+        delete xx[key];
+        for (var y in xx){
+            $('#kpi_'+xx[y]).removeClass().addClass('btn btn-primary btn-sm');
+        }
+        $.getJSON("/ajax_kpi/",{'kpi':'{{k.0}}'},function(ret){
+            var all_cluster = get_cluster();   
+            for (var x in all_cluster){
+                $('#kpi_'+all_cluster[x]+' tr:eq(1) td:nth-child(1) ').html(ret[all_cluster[x]][0]+"%");
+                $('#kpi_'+all_cluster[x]+' tr:eq(1) td:nth-child(2) ').html(ret[all_cluster[x]][2]+"%");
+                $('#kpi_'+all_cluster[x]+' tr:eq(1) td:nth-child(3) ').html(ret[all_cluster[x]][1]+"%");
+            }
+        });
+    });
+    {% endfor %}
+
+   function highcharts(ret,c,x,title){
+        return   {
+                        legend:{layout:'horizontal', floating: true, align: 'center', verticalAlign: 'bottom',y:18,itemDistance:4},
+                        chart:{spacing:[1,1,20,1]},
+                        title: {
+                            text: title,
+                            style:{
+                                fontSize:'10px' },
+                            },
+                        xAxis: {
+                            categories: ret[c[x]][1],
+                            tickInterval: 2,
+                            labels:{ rotation:80 }
+                        },
+                        yAxis: {
+
+                            labels: {align:'left', x:0, y:-2,
+                                format: '{value}'+ret[c[x]][4] },
+                            title:{text:''},
+                            max:ret['mmax'],
+                            min:ret['mmin']
+                        },
+                        tooltip: { valueSuffix: ret[c[x]][4] },
+                        exporting: { enabled:false },
+                        credits:{ enabled:false },
+                        series: [{
+                            name: '0~24h',
+                            data: ret[c[x]][2]
+                        }, {
+                            name: '24~48h',
+                            data: ret[c[x]][3],
+                            visible:false
+                        },  ]
+                    }
+    }
+
+    {%for x in list_str.machine%} 
+        $(function () {
+            $('#{{x.0}}').highcharts({
+                legend:{layout:'horizontal', floating: true, align: 'center', verticalAlign: 'bottom',y:18,itemDistance:4},
+                chart:{spacing:[1,1,20,1]},
+                title: {
+                    text: 'Machine',
+                    style:{
+                        fontSize:'10px' },
+                    },
+                xAxis: {
+                    categories: [ {% for y in x.1%}
+                               '{{y}}',
+                               {%endfor%}
+                               ],
+                    tickInterval: 2,
+                    labels:{ rotation:80 }
+                },
+                yAxis: {
+                    labels: {align:'left', x:0, y:-2,
+                        format: '{value}%' },
+                    title:{text:''},
+                },
+                tooltip: { valueSuffix: '%' },
+                exporting: { enabled:false },
+                credits:{ enabled:false },
+                series: [{
+                    name: '0~24h',
+                    data: [
+                         {%for v in x.2%}
+                         {{v}},
+                         {%endfor%}
+                          ]
+                }, {
+                    name: '24~48h',
+                    data: [
+                          {%for v in x.3%}
+                         {{v}},
+                         {%endfor%}       ],
+                    visible:false
+                },  ]
+            });
+        });
+    {%endfor%}
+
+    {%for x in list_str.instance%}
+        $(function () {
+            $('#{{x.0}}').highcharts({
+                legend:{layout:'horizontal', floating: true, align: 'center', verticalAlign: 'bottom',y:18,itemDistance:4},
+                chart:{spacing:[1,1,20,1]},
+                title: {text: 'Instance',
+                    style:{
+                        fontSize:'10px' },
+                    },
+                xAxis: {
+                    categories: [ 
+                               {%for y in x.1%}
+                               '{{y}}',
+                               {%endfor%}  
+                               ],
+                    tickInterval: 2,
+                    labels:{ rotation:80 }
+                },
+                yAxis: {
+                    labels: {align:'left', x:0, y:-2,
+                        format: '{value}%' },
+
+                    title:{text:''},
+                },
+                tooltip: { valueSuffix: '%'
+
+                                            },
+                exporting: { enabled:false },
+                credits:{ enabled:false },
+                series: [{
+                    name: '0~24h',
+                    data: [  
+                         {%for v in x.2%}
+                         {{v}},
+                         {%endfor%}    ]
+                }, {
+                    name: '24~48h',
+                    data: [ 
+                         {%for v in x.3%}
+                         {{v}},
+                         {%endfor%}   ],
+                    visible:false
+                },  ]
+            });
+        });
+    {% endfor %}
+
+
+    macr='all'
+    macw='rate'
+    macs='off'
+    
+    $('#index_machine_all').addClass('active');
+    {%for k in chart_machine_list%}
+    $('#index_machine_{{k.0}}').click(function(){
+        var count = ['1','2','3','4','5'];
+        for (var c in count) {
+            $('#mchange'+count[c]).html("<div style='height:200px;width:1000px;line-height:105px;overflow:hidden;text-align:center ; display: table-cell; vertical-align:middle;'><img src='{% static "loading_new.gif"%}'/></div>");
+        }
+        $(this).addClass('active');
+        var xx = ['all','online','hard','soft','no_err','no_err_use'];
+        key = xx.indexOf('{{k.0}}');
+        delete xx[key];
+        for (var y in xx){
+            $('#index_machine_'+xx[y]).removeClass().addClass('btn btn-primary btn-sm');    
+        }
+
+        macr=$(this).val();
+        $.getJSON("/ajax_index_machine/",{'machine':macr,'where0':macw,'switch':macs},function(ret){
+            $('#mchange1').html("<div id='machine1' style='height: 200px; margin: 0 auto'></div>");
+            $('#mchange2').html("<div id='machine2' style='height: 200px; margin: 0 auto'></div>");
+            $('#mchange3').html("<div id='machine3' style='height: 200px; margin: 0 auto'></div>");
+            $('#mchange4').html("<div id='machine4' style='height: 200px; margin: 0 auto'></div>");
+            $('#mchange5').html("<div id='machine5' style='height: 200px; margin: 0 auto'></div>");
+            var c = get_cluster();
+            for (var x in c){
+                $(function () {
+                    $('#'+ret[c[x]][0]).highcharts( highcharts(ret,c,x,'Machine'));
+                });
+            }
+        });
+    });
+    {%endfor%}
+
+
+    $('#machine_rate').addClass('active');
+    
+    {% for k in machine_where_list %}
+    $('#machine_{{k}}').click(function(){
+        macw=$(this).val();
+        $(this).addClass('active');
+        var xx = ['rate','num'];
+        key = xx.indexOf('{{k}}');
+        delete xx[key];
+        for (var y in xx){
+            $('#machine_'+xx[y]).removeClass().addClass('btn btn-warning btn-sm');    
+        }
+        $.getJSON("/ajax_index_machine/",{'machine':macr,'where0':macw,'switch':macs},function(ret){
+            var c = get_cluster();
+            for (var x in c){
+                $(function () {
+                    $('#'+ret[c[x]][0]).highcharts( highcharts(ret,c,x,'Machine'));
+                });
+            }
+        });
+    });
+    {% endfor %}
+
+
+    $('#machine_off').addClass('active');
+    {% for k in machine_switch_list %}
+    $('#machine_{{k}}').click(function(){
+         macs=$(this).val();
+         $(this).addClass('active');
+         var xx = ['on','off'];
+         key = xx.indexOf('{{k}}');
+         delete xx[key];
+         for (var y in xx){
+            $('#machine_'+xx[y]).removeClass().addClass('btn btn-warning btn-sm');    
+         }
+         $.getJSON("/ajax_index_machine/",{'machine':macr,'where0':macw,'switch':macs},function(ret){
+            var c = get_cluster();
+            for (var x in c){
+                $(function () {
+                    $('#'+ret[c[x]][0]).highcharts( highcharts(ret,c,x,'Machine'));
+                });
+            }
+         });
+    });
+    {% endfor %}
+
+
+    insm='bs_on_ns'
+    insw='rate'
+    inss='off'
+    $('#index_instance_bs_on_ns').addClass('active');
+    {%for k in chart_items_list%}
+    $('#index_instance_{{k}}').click(function(){
+        var count = ['1','2','3','4','5'];
+        for (var c in count) {
+            $('#ichange'+count[c]).html("<div style='height:200px;width:1000px;line-height:105px;overflow:hidden;text-align:center ; display: table-cell; vertical-align:middle;'><img src='{% static "loading_new.gif"%}'/></div>");
+        }
+        $(this).addClass('active');
+        var xx = ['bs','bc','attr','basa','dictserver','disp','bs_on_ns'];
+        key = xx.indexOf('{{k}}');
+        delete xx[key];
+        for (var y in xx){
+            $('#index_instance_'+xx[y]).removeClass().addClass('btn btn-primary btn-sm');    
+        }
+        insm=$(this).val();
+        $.getJSON("/ajax_index_instance/",{'chart':insm,'where':insw,'switch1':inss},function(ret){
+            $('#ichange1').html("<div id='instance1' style='height: 200px; margin: 0 auto'></div>");
+            $('#ichange2').html("<div id='instance2' style='height: 200px; margin: 0 auto'></div>");
+            $('#ichange3').html("<div id='instance3' style='height: 200px; margin: 0 auto'></div>");
+            $('#ichange4').html("<div id='instance4' style='height: 200px; margin: 0 auto'></div>");
+            $('#ichange5').html("<div id='instance5' style='height: 200px; margin: 0 auto'></div>");
+            var c = get_cluster();
+            for (var x in c){
+                $(function () {
+                    $('#'+ret[c[x]][0]).highcharts( highcharts(ret,c,x,'Instance'));
+                });
+            }
+        });
+    });
+    {%endfor%}
+
+    $('#instance_rate').addClass('active');
+    {% for k in instance_where_list %}
+    $('#instance_{{k}}').click(function(){
+         insw=$(this).val();
+         $(this).addClass('active');
+         var xx = ['rate','num'];
+         key = xx.indexOf('{{k}}');
+         delete xx[key];
+         for (var y in xx){
+            $('#instance_'+xx[y]).removeClass().addClass('btn btn-warning btn-sm');    
+         }
+         $.getJSON("/ajax_index_instance/",{'chart':insm,'where':insw,'switch1':inss},function(ret){
+            var c = get_cluster();
+            for (var x in c){
+                $(function () {
+                    $('#'+ret[c[x]][0]).highcharts( highcharts(ret,c,x,'Instance'));
+                });
+            }
+         });
+    });
+    {% endfor %}
+
+    $('#instance_off').addClass('active');
+    {% for k in instance_switch_list %}
+    $('#instance_{{k}}').click(function(){
+         inss=$(this).val();
+         $(this).addClass('active');
+         var xx = ['on','off'];
+         key = xx.indexOf('{{k}}');
+         delete xx[key];
+         for (var y in xx){
+            $('#instance_'+xx[y]).removeClass().addClass('btn btn-warning btn-sm');    
+         }
+         $.getJSON("/ajax_index_instance/",{'chart':insm,'where':insw,'switch1':inss},function(ret){
+              var c= get_cluster();
+              for (var x in c){
+                  $(function () {
+                      $('#'+ret[c[x]][0]).highcharts( highcharts(ret,c,x,'Instance'));
+                  });
+              }
+         });
+
+    });
+    {% endfor %}
+        
+    new_fault='bs_on_ns'
+    new_fault_time=24
+
+    function kk(t){
+        var val=t.value;
+        var arr=new Array();
+        arr = val.split('-');
+        var room = arr[0]
+        var address=''
+        if (arr[2]=='bs_on_ns')
+            address= "wget tc-ps-beehive-test1.tc.baidu.com:/home/work/data_if/"+room+"/ns/"+arr[1]+".list";  
+        else
+            address= "wget tc-ps-beehive-test1.tc.baidu.com:/home/work/data_if/"+room+"/"+arr[1]+"_"+arr[2]+".list"; 
+        $('#show_all').html(address); 
+    } 
+
+    function new_fault_fun(ret){
+      var cluster=get_cluster();
+      var type=['dfail','freeze','new','null','repa','stop','unav','unknown'];
+      for(var c in cluster){
+          for(var t in type){
+              if (ret['new_fault_list'][c][t]['type'] == 'dfail') {
+                  $('#new_fault_table_'+cluster[c]+' tr:eq('+String(parseInt(t)+1)+') td:eq(0)').html('deployfail'); 
+              }  
+              else if (ret['new_fault_list'][c][t]['type'] == 'repa') {
+                  $('#new_fault_table_'+cluster[c]+' tr:eq('+String(parseInt(t)+1)+') td:eq(0)').html('repair'); 
+              }  
+              else if (ret['new_fault_list'][c][t]['type'] == 'unav') {
+                  $('#new_fault_table_'+cluster[c]+' tr:eq('+String(parseInt(t)+1)+') td:eq(0)').html('unavail'); 
+              }  
+              else {
+                  $('#new_fault_table_'+cluster[c]+' tr:eq('+String(parseInt(t)+1)+') td:eq(0)').html(ret['new_fault_list'][c][t]['type']); 
+              }
+              $('#new_fault_table_'+cluster[c]+' tr:eq('+String(parseInt(t)+1)+') td:eq(1)').html(ret['new_fault_list'][c][t]['num']);
+              if( parseInt(ret['new_fault_list'][c][t]['num_delta']) > 0){ 
+                  $('#new_fault_table_'+cluster[c]+' tr:eq('+String(parseInt(t)+1)+') td:eq(2)').html("+"+ret['new_fault_list'][c][t]['num_delta']).css({'color':'red','font-weight':'bolder'});
+              } 
+              else if( parseInt(ret['new_fault_list'][c][t]['num_delta']) < 0){ 
+                  $('#new_fault_table_'+cluster[c]+' tr:eq('+String(parseInt(t)+1)+') td:eq(2)').html(ret['new_fault_list'][c][t]['num_delta']).css({'color':'green','font-weight':'bolder'});
+              } 
+              else { 
+                  $('#new_fault_table_'+cluster[c]+' tr:eq('+String(parseInt(t)+1)+') td:eq(2)').html('0');
+              }
+              $('#new_fault_table_'+cluster[c]+' tr:eq('+String(parseInt(t)+1)+') td:eq(3) a').attr('href','/index_open?type='+type[t]+'&room='+cluster[c]+'&modeln='+new_fault); 
+              $('#new_fault_table_'+cluster[c]+' tr:eq('+String(parseInt(t)+1)+') td:eq(3) button:last').val(cluster[c]+'-'+type[t]+'-'+new_fault); 
+          }
+      $('#new_fault_table_'+cluster[c]+' tr:eq(9) td:eq(0)').html('总数'); 
+      $('#new_fault_table_'+cluster[c]+' tr:eq(9) td:eq(1)').html(ret['new_fault_total'][cluster[c]]['total']); 
+      if(ret['new_fault_total'][cluster[c]]['total_delta'] > 0){ 
+          $('#new_fault_table_'+cluster[c]+' tr:eq(9) td:eq(2)').html("+"+ret['new_fault_total'][cluster[c]]['total_delta']).css({'color':'red','font-weight':'bolder'});
+      } 
+      else if(ret['new_fault_total'][cluster[c]]['total_delta'] < 0){ 
+          $('#new_fault_table_'+cluster[c]+' tr:eq(9) td:eq(2)').html(ret['new_fault_total'][cluster[c]]['total_delta']).css({'color':'green','font-weight':'bolder'});
+      } 
+      else{ 
+          $('#new_fault_table_'+cluster[c]+' tr:eq(9) td:eq(2)').html('0');
+      } 
+      $('#new_fault_table_'+cluster[c]+' tr:eq(9) td:eq(3) a').attr('href','/index_open?cluster='+cluster[c]+'&model='+new_fault); 
+      $('#new_fault_table_'+cluster[c]+' tr:eq(9) td:eq(3) button:last').val(new_fault); 
+      }  
+    }
+
+
+    $('#new_fault_bs_on_ns').addClass('active');
+
+    {% for k in new_fault_items_list %}
+    $('#new_fault_{{k}}').click(function(){
+        {% if k == "bs" %}
+            $('#index_jstree').show();
+        {% else %}
+            $('#index_jstree').hide();
+        {% endif %}
+        $(this).addClass('active');
+        var xx = ['bs','bc','attr','basa','dictserver','disp','bs_on_ns'];
+        key = xx.indexOf('{{k}}');
+        delete xx[key];
+        for (var y in xx){
+            $('#new_fault_'+xx[y]).removeClass().addClass('btn btn-primary btn-sm');    
+        }
+        new_fault=$(this).val();
+        $.getJSON("/ajax_new_fault/",{'new_fault':new_fault,'new_fault_time':new_fault_time},new_fault_fun);
+     }); 
+    {% endfor %}
+
+     $('#new_fault_24').addClass('active');
+
+     {% for k in new_fault_time %}
+     $('#new_fault_{{k.0}}').click(function(){
+         $(this).addClass('active');
+         new_fault_time=$(this).val();
+         var xx = [1,24];
+         key = xx.indexOf({{k.0}});
+         delete xx[key];
+         for (var y in xx){
+                $('#new_fault_'+xx[y]).removeClass().addClass('btn btn-warning btn-sm');
+         }
+         var c = get_cluster();
+         for (var x in c){
+            $('#new_fault_table_'+c[x]+' tr:eq(0) th:eq(2)').html('{{k.1}}');   
+         } 
+         $.getJSON("/ajax_new_fault/",{'new_fault':new_fault,'new_fault_time':new_fault_time},new_fault_fun);
+     }); 
+     {% endfor %}
+    function dr(ret,t){
+        $('#jstree_title b:eq(0)').html(' 实例数 '+ret['mi_count']['hangzhou']);
+        $('#jstree_title b:eq(1)').html(' 实例数 '+ret['mi_count']['nanjing']);
+        $('#jstree_title b:eq(2)').html(' 实例数 '+ret['mi_count']['shanghai']);
+        $('#jstree_title b:eq(3)').html(' 实例数 '+ret['mi_count']['tucheng']);
+        $('#jstree_title b:eq(4)').html(' 实例数 '+ret['mi_count']['beijing']);
+        {% for k in city %}
+        $('#{{k}}').data('jstree',false).empty().jstree({ //jstree scripts
+                'core' : {
+                    'data' : {
+                        "url" : "{% static ''%}{{k}}_"+t+".json",
+                        "dataType" : "json" 
+                    }
+                }
+        });
+        {% endfor %}
+    }
+    $('#dfail').addClass('active');
+    $('#dfail').click(function(){
+        $(this).addClass('active');
+        $('#repa').removeClass().addClass("btn btn-primary btn-sm");
+        $.getJSON("/ajax_new_fault/",{'new_fault':new_fault,'new_fault_time':new_fault_time,'fault_type':'dfail'},function(ret){
+            dr(ret,'DEPLOYFAIL');
+        });
+    });
+
+    $('#repa').click(function(){
+        $(this).addClass('active');
+        $('#dfail').removeClass().addClass("btn btn-primary btn-sm");
+        $.getJSON("/ajax_new_fault/",{'new_fault':new_fault,'new_fault_time':new_fault_time,'fault_type':'repa'},function(ret){
+            dr(ret,'REPAIR');
+        });
+    });
+
+    function show_txt(v){
+        var t = [];
+        t['machine'] = '机器 总使用率 平均'
+        t['instance'] = 'core 实例存活率 95分位';
+        t['all'] = '总使用率'
+        t['online'] = '标记online率'
+        t['hard'] = '硬故障率'
+        t['soft'] = '软故障率'
+        t['no_err'] = '无故障率'
+        t['no_err_use'] = '无故障使用率'
+        t['bs'] = 'bs'
+        t['bc'] = 'bc'
+        t['attr'] = 'attr'
+        t['basa'] = 'basa'
+        t['dictserver'] = 'dictserver'
+        t['disp'] = 'disp'
+        t['bs_on_ns'] = 'bs_on_ns'
+        return t[v];
+    } 
+    {% for k in kpi_list %}
+    $('#kpi_{{k.0}}').mouseover(function(){
+        $('#show_all').html(show_txt('{{k.0}}'));
+    });
+    {% endfor %}
+        
+    {% for k in chart_machine_list %}
+    $('#index_machine_{{k.0}}').mouseover(function(){
+        $('#show_all').html(show_txt('{{k.0}}'));
+    });
+    {% endfor %}
+
+    {% for k in chart_items_list %}
+    $('#index_instance_{{k}}').mouseover(function(){
+        $('#show_all').html(show_txt('{{k}}'));
+    });
+    {% endfor %}
+
+    {% for k in new_fault_items_list %}
+    $('#new_fault_{{k}}').mouseover(function(){
+        $('#show_all').html(show_txt('{{k}}'));
+    });
+    {% endfor %}
+
+    {% for k in core_info %}
+    $('#core_{{k.0}} tr:eq(0) td:eq(0)').mouseover(function(){
+    $('#show_all').html('{{k.1.main}}');
+    });
+    $('#core_{{k.0}} tr:eq(1) td:eq(0)').mouseover(function(){
+    $('#show_all').html('{{k.1.backup}}');
+    });
+    $('#core_{{k.0}} tr:eq(2) td:eq(0)').mouseover(function(){
+    $('#show_all').html('{{k.1.version}}');
+    });
+    $('#core_{{k.0}} tr:eq(3) td:eq(0)').mouseover(function(){
+    $('#show_all').html('{{k.1.zk}}');
+    });
+    {% endfor %}    
+
+    //get window width begin
+    var winWidth = 0;
+    var winHeight = 0;
+    function findDimensions() //函数：获取尺寸
+    {
+        //获取窗口宽度
+        if (window.innerWidth)
+            winWidth = window.innerWidth;
+        else if ((document.body) && (document.body.clientWidth))
+            winWidth = document.body.clientWidth;
+        //获取窗口高度
+        if (window.innerHeight)
+            winHeight = window.innerHeight;
+        else if ((document.body) && (document.body.clientHeight))
+            winHeight = document.body.clientHeight;
+        //通过深入Document内部对body进行检测，获取窗口大小
+        if (document.documentElement && document.documentElement.clientHeight && document.documentElement.clientWidth)
+        {
+            winHeight = document.documentElement.clientHeight;
+            winWidth = document.documentElement.clientWidth;
+        }
+        //结果输出至两个文本框
+        $('#show_width_high').html("h:"+winHeight + " w:" + winWidth)
+    }
+    findDimensions();
+    //调用函数，获取数值
+    window.onresize=findDimensions;
+    // 690*1265
+    //get window width end
+    {% for k,v in zk_map.iteritems %}
+        $('#zk_{{k}}').mouseover(function(){
+            $('#show_all').html('{{v}}');
+        });
+    {% endfor %}
+    
+    {% for k in core_info %}
+        $('#main_{{k.0}}').mouseover(function(){
+            $('#show_all').html('{{k.1.main}}');
+        });
+        $('#backup_{{k.0}}').mouseover(function(){
+            $('#show_all').html('{{k.1.backup}}');
+        });
+    {% endfor %}
+
+</script>
+</body>
+</html>
+

@@ -1,0 +1,30 @@
+table.gridtable {
+    font-family: verdana,arial,sans-serif;
+    font-size:5px;
+    color:#333333;
+    border-width: 1px;
+    border-color: #666666;
+    border-collapse: collapse;
+    table-layout:fixed;
+}
+table.gridtable th {
+    border-width: 1px;
+    padding: 2px;
+    border-style: solid;
+    border-color: #666666;
+    background-color: #dedede;
+}
+table.gridtable td {
+    border-width: 1px;
+    padding: 2px;
+    border-style: solid;
+    border-color: #666666;
+    background-color: #ffffff;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.right_al{
+    text-align:right;
+}

@@ -1,0 +1,1574 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static "js/bootstrap-3.3.4-dist/css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "wanggang.css" %}">
+    <link rel="stylesheet" href="{% static "jstree/dist/themes/default/style.min.css" %}">
+    <link href="{% static "dashboard.css"%} " rel="stylesheet">
+    <link href="{% static "datetimepicker/css/bootstrap-datetimepicker.min.css"%}" rel="stylesheet" media="screen">
+    <title>Dashboard for Beehive</title>
+    <script src="{% static "js/jquery-1.11.2.min.js" %}"></script>
+    <script src="{% static "js/bootstrap-3.3.4-dist/js/bootstrap.min.js" %}"></script>
+    <script src="{% static "jstree/dist/jstree.min.js" %}"></script>
+    <script src="{% static "datetimepicker/js/bootstrap-datetimepicker.js" %}" charset="UTF-8" ></script>
+    <script src="{% static "datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js" %}" charset="UTF-8"></script>
+    <script src="{% static "highcharts/js/highcharts.js" %}"></script>
+    <script src="{% static "highcharts/js/modules/exporting.js" %}"></script> 
+    <style type="text/css">
+        body{
+            margin:0px;
+            padding:0px;
+            text-align:center;
+        }
+       #mycontainer{
+            position:relative;
+            margin:0 auto;
+            padding:0px;
+         /* width:1265px; */
+            overflow:hidden;
+            text-align:left;
+        }
+        .container {
+            width:1265px;
+        }
+    </style> 
+</head>
+<body style="overflow:scroll">
+  <div id="mycontainer">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+          <div class="row" style="padding-top:10px">
+            <ul class="nav nav-tabs nav-justified">
+                  <li role="presentation"><a href="/">首页</a></li>
+                  {% if room == 'hangzhou' %} 
+                  <li role="presentation" class="active"><a href="/detail/hangzhou">杭州机房</a></li>
+                  {% else %}    
+                  <li role="presentation"><a href="/detail/hangzhou">杭州机房</a></li>
+                  {% endif %}
+
+                  {% if room == 'nanjing' %} 
+                  <li role="presentation" class="active"><a href="/detail/nanjing">南京机房</a></li>
+                  {% else %}    
+                  <li role="presentation"><a href="/detail/nanjing">南京机房</a></li>
+                  {% endif %}
+
+                  {% if room == 'shanghai' %} 
+                  <li role="presentation" class="active"><a href="/detail/shanghai">上海机房</a></li>
+                  {% else %}    
+                  <li role="presentation"><a href="/detail/shanghai">上海机房</a></li>
+                  {% endif %}
+
+                  {% if room == 'tucheng' %} 
+                  <li role="presentation" class="active"><a href="/detail/tucheng">土城机房</a></li>
+                  {% else %}    
+                  <li role="presentation"><a href="/detail/tucheng">土城机房</a></li>
+                  {% endif %}
+
+                  {% if room == 'beijing' %} 
+                  <li role="presentation" class="active"><a href="/detail/beijing">北京机房</a></li>
+                  {% else %}    
+                  <li role="presentation"><a href="/detail/beijing">北京机房</a></li>
+                  {% endif %}
+            </ul>
+          </div>
+        </div>
+    </nav>
+
+    <div class="container">
+      <div class="row"> <!-- left bar -->
+        <div class="col-xs-2 " id="side_bar">
+            <div class="sidebar" style="margin-left:-25px">
+                <button class="btn btn-success btn-sm" style="width:100%" disabled>检索</button>
+                <input type="text" class="form-control" id="search_txt" placeholder="实例ID/IP/机器名" style="height:28px;margin-top:5px">
+                <div class="btn-group" role="group" aria-label="..." style="width:100%;margin-top:5px">
+                <button class="btn btn-default btn-xs" id="search_hangzhou" type="button" style="width:20%" disabled>杭州</button>
+                <button class="btn btn-default btn-xs" id="search_nanjing" type="button" style="width:20%" disabled>南京</button>
+                <button class="btn btn-default btn-xs" id="search_shanghai" type="button" style="width:20%" disabled>上海</button>
+                <button class="btn btn-default btn-xs" id="search_tucheng" type="button" style="width:20%" disabled>土城</button>
+                <button class="btn btn-default btn-xs" id="search_beijing" type="button" style="width:20%" disabled>北京</button>
+                </div>
+
+                <div style="margin-top:20px;">
+                <button class="btn btn-success btn-sm" style="width:100%" disabled>提示</button>
+                <textarea class="form-control" rows="5" id="show_all" style="resize:none;margin-top:5px;font-size:12px" readonly></textarea>
+                </div>
+           <!--     <textarea class="form-control" rows="1" placeholder="" id="show_width_high" style="resize:none;margin-top:20px;font-size:12px" readonly></textarea>  -->
+          <ul class="nav nav-sidebar" style="margin-top:15px">
+            <li><a href="http://wiki.baidu.com/pages/viewpage.action?pageId=80550829" target="_blank">数据说明</a></li>
+            <li><a href="http://wiki.baidu.com/pages/viewpage.action?pageId=80550848" target="_blank">Todo List</a></li>
+            <li><a href="http://tc-ps-beehive-test1.tc.baidu.com:8088/phpMyAdmin" target="_blank">PHPMyAdmin</a></li>
+          </ul>
+          </div>    
+        </div>
+      </div>
+
+    <div class="row" style="padding-top:65px">
+        <div class="col-xs-10 col-xs-offset-2">
+
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <button type="button" class="btn btn-success active btn-sm" data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">实例一致性 pd/app_id/ (package/data_source)</button>
+      </h4>
+    </div>
+<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+    <div class="panel-body">
+      <div class="well">
+      {% if room == 'hangzhou' %} 
+      <div id="package_hz">{{ consistency_header.hangzhou.0|safe }}</div> 
+      {% elif room == 'nanjing' %}    
+      <div id="package_nj">{{ consistency_header.nanjing.0|safe }}</div> 
+      {% elif room == 'shanghai' %}    
+      <div id="package_sh">{{ consistency_header.shanghai.0|safe }}</div> 
+      {% elif room == 'tucheng' %}    
+      <div id="package_tc">{{ consistency_header.tucheng.0|safe }}</div> 
+      {% else %}    
+      <div id="package_bj">{{ consistency_header.beijing.0|safe }}</div> 
+      {% endif %}
+      </div>
+<form class="form-inline">
+    <div class="btn-group" role="group" aria-label="..." >
+      <button type="button" class="btn btn-default btn-sm" value="" onclick="open_tree('#package_date_source')">全部展开</button>
+      <button type="button" class="btn btn-default btn-sm" value="" onclick="close_tree('#package_date_source')">全部收起</button>
+    </div>
+    <div class="form-group" style="margin-left:10px">
+        <button type="button" class="btn btn-success active btn-sm" value="" disabled>日视图</button>
+        <input size="12" type="text" value="{{cd_package}}" readonly class="form_date3 form-control input-sm" id="cd_package">
+    </div>
+</form>
+
+<div id = "package_date_source" style="padding-top:10px"></div> 
+</div>
+</div>
+</div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h4 class="panel-title">
+        <button type="button" class="btn btn-success active btn-sm" data-toggle="collapse" data-parent="#accordion" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">实例一致性 pd/app_id/ (dynamic_data/items/ltr_ranksvm_model_chn/data_source)</button>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+
+      <div class="well" >
+      {% if room == 'hangzhou' %} 
+      <div id="ltr_hz">{{ consistency_header.hangzhou.1|safe }}</div> 
+      {% elif room == 'nanjing' %}    
+      <div id="ltr_nj">{{ consistency_header.nanjing.1|safe }}</div> 
+      {% elif room == 'shanghai' %}    
+      <div id="ltr_sh">{{ consistency_header.shanghai.1|safe }}</div> 
+      {% elif room == 'tucheng' %}    
+      <div id="ltr_tc">{{ consistency_header.tucheng.1|safe }}</div> 
+      {% else %}    
+      <div id="ltr_bj">{{ consistency_header.beijing.1|safe }}</div> 
+      {% endif %}
+      </div>
+      <form class="form-inline">
+          <div class="btn-group" role="group" aria-label="...">
+              <button type="button" class="btn btn-default btn-sm" value="" onclick="open_tree('#ltr_ranksvm_model_chn')">全部展开</button>
+              <button type="button" class="btn btn-default btn-sm" value="" onclick="close_tree('#ltr_ranksvm_model_chn')">全部收起</button>
+          </div>
+          <div class="form-group" style="margin-left:10px">
+              <button type="button" class="btn btn-success active btn-sm" value="" disabled>日视图</button>
+              <input size="12" type="text" value="{{cd_ltr}}" readonly class="form_date4 form-control input-sm" id="cd_ltr">
+          </div>
+      </form> 
+
+      <div id = "ltr_ranksvm_model_chn" style="padding-top:10px"></div> 
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingThree">
+      <h4 class="panel-title">
+        <button type="button" class="btn btn-success active btn-sm" data-toggle="collapse" data-parent="#accordion" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">实例一致性 pd/app_id/ (package/static_data/items/base_bs/data_source)</button>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+      <div class="panel-body">
+      <div class="well">
+      {% if room == 'hangzhou' %}  
+      <div id="base_hz">{{ consistency_header.hangzhou.2|safe }}</div> 
+      {% elif room == 'nanjing' %}    
+      <div id="base_nj">{{ consistency_header.nanjing.2|safe }}</div> 
+      {% elif room == 'shanghai' %}    
+      <div id="base_sh">{{ consistency_header.shanghai.2|safe }}</div> 
+      {% elif room == 'tucheng' %}    
+      <div id="base_tc">{{ consistency_header.tucheng.2|safe }}</div> 
+      {% else %}    
+      <div id="base_bj">{{ consistency_header.beijing.2|safe }}</div> 
+      {% endif %}
+      </div>
+      <form class="form-inline">
+          <div class="btn-group" role="group" aria-label="...">
+              <button type="button" class="btn btn-default btn-sm" value="" onclick="open_tree('#base_bs')">全部展开</button>
+              <button type="button" class="btn btn-default btn-sm" value="" onclick="close_tree('#base_bs')">全部收起</button>
+          </div>
+          <div class="form-group" style="margin-left:10px">
+              <button type="button" class="btn btn-success active btn-sm" value="" disabled>日视图</button>
+              <input size="12" type="text" value="{{cd_base}}" readonly class="form_date5 form-control input-sm" id="cd_base">
+          </div>
+      </form>
+
+      <div id = "base_bs" style="padding-top:10px"></div> 
+    </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingFour">
+      <h4 class="panel-title">
+        <button type="button" class="btn btn-success active btn-sm" data-toggle="collapse" data-parent="#accordion" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">未被使用机器</button>
+      </h4>
+    </div>
+    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+      <div class="panel-body">
+        <form class="form-inline">
+        <div class="form-group">
+        <button type="button" class="btn btn-success active btn-sm" value="" disabled>日视图</button>
+        <input size="12" type="text" value="{{um_date}}" readonly class="form_date6 form-control input-sm" id="um_date">
+        </div>
+        </form> </br>
+      <div class="well">
+      {% if room == "hangzhou" %}
+      <div id="um_hz">{{ unused_machine.hz | safe }}</div>
+      {% elif room == "nanjing" %}
+      <div id="um_nj">{{ unused_machine.nj | safe }}</div>
+      {% elif room == "shanghai" %}
+      <div id="um_sh">{{ unused_machine.sh | safe }}</div>
+      {% elif room == "tucheng" %}
+      <div id="um_tc">{{ unused_machine.tc | safe }}</div>
+      {% else %}
+      <div id="um_bj">{{ unused_machine.bj | safe }}</div>
+      {% endif %}
+      </div>
+     </div>
+    </div>
+   </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingFive">
+      <h4 class="panel-title">
+        <button type="button" class="btn btn-success active btn-sm"  data-toggle="collapse" data-parent="#accordion" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">机器状态</button>
+            <div class="btn-group" role="group" aria-label="...">
+                {%for k in chart_machine_list%}
+                  <button type="button" class="btn btn-primary btn-sm" value="{{k.0}}" id="detail_machine_{{k.0}}">{{k.1}}</button>
+                {%endfor%}
+            </div>
+            <div class="btn-group" role="group" aria-label="...">
+                {% for k in which_items_list %}
+                <button type="button" class="btn btn-warning btn-sm" value="{{k.0}}" id="detail_machine_{{k.0}}">{{k.1}}</button>
+                {% endfor %}
+            </div>
+      </h4>
+    </div>
+    <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+      <div class="panel-body">
+            <div class="btn-group" role="group" aria-label="...">
+            <button type="button" class="btn btn-success active btn-sm" value="" disabled>Label</button>
+            {% for x in machine_label %}
+              <button type="button" class="btn btn-primary btn-sm" value="{{x}}" id="detail_machine_{{x}}">{{x}}</button>
+            {% endfor %}
+            </div>
+       
+            <form class="form-inline" style="margin-top:5px">
+                 <div class="btn-group" role="group" aria-label="...">
+                    <button type="button" class="btn btn-success active btn-sm" value="" disabled>月视图</button>
+                    {%for d in monthlist%}
+                        <button type="button" class="btn btn-primary btn-sm" value="{{d.0}}" id="detail_machine_{{d.0}}">{{d.1.0}}</button>
+                    {%endfor%}
+     
+                    </div>
+                <div class="btn-group" role="group" aria-label="...">
+                    <button type="button" class="btn btn-success active btn-sm" value="" disabled>周视图</button>
+                     {%for d in weeklist%}
+                        <button type="button" class="btn btn-primary btn-sm " value="{{d.0}}" id="detail_machine_{{d.0}}">{{d.1.0}}</button>
+                    {%endfor%}
+               
+                </div>
+                <div class="btn-group" role="group" aria-label="...">
+                    <button type="button" class="btn btn-success active btn-sm" value="" disabled>日视图</button>
+                    {%for d in daylist%}
+                        <button type="button" class="btn btn-primary btn-sm " value="{{d.0}}" id="detail_machine_{{d.0}}">{{d.1.0}}</button>
+                    {%endfor%}
+                </div>
+
+                <div class="btn-group" role="group" aria-label="...">
+                    <button type="button" class="btn btn-success active btn-sm" value="" disabled>自选视图</button>
+                </div>
+                <div class="form-group">
+                    <input size="7" type="text" value="" readonly class="form_date form-control input-sm" id="start" placeholder='开始时间'>
+                    <input size="7" type="text" value="" readonly class="form_date form-control input-sm" id="end" placeholder='结束时间'>
+                 </div>
+            </form>
+   
+              <div id="qst_machine" style="height: 200px; margin: 0 auto;width:960px;padding-top:10px"></div>
+      </div>
+    </div>
+   </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingSix">
+      <h4 class="panel-title">
+        <button type="button" class="btn btn-success btn-sm active"  data-toggle="collapse" data-parent="#accordion" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">故障实例</button>
+            <div class="btn-group" role="group" aria-label="...">
+                {%for k in chart_instance_list%}
+                  <button type="button" class="btn btn-primary btn-sm" value="{{k}}" id="detail_instance_{{k}}">{{k}}</button>
+                {%endfor%}
+            </div>
+            <div class="btn-group" role="group" aria-label="...">
+                {%for k in which1_items_list %}
+                   <button type="button" class="btn btn-warning btn-sm" value="{{k.0}}" id="detail_instance_{{k.0}}">{{k.1}}</button>
+                {%endfor%}
+            </div>
+      </h4>
+    </div>
+    <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+      <div class="panel-body">
+
+        <form class="form-inline">
+                <div class="btn-group" role="group" aria-label="...">
+                    <button type="button" class="btn btn-success active btn-sm" value="" disabled>月视图</button>
+                    {%for d in monthlist%}
+                        <button type="button" class="btn btn-primary btn-sm " value="{{d.0}}" id="detail_instance_{{d.0}}">{{d.1.0}}</button>
+                    {%endfor%}
+                </div>
+                <div class="btn-group" role="group" aria-label="...">
+                    <button type="button" class="btn btn-success active btn-sm" value="" disabled>周视图</button>
+                     {%for d in weeklist%}
+                        <button type="button" class="btn btn-primary btn-sm " value="{{d.0}}" id="detail_instance_{{d.0}}">{{d.1.0}}</button>
+                    {%endfor%}
+                </div>
+                <div class="btn-group" role="group" aria-label="...">
+
+                    <button type="button" class="btn btn-success active btn-sm" value="" disabled>日视图</button>
+                    {%for d in daylist%}
+                        <button type="button" class="btn btn-primary btn-sm " value="{{d.0}}" id="detail_instance_{{d.0}}">{{d.1.0}}</button>
+                    {%endfor%}
+                </div>
+                <div class="btn-group" role="group" aria-label="...">
+                    <button type="button" class="btn btn-success active btn-sm" value="" disabled>自选视图</button>
+                </div>
+                <div class="form-group">
+                    <input size="7" type="text" value="" readonly class="form_date1 form-control input-sm" id="start1" placeholder='开始时间'>
+                    <input size="7" type="text" value="" readonly class="form_date1 form-control input-sm" id="end1" placeholder='结束时间'>
+                </div>
+        </form>
+            <div id="qst_instance" style="height: 200px; margin: 0 auto;width:960px;padding-top:10px"></div>
+      </div>
+    </div>
+   </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingSeven">
+      <h4 class="panel-title">
+        <button class="btn btn-success active btn-sm" type="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">agent</button>
+            <div class="btn-group" role="group" aria-label="...">
+                {%for k in chart_agent_list%}
+                    <button type="button" class="btn btn-primary btn-sm"  value="{{k}}" id="detail_agent_{{k}}">{{k}}</button>
+                {%endfor%}
+            </div>
+            <div class="btn-group" role="group" aria-label="...">
+
+                {%for k in which2_items_list%}
+                    <button type="button" class="btn btn-warning btn-sm" value="{{k.0}}" id="detail_agent_{{k.0}}">{{k.1}}</button>
+                {%endfor%}
+            </div>
+      </h4>
+    </div>
+    <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
+      <div class="panel-body">
+
+        <form class="form-inline" >
+                <div class="btn-group" role="group" aria-label="..." >
+                    <button type="button" class="btn btn-success active btn-sm" value="" disabled>月视图</button>
+                    {%for d in monthlist%}
+                        <button type="button" class="btn btn-primary btn-sm " value="{{d.0}}" id="detail_agent_{{d.0}}">{{d.1.0}}</button>
+                    {%endfor%}
+     
+                    </div>
+                <div class="btn-group" role="group" aria-label="..." >
+                    <button type="button" class="btn btn-success active btn-sm" value="" disabled>周视图</button>
+                     {%for d in weeklist%}
+                        <button type="button" class="btn btn-primary btn-sm " value="{{d.0}}" id="detail_agent_{{d.0}}">{{d.1.0}}</button>
+                    {%endfor%}
+               
+                </div>
+                <div class="btn-group" role="group" aria-label="..." >
+                    <button type="button" class="btn btn-success active btn-sm" value="" disabled>日视图</button>
+                    {%for d in daylist%}
+                        <button type="button" class="btn btn-primary btn-sm" value="{{d.0}}" id="detail_agent_{{d.0}}">{{d.1.0}}</button>
+                    {%endfor%}
+                </div>
+
+                <div class="btn-group" role="group" aria-label="..." >
+                    <button type="button" class="btn btn-success active btn-sm" value="" disabled>自选视图</button>
+                </div>
+                <div class="form-group">
+                    <input size="7" type="text" value="" readonly class="form_date2 form-control input-sm" id="start2" placeholder='开始时间'>
+                    <input size="7" type="text" value="" readonly class="form_date2 form-control input-sm" id="end2" placeholder='结束时间'>
+                </div>
+        </form>
+                <div id="qst_agent" style="height: 200px;margin:0 auto;width:960px;padding-top:10px;"></div>
+      </div>
+    </div>
+   </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingEight">
+      <h4 class="panel-title">
+        <button class="btn btn-success active btn-sm" type="button"  data-toggle="collapse" data-parent="#accordion" data-target="#collapseEight" aria-expanded="true" aria-controls="collapseEight">KPI</button>
+      </h4>
+    </div>
+    <div id="collapseEight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEight">
+      <div class="panel-body">
+            <div id="kpi" style="height: 200px; margin: 0 auto;min-width:960px;"></div>
+      </div>
+    </div>
+   </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingNine">
+      <h4 class="panel-title">
+        <button class="btn btn-success active btn-sm" type="button"  data-toggle="collapse" data-parent="#accordion" data-target="#collapseNine" aria-expanded="true" aria-controls="collapseNine">故障机器数据</button>
+      </h4>
+    </div>
+    <div id="collapseNine" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingNine">
+      <div class="panel-body">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-xs-6">
+                    <table class="table table-condensed table-bordered"> 
+                    <tr><th>更新时间</th><th><font color="red">fix_mac</font></th><th><font color="red">handling</font><th>not_found</th><th >dump文件</th><th>树形分类</th>
+                    </tr>
+                    {%for x in yj_table%}
+                        <tr >
+                        <td >{{x.stat}}</td>
+                        <td >{{x.fix_mac}}</td>
+                        <td >{{x.handling}}</td>
+                        <td >{{x.not_found}}</td>
+                        <td style="padding-top:3px;padding-bottom:2px">
+                        <div class="btn-group" role="group" aria-label="..." >
+                        <button type="button" class="btn btn-default btn-xs" aria-label="Left Align" id="{{x.stat_time}}">
+                            <a href="/open?stat_time={{x.stat_time}}&cluster={{x.cluster}}" target="_blank"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                        </button>
+                        <button type="button" class="btn btn-default btn-xs" aria-label="Left Align">
+                            <a href="/download?stat_time={{x.stat_time}}&cluster={{x.cluster}}"><span class="glyphicon glyphicon-download-alt"></span></a>
+                        </button>
+                        </div>
+                        </td>
+                        <td style="padding-top:3px;padding-bottom:2px" align="center">
+                        <button type="button" class="btn btn-default btn-xs" onclick="change(this)" value="{{x.stat_time}}">加载</button>
+                        </td> 
+                        </tr>
+                    {%endfor%}
+                    </table> 
+                </div>
+
+                <div class="col-xs-6">
+                    {% if room == 'hangzhou' %}
+                    <div id="hangzhou" style="font-size:12px"></div>
+                    {% elif room == 'nanjing' %}
+                    <div id="nanjing" style="font-size:12px"></div>
+                    {% elif room == 'shanghai' %}
+                    <div id="shanghai" style="font-size:12px"></div>
+                    {% elif room == 'tucheng' %}
+                    <div id="tucheng" style="font-size:12px"></div>
+                    {% else %}
+                    <div id="beijing" style="font-size:12px"></div>
+                    {% endif %}
+                </div>
+              </div>
+            </div>
+      </div>
+    </div>
+   </div>
+</div>
+        </div>
+        </div>
+  </div>
+<script>
+    var flag = '{{room}}'; 
+    $(function () {
+        $('#qst_machine').highcharts({
+            chart: {
+                zoomType: 'x',
+                spacing:[1,1,1,1]
+            },
+            exporting:{enabled:false},
+            credits:{enabled:false},
+            title: {
+                text: 'Machine'
+            },
+            subtitle: {
+                text: '' 
+            },
+            tooltip: { valueSuffix: '%' },
+            xAxis: {
+                type: 'datetime',
+                minRange:  24 * 3600000
+            },
+            yAxis: {
+                title: { text:'' },
+                labels:{
+                  format:'{value} %'}
+             },
+            legend: {
+                enabled:false
+             },
+            plotOptions: {
+                area: {
+                    fillColor: {
+                        linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1},
+                        stops: [
+                            [0, Highcharts.getOptions().colors[0]],
+                            [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                        ]
+                    },
+                    marker: {
+                        radius: 2
+                    },
+                    lineWidth: 1,
+                    states: {
+                        hover: {
+                            lineWidth: 1
+                        }
+                    },
+                    threshold: null
+                }
+            },
+    
+            series: [ 
+               {
+                type: 'area',
+                name: 'all',
+                pointInterval:  3600 * 1000,
+                pointStart: Date.UTC{{tuple_day_mac}},
+                data: [
+                {%for xx  in qsm%}
+                {{xx}},
+                {%endfor%}             
+                ] 
+               },
+                  ]
+        });
+    });
+  
+    $(function () {
+        $('#qst_instance').highcharts({
+            chart: {
+                zoomType: 'x',
+                spacing:[1,1,1,1]
+            },
+            exporting:{enabled:false},
+            credits:{enabled:false},
+            title: {
+                text: 'Instance'
+            },
+            subtitle: {
+                text: ''
+            },
+           tooltip: { valueSuffix: '%' },
+            xAxis: {
+                type: 'datetime',
+                minRange:  24 * 3600000 
+            },
+            yAxis: {
+                title: {
+                    text: ''
+                },
+                labels:{
+                  format:'{value} %'}
+            },
+            legend: {
+                     enabled:false
+            },
+            plotOptions: {
+                area: {
+                    fillColor: {
+                        linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1},
+                        stops: [
+                            [0, Highcharts.getOptions().colors[0]],
+                            [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                        ]
+                    },
+                    marker: {
+                        radius: 2
+                    },
+                    lineWidth: 1,
+                    states: {
+                        hover: {
+                            lineWidth: 1
+                        }
+                    },
+                    threshold: null
+                }
+            },
+    
+            series: [ 
+               {
+                type: 'area',
+                name: 'bs',
+                pointInterval: 3600 * 1000,
+                pointStart: Date.UTC{{tuple_day_ins}},
+                data: [
+                {%for xx  in qsi%}
+                {{xx}},
+                {%endfor%}             
+                ] 
+               },
+                        
+                  ]
+        });
+    });
+
+    $(function () {
+        $('#qst_agent').highcharts({
+            chart: {
+                zoomType: 'x',
+                spacing:[1,1,1,1]
+            },
+            exporting:{enabled:false},
+            credits:{enabled:false},
+            title: {
+                text: 'Agent'
+            },
+            subtitle: {
+                text: ''
+            },
+           tooltip: { valueSuffix: '%' },
+            xAxis: {
+                type: 'datetime',
+                minRange:  24 * 3600000 
+            },
+            yAxis: {
+                title: {
+                    text: ''
+                },
+                labels:{
+                  format:'{value} %'}
+            },
+            legend: {
+                     enabled:false
+            },
+            plotOptions: {
+                area: {
+                    fillColor: {
+                        linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1},
+                        stops: [
+                            [0, Highcharts.getOptions().colors[0]],
+                            [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                        ]
+                    },
+                    marker: {
+                        radius: 2
+                    },
+                    lineWidth: 1,
+                    states: {
+                        hover: {
+                            lineWidth: 1
+                        }
+                    },
+                    threshold: null
+                }
+            },
+    
+            series: [ 
+               {
+                type: 'area',
+                name: 'all',
+                pointInterval: 3600 * 1000,
+                pointStart: Date.UTC{{tuple_day_agent}},
+                data: [
+                {%for xx  in qsa%}
+                {{xx}},
+                {%endfor%}             
+                ] 
+               },
+                        
+                  ]
+        });
+    });
+
+    var tod=new Date();
+    var today=new Date(String(tod.getFullYear())+'/'+String(tod.getMonth()+1)+'/'+String(tod.getDate()));
+    function form_date_init(){
+    return  {   weekStart: 1,
+                autoclose: 1,
+                todayHighlight: 1,
+                minView: 2,
+                forceParse: 0,
+                language: 'zh-CN',
+                format:'yyyy-mm-dd',
+                endDate:today
+            }
+    }
+
+    $('.form_date').datetimepicker(form_date_init());
+    function time_submit(){
+        var start=$('#start').val();
+        var end=$('#end').val();
+        start_new=new Date(start.replace(/\-/g,"/"));
+        end_new=new Date(end.replace(/\-/g,"/"));
+        if(start_new >= end_new)
+            alert("开始时间必须早于结束时间"); 
+        else{
+            if (start!=""&&end!=""){
+                mact="any_"+start+"_"+end
+                $.getJSON("/ajax_detail_machine/"+flag,{'machine':macr,'which':macw,'label':macl,'time':mact},function(ret){
+                    $(function () {
+                        $('#qst_machine').highcharts( qst_machine(ret,macr, ret['tuple_day_mac']));
+                    });
+                });
+        } 
+    } }
+    $('.form_date').datetimepicker().on('changeDate',time_submit);
+
+    $('.form_date1').datetimepicker(form_date_init());
+    function time1_submit(){
+        var start=$('#start1').val();
+        var end=$('#end1').val();
+        start_new=new Date(start.replace(/\-/g,"/"));
+        end_new=new Date(end.replace(/\-/g,"/"));
+        if(start_new >= end_new)
+            alert("开始时间必须早于结束时间"); 
+        else{
+            if (start!=""&&end!=""){
+             inst="any_"+start+"_"+end
+             $.getJSON("/ajax_detail_instance/"+flag,{'instance':insm,'which1':insw,'time1':inst},function(ret){
+                    $(function () {
+                        $('#qst_instance').highcharts( qst_instance(ret,insm, ret['tuple_day_ins']));
+                    });
+                 });
+            }
+        } 
+    }
+    $('.form_date1').datetimepicker().on('changeDate',time1_submit);
+       
+    $('.form_date2').datetimepicker(form_date_init());
+    function time2_submit(){
+        var start=$('#start2').val();
+        var end=$('#end2').val();
+        start_new=new Date(start.replace(/\./g,"/"));
+        end_new=new Date(end.replace(/\./g,"/"));
+        if(start_new >= end_new)
+            alert("开始时间必须早于结束时间!"); 
+        else{
+            if (start!=""&&end!=""){
+             agnt="any_"+start+"_"+end
+             $.getJSON("/ajax_detail_agent/"+flag,{'agent':agnr,'which2':agnw,'time2':agnt},function(ret){
+                    $(function () {
+                        $('#qst_agent').highcharts( qst_agent(ret,agnr, ret['tuple_day_agent']));
+                    });
+                 });
+            }
+        } 
+    }
+    $('.form_date2').datetimepicker().on('changeDate',time2_submit);
+ 
+    function plb(t,ret){
+        $('#'+t+'_hz').html(ret['hangzhou'][0]);
+        $('#'+t+'_nj').html(ret['nanjing'][0]);
+        $('#'+t+'_sh').html(ret['shanghai'][0]);
+        $('#'+t+'_tc').html(ret['tucheng'][0]);
+        $('#'+t+'_bj').html(ret['beijing'][0]);
+    }
+    $('.form_date3').datetimepicker(form_date_init());
+    function time3_submit(){
+        var cd_package=$('#cd_package').val();
+        $.getJSON("/ajax_detail_package/",{'cd_package':cd_package},function(ret){
+            plb('package',ret);
+        });
+    }
+    $('.form_date3').datetimepicker().on('changeDate',time3_submit);
+
+    $('.form_date4').datetimepicker(form_date_init());
+    function time4_submit(){
+        var cd_ltr=$('#cd_ltr').val();
+        $.getJSON("/ajax_detail_ltr/",{'cd_ltr':cd_ltr},function(ret){
+            plb('ltr',ret);
+        });
+
+    }
+    $('.form_date4').datetimepicker().on('changeDate',time4_submit);
+
+    $('.form_date5').datetimepicker(form_date_init());
+    
+    function time5_submit(){
+        var cd_base=$('#cd_base').val();
+        $.getJSON("/ajax_detail_base/",{'cd_base':cd_base},function(ret){
+            plb('base',ret);
+        });
+    }
+    
+    $('.form_date5').datetimepicker().on('changeDate',time5_submit);
+
+    $('.form_date6').datetimepicker(form_date_init());
+    function time6_submit(){
+        var um_date=$('#um_date').val();
+        $.getJSON('/ajax_detail_um/', {'um_date': um_date}, function(ret){
+            $('#um_hz').html(ret['hz']);
+            $('#um_nj').html(ret['nj']);
+            $('#um_sh').html(ret['sh']);
+            $('#um_tc').html(ret['tc']);
+            $('#um_bj').html(ret['bj']);
+        });
+    }
+    $('.form_date6').datetimepicker().on('changeDate',time6_submit);
+
+    function get_text(x){
+        t = {}
+        t["fix_mac"] = "level-1故障，直接影响服务的机器，包括死机，目录权限问题，机器掉盘等，需要设offline"
+            t["fix_mac_drop/home"] = "home掉盘"
+            t["fix_mac_drop/disk"] = "disk掉盘"
+            t["fix_mac_drop/ssd"] = "ssd掉盘"
+            t["fix_mac_ssd_noatime"] = "ssd noatime参数，影响ssd性能"
+            t["fix_mac_MemErr"] = "内存故障"
+            t["fix_mac_ssd_permission"] = "ssd不是work权限"
+            t["fix_mac_ssd_rotational"] = "ssd没有设置rotational，影响性能"
+            t["fix_mac_ssh:cant"] = "ssh连不上"
+            t["fix_mac_DISKIO/disk"] = "某个disk挂载点无法访问/文件系统故障"
+            t["fix_mac_DISKIO/ssd"] = "某个ssd挂载点无法访问/文件系统故障"
+            t["fix_mac_DISKIO/home"] = "home挂载点无法访问/文件系统故障"
+            t["fix_mac_Input/Output"] = "特定位置磁盘故障/文件系统故障"
+            t["fix_mac_in_cetus_err:1"] = "故障池故障"
+            t["fix_mac_in_cetus_err:2"] = "故障池故障"
+            t["fix_mac_ip_local_port_range"] = "bc可能会占用bs端口，需要执行初始化，修改内核参数"
+            t["fix_mac_'NoneType'"] = "???"
+            t["fix_mac_flashv2"] = "???"
+        t["handling"] = "正在维修，已经设offline"
+            t["handling_rms_handling"] = "???"
+        t['handling_onser'] = "带服务维修"
+            t["handling_onser_rms_handling"] = "???"
+        t['lv2cetus'] = "level-2故障，暂不需要维修"
+            t['lv2cetus_ser_ok_mac_err:1'] = "服务正常，硬件有隐患"
+            t['lv2cetus_ser_ok_mac_err:2'] = "服务正常，硬件有隐患"
+        t['some_ser_err'] = "机器上服务出错"
+        t['not_found'] = "在袁嘉列表但不在Beehive RM里的机器"
+
+        if (t[x])
+            return t[x]
+        else
+            return x
+    }
+
+
+    {% for k in city %}
+    $('#{{k}}').jstree({
+        'core':{
+              'data' : {
+                       "url":"{% static "" %}lv2_soft/latest/{{k}}.lv2.json " ,
+                       "dataType" : "json"
+                       }
+                }
+                   });
+    $('#{{k}}').on("hover_node.jstree", function (e, data) {
+        x = data.node.id;
+        $('#show_all').html(get_text(x));
+    });
+    {% endfor %} 
+
+    function change(t) {
+        $('#{{ room }}').data('jstree',false).empty().jstree({
+            'core' : {
+                'data' : {
+                    "url" : "{% static "" %}lv2_soft/"+t.value+"/{{room}}.lv2.json",
+                    "dataType" : "json" // needed only if you do not supply JSON headers
+                }
+            }
+        });
+    }
+
+    {% for x in yj_table %}    
+    $('#{{x.stat_time}}').mouseover( function(){
+    var address="wget tc-ps-beehive-test1.tc.baidu.com:/home/work/data/{{x.stat_time}}/{{x.cluster}}.machine_health.dump";
+    $('#show_all').html(address);
+    }
+    );
+    {% endfor %}
+
+    {% for k in consistency %}
+    $('#{{k.0}}').jstree({
+        'core':{
+              'data' : {
+                       "url":"{% static ''%}consistent/{{k.1}}/{{room}}_{{k.0}}_body_jstree" ,
+                       "dataType" : "json"
+                       }
+                }
+    });
+    $('#{{k.0}}').on("hover_node.jstree", function (e, data) {
+        str = data.node.id;
+        x = str.split(" ");
+        $('#show_all').html("实例 :\n"+x[0]+"\n"+"ip :\n"+x[1]);
+    });
+    {% endfor %}
+
+    function open_tree(idstr){
+        $(idstr).jstree(true).open_all()
+    }
+    function close_tree(idstr){
+        $(idstr).jstree(true).close_all()
+    }
+
+    $(function () {
+    $('#kpi').highcharts({
+            title: {
+                text: 'KPI',
+                x: -20 //center
+            },
+            chart:{spacing:[1,1,50,1]},
+            xAxis: {
+                categories: [
+                            {% for x in km%}
+                            '{{ x.stat_time}}日',
+                            {% endfor %}
+                            ]
+            },
+            yAxis: {
+                labels: {format: '{value} %' },
+                title: {
+                    text: ''
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }],
+                max:100
+            },
+            exporting: { enabled:false },
+            credits:{ enabled:false },
+            tooltip: {
+                valueSuffix: '%'
+            },
+            legend: {
+                layout: 'horizontal',
+                align: 'center',
+                verticalAlign: 'bottom',
+                floating:true,
+                y:20,
+                itemDistance:12
+            },
+            series: [{
+                name:'machine',
+                data: [
+                       {% for x in km%}
+                        {{ x.latest_24}},
+                       {% endfor %}
+                        ]
+            },
+            {
+                name:'instance',
+                data: [
+                       {% for x in ki%}
+                        {{ x.per_24}},
+                       {% endfor %}
+                      ]
+            }
+           ]
+        });
+    });
+
+    function cluster(){
+        return ['hangzhou','nanjing','shanghai','tucheng','beijing'];
+    }
+    function search_in(ret){
+        var cc = cluster();   
+        for (var x in cc){
+            $("#search_"+cc[x]).removeClass().addClass("btn btn-default btn-xs"); 
+            $("#search_"+cc[x]).attr('disabled',true); 
+        }
+        if (ret == "none") {
+            $('#show_all').html("查询不到结果");
+        }
+        else {
+            if ( typeof(ret) == "string" ){
+                $("#search_"+ret).attr("disabled",false);
+                $("#search_"+ret).removeClass().addClass("btn btn-danger btn-xs");
+            }   
+            else{
+                for (var i in ret){
+                    $("#search_"+ret[i]).attr("disabled",false);
+                    $("#search_"+ret[i]).removeClass().addClass("btn btn-danger btn-xs");
+                }
+            }
+            $('#show_all').html('');
+        }
+    }
+
+    function search_fun()
+    {
+        var search_txt=$.trim($('#search_txt').val());
+        if(search_txt != "" || search_txt != " "){
+            var flag = search_txt.indexOf('_');
+            if (flag != -1){
+            $.getJSON("/ajax_instance/",{'search_txt':search_txt}, search_in);
+            }
+            else {
+            $.get("/ajax_machine/",{'search_txt':search_txt},search_in);
+            }
+        }
+        else{
+            var cc = cluster();   
+            for (var x in cc){
+               $("#search_"+cc[x]).removeClass().addClass("btn btn-default btn-xs"); 
+            }
+        }
+    }
+
+    $('#search_txt').bind({
+        input: search_fun,
+        keyup: search_fun
+    });
+
+    {% for k in city %}
+    $('#search_{{k}}').click(function(){
+    var search_txt=$.trim($('#search_txt').val());
+    window.open("/show_instance?search="+search_txt+"&cluster={{k}}");
+    });    
+    {% endfor %}
+    
+
+    function qst_machine(ret,legend,time) {
+          return   {
+            chart: {
+                zoomType: 'x',
+                spacing:[1,1,1,1]
+            },
+            exporting:{enabled:false},
+            credits:{enabled:false},
+            title: {
+                text: 'Machine'
+            },
+            subtitle: {
+                text: '' 
+            },
+            tooltip: { valueSuffix: ret['sym'] },
+            xAxis: {
+                type: 'datetime',
+                minRange:  24 * 3600000
+            },
+            yAxis: {
+                title: { text:'' },
+                labels:{
+                  format:"{value}"+ret['sym']}
+             },
+            legend: {
+                enabled:false
+             },
+            plotOptions: {
+                area: {
+                    fillColor: {
+                        linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1},
+                        stops: [
+                            [0, Highcharts.getOptions().colors[0]],
+                            [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                        ]
+                    },
+                    marker: {
+                        radius: 2
+                    },
+                    lineWidth: 1,
+                    states: {
+                        hover: {
+                            lineWidth: 1
+                        }
+                    },
+                    threshold: null
+                }
+            },
+    
+            series: [ 
+               {
+                type: 'area',
+                name: legend,
+                pointInterval:  3600 * 1000,
+                pointStart: Date.UTC (time[0],time[1],time[2],time[3]),
+                data: ret['qsm'] 
+               },
+                        
+                  ]
+        }
+    }
+
+    var date=new Date();
+    var strtime="day_"+String(date.getFullYear())+"-"+String(date.getMonth()+1)+"-"+String(date.getDate());
+
+    macr='all'
+    macw='rate'
+    macl='*all*'
+    mact=strtime
+    $('#detail_machine_'+strtime).addClass('active');
+    $('#detail_machine_all').addClass('active');
+    {%for k in chart_machine_list%}
+
+        $('#detail_machine_{{k.0}}').click(function(){
+            macr=$(this).val();
+            $(this).addClass('active');
+            var xx = ['all','online','hard','soft','no_err','no_err_use'];
+            key = xx.indexOf('{{k.0}}');
+            delete xx[key];
+            for (var y in xx){
+                $('#detail_machine_'+xx[y]).removeClass().addClass('btn btn-primary btn-sm');
+            }
+            $.getJSON("/ajax_detail_machine/"+flag,{'machine':macr,'which':macw,'label':macl,'time':mact},function(ret){
+                 $(function () {
+                     $('#qst_machine').highcharts( qst_machine(ret,macr, ret['tuple_day_mac']));
+                 });
+            });
+        });
+    {%endfor%}
+
+    $('#detail_machine_rate').addClass('active');
+    {% for k in which_items_list %}
+        $('#detail_machine_{{k.0}}').click(function(){
+            macw=$(this).val();
+            $(this).addClass('active');
+            var xx = ['rate','num'];
+            key = xx.indexOf('{{k.0}}');
+            delete xx[key];
+            for (var y in xx){
+                $('#detail_machine_'+xx[y]).removeClass().addClass('btn btn-warning btn-sm');
+            }
+            $.getJSON("/ajax_detail_machine/"+flag,{'machine':macr,'which':macw,'label':macl,'time':mact},function(ret){
+                 $(function () {
+                     $('#qst_machine').highcharts( qst_machine(ret,macr, ret['tuple_day_mac']));
+                 });
+            });
+        });
+    {% endfor %}
+
+    $('#detail_machine_\\*all\\*').addClass('active');
+    {% for k in machine_label %}
+    {% if k == '*all*' %}
+    $('#detail_machine_\\*all\\*').click(function(){
+    {% else %}
+    $('#detail_machine_'+'{{k}}'.replace(/\,/g,'\\,')).click(function(){
+    {% endif %}
+        macl=$(this).val();
+        $(this).addClass('active');
+        var xx = {{ machine_label | safe }}
+        key = xx.indexOf('{{k}}');
+        delete xx[key];
+        for (var y in xx){
+            if (xx[y]=='*all*')
+                $('#detail_machine_\\*all\\*').removeClass().addClass('btn btn-primary btn-sm');
+            else
+                $('#detail_machine_'+xx[y].replace(/\,/g,'\\,')).removeClass().addClass('btn btn-primary btn-sm');
+        }
+        $.getJSON("/ajax_detail_machine/"+flag,{'machine':macr,'which':macw,'label':macl,'time':mact},function(ret){
+             $(function () {
+                 $('#qst_machine').highcharts( qst_machine(ret,macr, ret['tuple_day_mac']));
+             });
+        });
+     });
+
+    {% endfor %}
+
+    function qst_instance(ret,legend,time) {
+          return   {
+            chart: {
+                zoomType: 'x',
+                spacing:[1,1,1,1]
+            },
+            exporting:{enabled:false},
+            credits:{enabled:false},
+            title: {
+                text: 'Instance'
+            },
+            subtitle: {
+                text: '' 
+            },
+            tooltip: { valueSuffix: ret['sym'] },
+            xAxis: {
+                type: 'datetime',
+                minRange:  24 * 3600000
+            },
+            yAxis: {
+                title: { text:'' },
+                labels:{
+                  format:"{value}"+ret['sym']}
+             },
+            legend: {
+                enabled:false
+             },
+            plotOptions: {
+                area: {
+                    fillColor: {
+                        linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1},
+                        stops: [
+                            [0, Highcharts.getOptions().colors[0]],
+                            [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                        ]
+                    },
+                    marker: {
+                        radius: 2
+                    },
+                    lineWidth: 1,
+                    states: {
+                        hover: {
+                            lineWidth: 1
+                        }
+                    },
+                    threshold: null
+                }
+            },
+    
+            series: [ 
+               {
+                type: 'area',
+                name: legend,
+                pointInterval:  3600 * 1000,
+                pointStart: Date.UTC (time[0],time[1],time[2],time[3]),
+                data: ret['qsi'] 
+               },
+                        
+                  ]
+        }
+    }
+
+    insm='bs'
+    insw='rate'
+    inst=strtime
+    $('#detail_instance_'+strtime).addClass('active');
+
+    $('#detail_instance_bs').addClass('active');
+    {%for k in chart_instance_list%}
+
+        $('#detail_instance_{{k}}').click(function(){
+        insm=$(this).val();
+        $(this).addClass('active');
+        var xx = ['bs','bc','attr','basa','dictserver','disp','bs_on_ns']
+        key = xx.indexOf('{{k}}');
+        delete xx[key];
+        for (var y in xx){
+            $('#detail_instance_'+xx[y]).removeClass().addClass('btn btn-primary btn-sm');
+        }
+         $.getJSON("/ajax_detail_instance/"+flag,{'instance':insm,'which1':insw, 'time1':inst},function(ret){
+                    $(function () {
+                        $('#qst_instance').highcharts( qst_instance(ret,insm, ret['tuple_day_ins']));
+                });
+            });
+        });
+    {%endfor%}
+
+    $('#detail_instance_rate').addClass('active');
+    {% for k in which1_items_list %}
+    $('#detail_instance_{{k.0}}').click(function(){
+    insw=$(this).val();
+    $(this).addClass('active');
+    var xx = ['rate','num']
+    key = xx.indexOf('{{k.0}}');
+    delete xx[key];
+    for (var y in xx){
+        $('#detail_instance_'+xx[y]).removeClass().addClass('btn btn-warning btn-sm');
+    }
+     $.getJSON("/ajax_detail_instance/"+flag,{'instance':insm,'which1':insw,'time1':inst},function(ret){
+                $(function () {
+                    $('#qst_instance').highcharts( qst_instance(ret,insm, ret['tuple_day_ins']));
+            });
+        });
+    });
+    {% endfor %}
+
+    function qst_agent(ret,legend,time) {
+          return   {
+            chart: {
+                zoomType: 'x',
+                spacing:[1,1,1,1]
+            },
+            exporting:{enabled:false},
+            credits:{enabled:false},
+            title: {
+                text: 'Agent'
+            },
+           tooltip: { valueSuffix: ret['sym'] },
+            subtitle: {
+                text: '' 
+            },
+            xAxis: {
+                type: 'datetime',
+                minRange:  24 * 3600000
+            },
+            yAxis: {
+                title: { text:'' },
+                labels:{
+                  format:"{value}"+ret['sym']}
+             },
+            legend: {
+                enabled:false
+             },
+            plotOptions: {
+                area: {
+                    fillColor: {
+                        linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1},
+                        stops: [
+                            [0, Highcharts.getOptions().colors[0]],
+                            [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                        ]
+                    },
+                    marker: {
+                        radius: 2
+                    },
+                    lineWidth: 1,
+                    states: {
+                        hover: {
+                            lineWidth: 1
+                        }
+                    },
+                    threshold: null
+                }
+            },
+    
+            series: [ 
+               {
+                type: 'area',
+                name: legend,
+                pointInterval:  3600 * 1000,
+                pointStart: Date.UTC (time[0],time[1],time[2],time[3]),
+                data: ret['qsa'] 
+               },
+                        
+                  ]
+        }
+    }
+
+    agnr='all'
+    agnw='rate'
+    agnt=strtime
+    $('#detail_agent_'+strtime).addClass('active');
+    
+    $('#detail_agent_all').addClass('active');
+    {%for k in chart_agent_list%}
+        $('#detail_agent_{{k}}').click(function(){
+        agnr=$(this).val();
+        $(this).addClass('active');
+        var xx = ['all','no_hard_err']
+        key = xx.indexOf('{{k}}');
+        delete xx[key];
+        for (var y in xx){
+            $('#detail_agent_'+xx[y]).removeClass().addClass('btn btn-primary btn-sm');
+        }
+         $.getJSON("/ajax_detail_agent/"+flag,{'agent':agnr,'which2':agnw, 'time2':agnt},function(ret){
+                    $(function () {
+                        $('#qst_agent').highcharts( qst_agent(ret,agnr, ret['tuple_day_agent']));
+                });
+            });
+        });
+    {%endfor%}
+
+    $('#detail_agent_rate').addClass('active');
+    {% for k in which2_items_list %}
+    $('#detail_agent_{{k.0}}').click(function(){
+    agnw=$(this).val();
+    $(this).addClass('active');
+    var xx = ['rate','num']
+    key = xx.indexOf('{{k.0}}');
+    delete xx[key];
+    for (var y in xx){
+        $('#detail_agent_'+xx[y]).removeClass().addClass('btn btn-warning btn-sm');
+    }
+     $.getJSON("/ajax_detail_agent/"+flag,{'agent':agnr,'which2':agnw,'time2':agnt},function(ret){
+                $(function () {
+                    $('#qst_agent').highcharts( qst_agent(ret,agnr, ret['tuple_day_agent']));
+            });
+        });
+    });
+    {% endfor %}
+
+    var mia_date_list = [ {%for x in mia_date_list%}
+                              '{{ x.0 | safe }}',
+                          {% endfor %}
+                        ];
+    {%for k in monthlist%}
+    $('#detail_machine_{{k.0}}').click(function(){
+        mact=$(this).val();
+        $(this).addClass('active');
+        var xx = mia_date_list.slice(0);   
+        key = xx.indexOf('{{k.0}}');
+        delete xx[key];
+        for (var y in xx){
+            $('#detail_machine_'+xx[y]).removeClass().addClass('btn btn-primary btn-sm');
+        }
+        $.getJSON("/ajax_detail_machine/"+flag,{'machine':macr,'which':macw,'label':macl,'time':mact},function(ret){
+             $(function () {
+                 $('#qst_machine').highcharts( qst_machine(ret,macr, ret['tuple_day_mac']));
+             });
+        });
+    });
+
+    $('#detail_instance_{{k.0}}').click(function(){
+        inst=$(this).val();
+        $(this).addClass('active');
+        var xx = mia_date_list.slice(0);
+        key = xx.indexOf('{{k.0}}');
+        delete xx[key];
+        for (var y in xx){
+            $('#detail_instance_'+xx[y]).removeClass().addClass('btn btn-primary btn-sm');
+        }
+        $.getJSON("/ajax_detail_instance/"+flag,{'instance':insm,'which1':insw,'time1':inst},function(ret){
+                $(function () {
+                    $('#qst_instance').highcharts( qst_instance(ret,insm, ret['tuple_day_ins']));
+            });
+        });
+    });
+
+    $('#detail_agent_{{k.0}}').click(function(){
+        agnt=$(this).val();
+        $(this).addClass('active');
+        var xx = mia_date_list.slice(0);
+        key = xx.indexOf('{{k.0}}');
+        delete xx[key];
+        for (var y in xx){
+            $('#detail_agent_'+xx[y]).removeClass().addClass('btn btn-primary btn-sm');
+        }
+        $.getJSON("/ajax_detail_agent/"+flag,{'agent':agnr,'which2':agnw,'time2':agnt},function(ret){
+                $(function () {
+                    $('#qst_agent').highcharts( qst_agent(ret,agnr, ret['tuple_day_agent']));
+            });
+        });
+    });
+    {%endfor%}
+
+    {%for k in weeklist%}
+    $('#detail_machine_{{k.0}}').click(function(){
+        mact=$(this).val();
+        $(this).addClass('active');
+        var xx = mia_date_list.slice(0);
+        key = xx.indexOf('{{k.0}}');
+        delete xx[key];
+        for (var y in xx){
+            $('#detail_machine_'+xx[y]).removeClass().addClass('btn btn-primary btn-sm');
+        }
+        $.getJSON("/ajax_detail_machine/"+flag,{'machine':macr,'which':macw,'label':macl,'time':mact},function(ret){
+            $(function () {
+                $('#qst_machine').highcharts( qst_machine(ret,macr, ret['tuple_day_mac']));
+            });
+        });
+    });
+
+    $('#detail_instance_{{k.0}}').click(function(){
+        inst=$(this).val();
+        $(this).addClass('active');
+        var xx = mia_date_list.slice(0);
+        key = xx.indexOf('{{k.0}}');
+        delete xx[key];
+        for (var y in xx){
+            $('#detail_instance_'+xx[y]).removeClass().addClass('btn btn-primary btn-sm');
+        }
+        $.getJSON("/ajax_detail_instance/"+flag,{'instance':insm,'which1':insw,'time1':inst},function(ret){
+                $(function () {
+                    $('#qst_instance').highcharts( qst_instance(ret,insm, ret['tuple_day_ins']));
+            });
+        });
+    });
+
+    $('#detail_agent_{{k.0}}').click(function(){
+        agnt=$(this).val();
+        $(this).addClass('active');
+        var xx = mia_date_list.slice(0);
+        key = xx.indexOf('{{k.0}}');
+        delete xx[key];
+        for (var y in xx){
+            $('#detail_agent_'+xx[y]).removeClass().addClass('btn btn-primary btn-sm');
+        }
+        $.getJSON("/ajax_detail_agent/"+flag,{'agent':agnr,'which2':agnw,'time2':agnt},function(ret){
+                $(function () {
+                    $('#qst_agent').highcharts( qst_agent(ret,agnr, ret['tuple_day_agent']));
+            });
+        });
+    });
+    {%endfor%}
+
+    {%for k in daylist%}
+    $('#detail_machine_{{k.0}}').click(function(){
+        mact=$(this).val();
+        $(this).addClass('active');
+        var xx = mia_date_list.slice(0);
+        key = xx.indexOf('{{k.0}}');
+        delete xx[key];
+        for (var y in xx){
+            $('#detail_machine_'+xx[y]).removeClass().addClass('btn btn-primary btn-sm');
+        }
+        $.getJSON("/ajax_detail_machine/"+flag,{'machine':macr,'which':macw,'label':macl,'time':mact},function(ret){
+            $(function () {
+                $('#qst_machine').highcharts( qst_machine(ret,macr, ret['tuple_day_mac']));
+            });
+        });
+    });
+
+    $('#detail_instance_{{k.0}}').click(function(){
+        inst=$(this).val();
+        $(this).addClass('active');
+        var xx = mia_date_list.slice(0);
+        key = xx.indexOf('{{k.0}}');
+        delete xx[key];
+        for (var y in xx){
+            $('#detail_instance_'+xx[y]).removeClass().addClass('btn btn-primary btn-sm');
+        }
+        $.getJSON("/ajax_detail_instance/"+flag,{'instance':insm,'which1':insw,'time1':inst},function(ret){
+                $(function () {
+                    $('#qst_instance').highcharts( qst_instance(ret,insm, ret['tuple_day_ins']));
+            });
+        });
+    });
+
+    $('#detail_agent_{{k.0}}').click(function(){
+        agnt=$(this).val();
+        $(this).addClass('active');
+        var xx = mia_date_list.slice(0);
+        key = xx.indexOf('{{k.0}}');
+        delete xx[key];
+        for (var y in xx){
+            $('#detail_agent_'+xx[y]).removeClass().addClass('btn btn-primary btn-sm');
+        }
+        $.getJSON("/ajax_detail_agent/"+flag,{'agent':agnr,'which2':agnw,'time2':agnt},function(ret){
+                $(function () {
+                    $('#qst_agent').highcharts( qst_agent(ret,agnr, ret['tuple_day_agent']));
+            });
+        });
+    });
+    {%endfor%}
+
+
+    //get window width begin
+    var winWidth = 0;
+    var winHeight = 0;
+    function findDimensions() //函数：获取尺寸
+    {
+        //获取窗口宽度
+        if (window.innerWidth)
+            winWidth = window.innerWidth;
+        else if ((document.body) && (document.body.clientWidth))
+            winWidth = document.body.clientWidth;
+        //获取窗口高度
+        if (window.innerHeight)
+            winHeight = window.innerHeight;
+        else if ((document.body) && (document.body.clientHeight))
+            winHeight = document.body.clientHeight;
+        //通过深入Document内部对body进行检测，获取窗口大小
+        if (document.documentElement && document.documentElement.clientHeight && document.documentElement.clientWidth)
+        {
+            winHeight = document.documentElement.clientHeight;
+            winWidth = document.documentElement.clientWidth;
+        }
+        //结果输出至两个文本框
+        $('#show_width_high').html("h:"+winHeight + " w:" + winWidth)
+    }
+    findDimensions();
+    //调用函数，获取数值
+    window.onresize=findDimensions;
+    // 690*1265
+    //get window width end
+
+</script>
+</body>
+</html>
+
